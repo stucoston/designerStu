@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
+  <link rel="icon" href="https://raw.githubusercontent.com/stucoston/saltwater/master/img/Screenshot%202017-04-24%20at%2010.png">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+</head>
+
+<style>
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  font-family: Montserrat, sans-serif;
+}  
+p {
+  font-weight: 200;
+  font-size: 14px;
+}
+i {
+  color: #0077cc;
+  margin: 20px auto;
+  font-size: 28px;
+  transition: 0.3s;
+  text-align: center;
+}
+i:hover {
+  color: black;
+}
+h1 a hr {
+  margin-top: -16px;
+}
+h2 a hr {
+  margin-top: -14px;
+}
+a {
+  color: #0077cc;
+  text-decoration: none;
+  padding: 5px 0;
+  transition: 0.3s;
+}
+a hr {
+  border: none;
+  background-color: black;
+  height: 1px;
+  width: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  float: left;
+}
+a:hover {
+  color: black;
+  transition: 0.3s;
+  cursor: pointer;
+}
+a:hover hr {
+  width:100%;
+  visibility: visible;
+}
+.middle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.bottommiddle {
+  position: absolute;
+  left: 50%;
+  top: 92%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.fixed {
+  position: fixed;
+  z-index: 10;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+  
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.text-white {
+  color: white;
+}
+.center {
+  text-align: center;
+}
+/* home-page elements */
+/* ===============================*/
+#home {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: 1s;
+  animation: opacityShow 3s ease-in forwards;
+}
+.h-top-words,
+.h-bottom-words {
+  position: absolute;
+  text-align: center;
+  width:190px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+}
+.h-top-words {
+  bottom: 70vh;
+}
+.h-bottom-words {
+  top: 70vh;
+}
+.highlight {
+  background-color: #222;
+  color: white;
+  padding: 1px 4px 1px 4px;
+}
+/* page elements */
+/* ===============================*/
+  .page-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+  #contact .page-wrapper {
+    padding: 24px 24px 48px;
+  }
+  
+  #opensource .page-wrapper {
+    padding: 24px 24px 24px 48px;
+  }
+  
+  #projects .page-wrapper {
+    padding: 48px 24px 24px;
+  }
+  
+  #templates .page-wrapper {
+    padding: 24px 48px 24px 24px;
+  }
+  
+  .page-title {
+    font-weight: 400;
+  }
+  
+  .page-content {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .page-link {
+    color: black;
+    border: 1px solid;
+    padding: 4px 20px;
+    margin: 5px;
+  }
+  
+  .page-link:hover {
+    color: #0077cc;
+    background-color: rgba(250, 250, 250, 0.3);
+  }
+  
+  .page-bg {
+    background: no-repeat center fixed;
+    background-size: cover;
+    transition: opacity .5s ease-in;
+    z-index: 0;
+  }
+  
+  .page-bg,
+  img {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+  
+  .see-through {
+    opacity: 0.4;
+  } 
+  
+  .proj-bg-1{
+    background-image: url("http://lorempixel.com/1080/720/people/1");
+  }
+  
+  .proj-bg-2{
+    background-image: url("http://lorempixel.com/1080/720/people/2");
+  }
+  
+  .proj-bg-3{
+    background-image: url("http://lorempixel.com/1080/720/people/3");
+  }
+  
+  .next-slide {
+    height: 40px;
+    width: 17px;
+  }
+  
+  .return-contact {
+    position: fixed;
+    height: 48px;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .return-opensource {
+    position: fixed;
+    height: 100vh;
+    width: 48px;
+    top: 0;
+    left: 0;
+  }
+  
+  .return-projects {
+    position: fixed;
+    height: 48px;
+    width: 100vw;
+    top: 0;
+    left: 0;
+  }
+  
+  .return-templates {
+    position: fixed;
+    height: 100vh;
+    width: 48px;
+    top: 0;
+    right: 0;
+  }
+  
+  .return-contact:hover,
+  .return-opensource:hover,
+  .return-projects:hover,
+  .return-templates:hover {
+    cursor: pointer;
+  }
+  
+  .animate-padding {
+    animation: pad-in 1s linear forwards 0.25s, opacityShow 1s ease-in forwards;
+  }
+  
+  @-webkit-keyframes pad-in {
+    0%   {padding: 0;}
+    100% {padding: 24px;}
+  }
+  @keyframes pad-in {
+    0%   {padding: 0;}
+    100% {padding: 24px;}
+  }
+  
+  .animate-fromtop {
+    animation: fromtop 1.5s ease-in-out forwards, opacityShow 1.5s ease-in-out forwards;
+  }
+  
+  @-webkit-keyframes fromtop {
+    0%   {bottom: 100%;}
+    100% {bottom: 0;}
+  }
+  
+  @keyframes fromtop {
+    0%   {bottom: 100%;}
+    100% {bottom: 0;}
+  }
+  
+  .animate-fromright {
+    animation: fromright 1.5s ease-in-out forwards, opacityShow 1.5s ease-in-out forwards;
+  }
+  
+  @-webkit-keyframes fromright {
+    0%   {left: 100%;}
+    100% {left: 0;}
+  }
+  
+  @keyframes fromright {
+    0%   {left: 100%;}
+    100% {left: 0;}
+  }
+  
+  .animate-frombottom {
+    animation: frombottom 1.5s ease-in-out forwards, opacityShow 1.5s ease-in-out forwards;
+  }
+  
+  @-webkit-keyframes frombottom {
+    0%   {top: 100%;}
+    100% {top: 0;}
+  }
+  
+  @keyframes frombottom {
+    0%   {top: 100%;}
+    100% {top: 0;}
+  }
+  
+  .animate-fromleft {
+    animation: fromleft 1.5s ease-in-out forwards, opacityShow 1.5s ease-in-out forwards;
+  }
+  
+  @-webkit-keyframes fromleft {
+    0%   {right: 100%;}
+    100% {right: 0;}
+  }
+  
+  @keyframes fromleft {
+    0%   {right: 100%;}
+    100% {right: 0;}
+  }
+  
+  .animate-totop {
+    animation: totop 1.5s ease-in-out forwards, opacityHide 1.5s ease-in-out forwards;
+  }
+  
+  @-webkit-keyframes totop {
+    0%   {bottom: 0;}
+    100% {bottom: 100%;}
+  }
+  
+  @keyframes totop {
+    0%   {bottom: 0;}
+    100% {bottom: 100%;}
+  }
+  
+  .animate-toright {
+    animation: toright 1.5s ease-in-out forwards, opacityHide 1.5s ease-in-out forwards;
+  }
+  
+  @-webkit-keyframes toright {
+    0%   {left: 0;}
+    100% {left: 100%;}
+  }
+  
+  @keyframes toright {
+    0%   {left: 0;}
+    100% {left: 100%;}
+  }
+  
+  .animate-tobottom {
+    animation: tobottom 1.5s ease-in-out forwards, opacityHide 1.5s ease-in-out forwards;
+  }
+  
+  @-webkit-keyframes tobottom {
+    0%   {top: 0;}
+    100% {top: 100%;}
+  }
+  
+  @keyframes tobottom {
+    0%   {top: 0;}
+    100% {top: 100%;}
+  }
+  
+  .animate-toleft {
+    animation: toleft 1.5s ease-in-out forwards, opacityHide 1.5s ease-in-out forwards;
+  }
+  
+  @-webkit-keyframes toleft {
+    0%   {right: 0;}
+    100% {right: 100%;}
+  }
+  
+  @keyframes toleft {
+    0%   {right: 0;}
+    100% {right: 100%;}
+  }
+  
+  .flash {
+    animation: flash 3s 2 forwards;
+  }
+  
+  @-webkit-keyframes flash {
+    0%   {opacity: 0;}
+    5%   {opacity: 1;}
+    7%   {opacity: 0;}
+    8%   {opacity: 1;}
+    10%   {opacity: 0;}
+    20%   {opacity: 1;}
+    22%   {opacity: 0;}
+    25%   {opacity: 1;}
+    30%   {opacity: 0;}
+    32%   {opacity: 1;}
+    38%   {opacity: 0;} 
+    70%   {opacity: 1;}
+    75%   {opacity: 0;}
+    82%   {opacity: 1;}
+    85%   {opacity: 0;}
+    87%   {opacity: 1;}
+    90%   {opacity: 0;}
+    92%   {opacity: 1;}
+    97%   {opacity: 0;}
+    100%   {opacity: 0;}
+  }
+  
+  @keyframes flash {
+    0%   {opacity: 0;}
+    5%   {opacity: 1;}
+    7%   {opacity: 0;}
+    8%   {opacity: 1;}
+    10%   {opacity: 0;}
+    20%   {opacity: 1;}
+    22%   {opacity: 0;}
+    25%   {opacity: 1;}
+    30%   {opacity: 0;}
+    32%   {opacity: 1;}
+    38%   {opacity: 0;} 
+    70%   {opacity: 1;}
+    75%   {opacity: 0;}
+    82%   {opacity: 1;}
+    85%   {opacity: 0;}
+    87%   {opacity: 1;}
+    90%   {opacity: 0;}
+    92%   {opacity: 1;}
+    97%   {opacity: 0;}
+    100%   {opacity: 0;}
+  }
+  
+  .animate-bounce {
+    animation: bounce 2s ease-in-out infinite;
+  }
+  
+  @-webkit-keyframes bounce {
+    0%   {margin-top: 0;}
+    50%   {margin-top: -5%;}
+    100% {margin-top: 0;}
+  }
+  
+  @keyframes bounce {
+    0%   {margin-top: 0;}
+    50%   {margin-top: -5%;}
+    100% {margin-top: 0;}
+  }
+  
+/* nav-item */
+/* ===============================*/
+  .nav-item-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  
+.nav-item {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 24px;
+  left: 0;
+  -webkit-transition: 1s;
+  -ms-transition: 1s;
+  transition: 1s;
+}
+.nav-item.h-contact {
+  top: -12px;
+}
+.nav-item.h-opensource {
+  width: 24px;
+  height: 100%;
+  left: auto;
+  right: -12px;
+}
+.nav-item.h-projects {
+  top: auto;
+  bottom: -12px;
+}
+.nav-item.h-templates {
+  left: -12px;
+  right: auto;
+  width: 24px;
+  height: 100%;
+}
+#nav-logo {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: -100px;
+  transition: .8s;
+}
+#arrow { 
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: -100px;
+  transition: .8s;
+}
+/*flex elements*/
+/* =============================== */
+#nav-contact .flex-wrapper,
+#nav-projects .flex-wrapper {
+  display:-webkit-flex;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 24px;
+}
+#nav-opensource .flex-wrapper,
+#nav-templates .flex-wrapper {
+  display:-webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 100%;
+}
+.flex-wrapper {
+  transform-origin: top center;
+  transition: 0.7s;
+}
+.flex-container {
+  display:-webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  -webkit-transition: 0.8s;
+  -ms-transition: 0.8s;
+  transition: 0.8s;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+#nav-contact .flex-container:hover,
+#nav-projects .flex-container:hover {
+  width: 85vw;
+}
+#nav-opensource .flex-container:hover,
+#nav-templates .flex-container:hover {
+  width: 85vh;
+}
+#nav-contact .flex-container {
+  width: 110px;
+}
+#nav-opensource .flex-container {
+  width: 170px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+#nav-projects .flex-container {
+  width: 115px;
+}
+#nav-templates .flex-container {
+  width: 140px;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+/*logo*/
+/* =============================== */
+#logo svg {
+  height: 100%;
+  width: 100%;
+}
+/*me slideshow animations*/
+/* =============================== */
+.slide-text {
+  font-size: 14px;
+  text-align: center;
+}
+.slide-text span {
+  display: inline-block;
+  position: relative;
+  transition: 1.5s;
+  opacity: 0;
+} 
+.slide-text span.active {
+  margin-top: initial;
+  opacity: 1;
+}
+ 
+/* site-wide CSS */
+/* =============================== */
+.button {
+  height: 30px;
+  width: 100px;
+  margin: 70px auto;
+}
+.button:hover {
+  background-color: #0077cc;
+}
+.contact-left {
+  position: absolute;
+  top: 39%;
+  left: 0;
+  width: 15%;
+  transform: translate(0, -50%);
+}
+.contact-right {
+  float: right;
+  width: 83%;
+  height: 100%;
+}
+.thin {
+  font-weight: 300;
+}
+/* site-wide KeyFrames */  
+/* =============================== */
+.opacity-show {
+  animation: opacityShow 1s forwards;
+}
+@-webkit-keyframes opacityShow {
+  0%	{opacity: 0;}
+  50%	{opacity: 0;}
+  100%	{opacity: 1;}
+}
+@keyframes opacityShow {
+  0%	{opacity: 0;}
+  50%	{opacity: 0;}
+  100%	{opacity: 1;}
+}
+.opacity-hide {
+  animation: opacityHide 1s forwards;
+}
+@-webkit-keyframes opacityHide{
+  0%	{opacity: 1;}
+  50%	{opacity: 0;}
+  100%	{opacity: 0;}
+}
+@keyframes opacityHide {
+  0%	{opacity: 1;}
+  50%	{opacity: 0;}
+  100%	{opacity: 0;}
+}
+/* Media Queries */  
+/* =============================== */
+@media only screen and (max-width: 600px) {
+  .hide-on-small-only {
+    display: none;
+  }
+}
+@media only screen and (min-width: 601px) {
+  .hide-on-med-and-up {
+    display: none;
+  }
+}
+</style>
+
+<body>
+
+  <div id="nav" class="page-wrapper animate-padding">
+    <div class="nav-item-overlay">
+    
+      <div id="nav-logo">
+        <svg viewBox="0,0,100,100">
+          <path fill="transparent" stroke-width="4" stroke="black" d="M70 10 L50 10 L90 50 L50 90 L35 75"/>
+        </svg>
+      </div>
+      
+      <div id="arrow">
+        <svg viewBox="0,0,100,100">
+          <path fill="transparent" stroke-width="4" stroke="black" d="M0 75 L50 25 L100 75"/>
+        </svg>
+      </div>
+    
+      <div id="nav-contact" class="nav-item h-contact nav-contact">
+        <div id="con-nav-wrap" class="flex-wrapper" onclick="pageContact()">
+          <div id="nav-contact-cont" class="page-title flex-container">contact</div>
+        </div>
+      </div>
+      
+      <div id="nav-opensource" class="nav-item h-opensource nav-opensource">
+        <div id="os-nav-wrap" class="flex-wrapper" onclick="pageOpensource()">
+          <div id="nav-opensource-cont" class="page-title flex-container">open source</div>
+        </div>
+      </div>
+      
+      <div id="nav-projects" class="nav-item h-projects nav-projects">
+        <div id="proj-nav-wrap" class="flex-wrapper" onclick="pageProjects()">
+          <div id="nav-projects-cont" class="page-title flex-container">projects</div>
+        </div>
+      </div>
+      
+      <div id="nav-templates" class="nav-item h-templates nav-templates">
+        <div id="temp-nav-wrap" class="flex-wrapper" onclick="pageTemplates()">
+          <div id="nav-templates-cont" class="page-title flex-container">templates</div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- close nav-item-overlay -->
+  </div>
+  <!-- close page-wrapper -->
+
+  <div id="home">
+  
+    <div id="logo" class="middle" style="width: 35vh; height: 35vh;">
+      <svg viewBox="0,0,150,100">
+        <path class="flash" fill="transparent" stroke-width="4" stroke="#0077cc" d="M70 10 L100 10 L140 50 L100 90 L50 90 M140 50 L90 50 M50 10 L10 50 L50 90"/>
+        <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M70 10 L50 10 L90 50 L50 90 L35 75"/>
+      </svg>
+    </div>
+
+    <div class="h-top-words">
+      <p>
+        <span class="me1 slide-text">Digital&nbsp;Designer</span>
+        <span class="me2 slide-text">Website&nbsp;Developer</span>
+        <span class="me3 slide-text">Freelance&nbsp;Entreprenuer</span>
+        <span class="me4 slide-text">Disciple&nbsp;Maker</span>
+        <br/>
+        <s><span style="font-weight: 500; text-transform: uppercase;">Stu Coston</span></s>
+      </p>
+    </div>
+    
+    <div class="h-bottom-words">
+      <p>be greater than the box</p>
+    </div>
+  
+  </div>
+  <!-- close home div -->
+  
+  <div id="contact" class="hide">
+    <div id="con-page-wrap" class="page-wrapper">
+      <div class="page-content">
+        <div class="middle" style="width: 342px;">
+          <div class="contact-right">
+            <h1>Why yes! I would love to do work for you.</h1>
+            <h2 class="thin"><a href="mailto:office@designerstu.com?Subject=Work%20Inquiry" target="_blank">office@designerstu.com<hr></a></h2>
+          </div>
+          <div class="contact-left">
+            <a href="https://www.facebook.com/stu.coston"><i class="fa fa-facebook show fa-lg"></i></a>
+            <a href="https://www.twitter.com/stucoston"><i class="fa fa-twitter show fa-lg"></i></a>
+            <a href="https://www.github.com/stucoston"><i class="fa fa-github show fa-lg"></i></a>
+          </div>
+        </div>
+        <!--<div class="button">
+          <svg viewBox="0,0,100,30">
+            <path fill="transparent" stroke-width="4" stroke="#0077cc" d="M0 0 L100 0 L100 30 L0 30 Z"/>
+            <text x="50" y="17" text-anchor="middle" alignment-baseline="middle" fill="black">CONTACT</text>
+          </svg>
+        </div>-->
+      </div>
+    </div>
+    <div class="return-contact" onclick="pageContact()"></div>
+  </div>
+  
+  <div id="opensource" class="hide">
+    <div id="os-page-wrap" class="page-wrapper">
+      <div class="page-content" style="border: 1px solid blue">
+        <div class="middle">
+          <p>Test Opensource page</p>
+        </div>
+      </div>
+    </div>
+    <div class="return-opensource" onclick="pageOpensource()"></div>
+  </div>
+  
+  <div id="projects" class="hide">
+    <div id="proj-page-wrap" class="page-wrapper">
+    
+      <div class="bottommiddle next-slide animate-bounce fixed" onclick="plusProjSlides(1)">
+        <svg viewBox="0,0,100,300">
+          <path fill="transparent" stroke-width="8" stroke="#0077cc" d="M0 240 L50 290 L100 240 M50 290 L50 0"/>
+        </svg>
+      </div>
+        
+      <div id="proj1" class="project-slide page-content proj-bg-1 page-bg see-through"></div>
+      <div id="proj1-slide" class="project-slide-content middle fixed center">
+        <h1>Coston Mission Blog</h1>
+        <a class="page-link" onclick="openProject1">Details</a>
+        <a class="page-link" href="http://www.costonmission.com" target="_blank">Visit</a>
+      </div>
+      
+      <div id="proj2" class="project-slide page-content proj-bg-2 page-bg see-through"></div>
+      <div id="proj2-slide" class="project-slide-content middle fixed center">
+        <h1>Coston Mission Magazine</h1>
+        <a class="page-link" onclick="openProject2">Details</a>
+        <a class="page-link" href="http://rawgit.com/stucoston/costonmission/master/2017_FebNewsletter/index.html" target="_blank">Visit</a>
+      </div>
+      
+      <div id="proj3" class="project-slide page-content proj-bg-3 page-bg see-through"></div>
+      <div id="proj3-slide" class="project-slide-content middle fixed center">
+        <h1>Sadie Hope Blog</h1>
+        <a class="page-link" onclick="openProject3">Details</a>
+        <a class="page-link" href="http://www.sadiehope.com" target="_blank">Visit</a>
+      </div>
+      
+    </div>
+    <div class="return-projects" onclick="pageProjects()"></div>
+  </div>
+  
+  <div id="templates" class="hide">
+   <div id="temp-page-wrap" class="page-wrapper">
+      <div class="page-content" style="border: 1px solid blue">
+        <div class="middle">
+          <p>Test Templates page</p>
+        </div>
+      </div>
+    </div>
+    <div class="return-templates" onclick="pageTemplates()"></div>
+  </div>
+  
+  <script>
+// navigation functions
+// ========================================================
+var win = window,
+    doc = document,
+    el = doc.documentElement,
+    bod = doc.getElementsByTagName('body')[0],
+    ww = win.innerWidth,
+    wh = win.innerHeight,
+    maxWidth = win.innerWidth || el.clientWidth || bod.clientWidth,
+    maxHeight = win.innerHeight || el.clientHeight || bod.clientHeight;
+    
+var c = document.getElementById('nav-contact'),
+    cCont = document.getElementById('nav-contact-cont'),
+    cw = document.getElementById('con-nav-wrap'),
+    o = document.getElementById('nav-opensource'),
+    oCont = document.getElementById('nav-opensource-cont'),
+    ow = document.getElementById('os-nav-wrap'),
+    p = document.getElementById('nav-projects'),
+    pCont = document.getElementById('nav-projects-cont'),
+    pw = document.getElementById('proj-nav-wrap'),
+    t = document.getElementById('nav-templates'),
+    tCont = document.getElementById('nav-templates-cont'),
+    tw = document.getElementById('temp-nav-wrap'),
+    home = document.getElementById('home'),
+    navLogo = document.getElementById('nav-logo');
+    
+function pageContact() {
+  
+  if(c.className.indexOf('nav-contact') >= 0) {
+    c.className = c.className.replace(' nav-contact','');
+    cCont.style.width = "85vw";
+    cCont.onmouseleave = function(){cCont.style.width = "85vw"};
+    home.style.top = wh + "px";
+    stu.toggleShow(o);
+    stu.toggleShow(t);
+    stu.toggleShow(p);
+    
+    setTimeout(function(){
+      setTimeout(function(){
+        cCont.onmouseenter = function(){cCont.style.width = "85vw"};
+        cCont.onmouseleave = function(){cCont.style.width = "110px"};
+        cCont.style.width = "110px";
+        contactPage();
+        
+        navLogo.style.transition = "0s";
+        arrow.style.transition = "0s";
+        navLogo.style.bottom = "auto";
+        navLogo.style.right = "auto";
+        navLogo.style.top = wh-60 + "px";
+        navLogo.style.left = "-100px";
+        arrow.style.bottom = "auto";
+        arrow.style.top = wh-60 + "px";
+        arrow.style.left = "auto";
+        arrow.style.right = "-100px";
+        arrow.style.transform = "rotate(180deg)";
+        setTimeout(function(){
+          navLogo.style.transition = "0.8s";
+          arrow.style.transition = "0.8s";
+          arrow.style.right = "0px";
+          navLogo.style.left = "0px";
+        }, 50);
+        
+      }, 1000);
+    
+      c.style.top = wh-60 + "px";
+      
+    }, 500);
+    
+  } else {
+    c.className += ' nav-contact';
+    cCont.style.width = "85vw";
+    cCont.onmouseleave = function(){cCont.style.width = "85vw"};
+    contactPage();
+    navLogo.style.left = "-100px";
+    arrow.style.right = "-100px";
+    
+    setTimeout(function(){
+      setTimeout(function(){
+        cCont.onmouseenter = function(){cCont.style.width = "85vw"};
+        cCont.onmouseleave = function(){cCont.style.width = "110px"};
+        cCont.style.width = "110px";
+        stu.toggleShow(o);
+        stu.toggleShow(t);
+        stu.toggleShow(p);
+      }, 1000);
+    
+      c.style.top = "-12px";
+      setTimeout(function(){home.style.top = "0px";}, 500);
+      
+    }, 500);
+    
+  }; 
+  
+}
+function pageOpensource() {
+  if(o.className.indexOf('nav-opensource') >= 0) {
+    o.className = o.className.replace(' nav-opensource','');
+    oCont.style.width = "85vh";
+    oCont.onmouseleave = function(){oCont.style.width = "85vh"};
+    home.style.left = -ww + "px";
+    stu.toggleShow(c);
+    stu.toggleShow(t);
+    stu.toggleShow(p);
+    
+    setTimeout(function(){
+      setTimeout(function(){
+        oCont.onmouseenter = function(){oCont.style.width = "85vh"};
+        oCont.onmouseleave = function(){oCont.style.width = "170px"};
+        oCont.style.width = "170px";
+        opensourcePage();
+        
+        navLogo.style.transition = "0s";
+        arrow.style.transition = "0s";
+        navLogo.style.bottom = "auto";
+        navLogo.style.left = "auto";
+        navLogo.style.top = "-100px";
+        navLogo.style.right = ww-60 + "px";
+        arrow.style.transform = "rotate(-90deg)";
+        arrow.style.top = "auto";
+        arrow.style.bottom = "-100px";
+        arrow.style.left = "auto";
+        arrow.style.right = ww-64 + "px";
+        setTimeout(function(){
+          navLogo.style.transition = "0.8s";
+          arrow.style.transition = "0.8s";
+          arrow.style.bottom = "0px";
+          navLogo.style.top = "0px";
+        }, 50);
+        
+      }, 1000);
+    
+      o.style.right = ww-60 + "px";
+      
+    }, 500);
+    
+  } else {
+    o.className += ' nav-opensource';
+    oCont.style.width = "85vh";
+    oCont.onmouseleave = function(){oCont.style.width = "85vh"};
+    opensourcePage();
+    arrow.style.bottom = "-100px";
+    navLogo.style.top = "-100px";
+    
+    setTimeout(function(){
+      setTimeout(function(){
+        oCont.onmouseenter = function(){oCont.style.width = "85vh"};
+        oCont.onmouseleave = function(){oCont.style.width = "170px"};
+        oCont.style.width = "170px";
+        stu.toggleShow(c);
+        stu.toggleShow(t);
+        stu.toggleShow(p);
+      }, 1000);
+    
+      o.style.right = "-12px";
+      setTimeout(function(){home.style.left = "0px";}, 500);
+      
+    }, 500);
+    
+  }; 
+  
+}
+function pageProjects() {
+  if(p.className.indexOf('nav-projects') >= 0) {
+    p.className = p.className.replace(' nav-projects','');
+    pCont.style.width = "85vw";
+    pCont.onmouseleave = function(){pCont.style.width = "85vw"};
+    home.style.top = -wh + "px";
+    stu.toggleShow(c);
+    stu.toggleShow(t);
+    stu.toggleShow(o);
+    
+    setTimeout(function(){
+      setTimeout(function(){
+        pCont.onmouseenter = function(){pCont.style.width = "85vw"};
+        pCont.onmouseleave = function(){pCont.style.width = "115px"};
+        pCont.style.width = "115px";
+        projectPage();
+        
+        navLogo.style.transition = "0s";
+        arrow.style.transition = "0s";
+        navLogo.style.bottom = "auto";
+        navLogo.style.left = "auto";
+        navLogo.style.top = "-14px";
+        navLogo.style.right = "-100px";
+        arrow.style.bottom = "auto";
+        arrow.style.top = "-14px";
+        arrow.style.right = "auto";
+        arrow.style.left = "-100px";
+        arrow.style.transform = "rotate(0deg)";
+        setTimeout(function(){
+          navLogo.style.transition = "0.8s";
+          arrow.style.transition = "0.8s";
+          arrow.style.left = "0px";
+          navLogo.style.right = "0px";
+        }, 50);
+        
+      }, 1000);
+    
+      p.style.bottom = wh-60 + "px";
+      
+    }, 500);
+    
+  } else {
+    p.className += ' nav-projects';
+    pCont.style.width = "85vw";
+    pCont.onmouseleave = function(){pCont.style.width = "85vw"};
+    projectPage();
+    arrow.style.left = "-100px";
+    navLogo.style.right = "-100px";
+    
+    setTimeout(function(){
+      setTimeout(function(){
+        pCont.onmouseenter = function(){pCont.style.width = "85vw"};
+        pCont.onmouseleave = function(){pCont.style.width = "115px"};
+        pCont.style.width = "115px";
+        stu.toggleShow(c);
+        stu.toggleShow(t);
+        stu.toggleShow(o);
+      }, 1000);
+    
+      p.style.bottom = "-12px";
+      setTimeout(function(){home.style.top = "0px";}, 500);
+      
+    }, 500);
+    
+  }; 
+  
+}
+function pageTemplates() {
+  if(t.className.indexOf('nav-templates') >= 0) {
+    t.className = t.className.replace(' nav-templates','');
+    tCont.style.width = "85vh";
+    tCont.onmouseleave = function(){tCont.style.width = "85vh"};
+    home.style.left = ww + "px";
+    stu.toggleShow(c);
+    stu.toggleShow(o);
+    stu.toggleShow(p);
+    
+    setTimeout(function(){
+      setTimeout(function(){
+        tCont.onmouseenter = function(){tCont.style.width = "85vh"};
+        tCont.onmouseleave = function(){tCont.style.width = "140px"};
+        tCont.style.width = "140px";
+        templatesPage();
+        
+        navLogo.style.transition = "0s";
+        arrow.style.transition = "0s";
+        navLogo.style.top = "auto";
+        navLogo.style.right = "auto";
+        navLogo.style.bottom = "-100px";
+        navLogo.style.left = ww-68 + "px";
+        arrow.style.transform = "rotate(90deg)";
+        arrow.style.bottom = "auto";
+        arrow.style.top = "-100px";
+        arrow.style.right = "auto";
+        arrow.style.left = ww-64 + "px";
+        setTimeout(function(){
+          navLogo.style.transition = "0.8s";
+          arrow.style.transition = "0.8s";
+          arrow.style.top = "0px";
+          navLogo.style.bottom = "0px";
+        }, 50);
+        
+      }, 1000);
+    
+      t.style.left = ww-60 + "px";
+      
+    }, 500);
+    
+  } else {
+    t.className += ' nav-templates';
+    tCont.style.width = "85vh";
+    tCont.onmouseleave = function(){tCont.style.width = "85vh"};
+    templatesPage();
+    arrow.style.top = "-100px";
+    navLogo.style.bottom = "-100px";
+    
+    setTimeout(function(){
+      setTimeout(function(){
+        tCont.onmouseenter = function(){tCont.style.width = "85vh"};
+        tCont.onmouseleave = function(){tCont.style.width = "140px"};
+        tCont.style.width = "140px";
+        stu.toggleShow(c);
+        stu.toggleShow(o);
+        stu.toggleShow(p);
+      }, 1000);
+    
+      t.style.left = "-12px";
+      setTimeout(function(){home.style.left = "0px";}, 500);
+      
+    }, 500);
+    
+  };
+  
+}
+function contactPage() {
+  if(document.getElementById('contact').className.indexOf('hide') >= 0) {
+    document.getElementById('contact').className = document.getElementById('contact').className.replace('hide','');
+    document.getElementById('con-page-wrap').className += ' animate-fromtop';
+    
+  } else {
+    
+    document.getElementById('con-page-wrap').className = document.getElementById('con-page-wrap').className.replace(' animate-fromtop',' animate-totop');
+    
+    setTimeout( function(){
+      document.getElementById('contact').className += 'hide';
+      document.getElementById('con-page-wrap').className = document.getElementById('con-page-wrap').className.replace(' animate-totop','');
+      
+    }, 2000);
+    
+  };
+  
+}
+function opensourcePage() {
+  if(document.getElementById('opensource').className.indexOf('hide') >= 0) {
+    document.getElementById('opensource').className = document.getElementById('opensource').className.replace('hide','');
+    document.getElementById('os-page-wrap').className += ' animate-fromright';
+    
+  } else {
+    
+    document.getElementById('os-page-wrap').className = document.getElementById('os-page-wrap').className.replace(' animate-fromright',' animate-toright');
+    
+    setTimeout( function(){
+      document.getElementById('opensource').className += 'hide';
+      document.getElementById('os-page-wrap').className = document.getElementById('os-page-wrap').className.replace(' animate-toright','');
+      
+    }, 2000);
+    
+  };
+  
+}
+function projectPage() {
+  if(document.getElementById('projects').className.indexOf('hide') >= 0) {
+    document.getElementById('projects').className = document.getElementById('projects').className.replace('hide','');
+    document.getElementById('proj-page-wrap').className += ' animate-frombottom';
+    
+  } else {
+    
+    document.getElementById('proj-page-wrap').className = document.getElementById('proj-page-wrap').className.replace(' animate-frombottom',' animate-tobottom');
+    
+    setTimeout( function(){
+      document.getElementById('projects').className += 'hide';
+      document.getElementById('proj-page-wrap').className = document.getElementById('proj-page-wrap').className.replace(' animate-tobottom','');
+      
+    }, 2000);
+    
+  };
+  
+}
+function templatesPage() {
+  if(document.getElementById('templates').className.indexOf('hide') >= 0) {
+    document.getElementById('templates').className = document.getElementById('templates').className.replace('hide','');
+    document.getElementById('temp-page-wrap').className += ' animate-fromleft';
+    
+  } else {
+    
+    document.getElementById('temp-page-wrap').className = document.getElementById('temp-page-wrap').className.replace(' animate-fromleft',' animate-toleft');
+    
+    setTimeout( function(){
+      document.getElementById('templates').className += 'hide';
+      document.getElementById('temp-page-wrap').className = document.getElementById('temp-page-wrap').className.replace(' animate-toleft','');
+      
+    }, 2000);
+    
+  };
+  
+}
+// stu toggle functions
+// ========================================================
+var stu = {};
+stu.styleElement = function (element, prop, val) {
+  element.style.setProperty(prop, val);
+};
+stu.toggleShow = function (sel) {
+  var i, x = stu.getElements(sel), l = x.length;
+  for (i = 0; i < l; i++) {    
+    if (x[i].style.display == "none") {
+      stu.styleElement(x[i], "display", "block");
+    } else {
+      stu.styleElement(x[i], "display", "none");
+    }
+  }
+};
+stu.getElements = function (id) {
+  if (typeof id == "object") {
+    return [id];
+  } else {
+    return document.querySelectorAll(id);
+  }
+};
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<script>
+jQuery(function($){
+  var windowWidth = $(window).width();
+  var windowHeight = $(window).height();
+  $(window).resize(function() {
+    if(windowWidth != $(window).width() || windowHeight != $(window).height()) {
+      location.reload();
+      return;
+    }
+  });
+});
+</script>
+
+<script>
+( function( $ ) {
+    /*
+     * span-letters.js
+     * 
+     * Example usage: jQuery('.selector').spanLetters();
+     */
+     
+    $.fn.spanLetters = function() {
+        // Loop through each element on which this function has been called
+        this.each( function() {   
+            
+            // Scope the variables
+            var words, i, text;
+          
+            // Make an array with each letter of the string as a value
+            words = $( this ).text().split( '' );
+            // Loop through the letters and wrap each one in a span
+            for ( i = 0; i in words; i++ ) {
+                words[i] = '<span class="sl' + ( i + 1 ) + ' span-letter">' + words[i] + '</span>'
+            };
+            // Join our array of span-wrapped letters back into a string
+            text = words.join( '' );
+            // Replace the original string with the new string
+            $( this ).html( text );
+        })
+    }
+}( jQuery ));
+// Span nav-item Letters
+$( ".flex-container" ).spanLetters();
+// Call spanLetters on our target
+$( ".me1" ).spanLetters();
+targetMe1 = $( ".me1 span" ); // Select our spans
+$( ".me2" ).spanLetters();
+targetMe2 = $( ".me2 span" ); // Select our spans
+$( ".me3" ).spanLetters();
+targetMe3 = $( ".me3 span" ); // Select our spans
+$( ".me4" ).spanLetters();
+targetMe4 = $( ".me4 span" ); // Select our spans
+duration = 5000; // Set duration of the effect here
+speed = 40; // Set animation speed through the letters here
+// Add the animation class to the letter, then remove it later
+function animateLetter( value ) {
+  if ( turnedOn ) {
+    
+    setTimeout( function() {
+      $( value ).addClass( "active" );
+    }, 0 );
+    setTimeout( function() {
+      stopAnimateLetter( value );  
+    }, duration );
+      
+  }
+  
+};
+// Remove the animation class from the letter
+function stopAnimateLetter( value ) {
+  $( value ).removeClass( "active" );
+};
+// Trigger function
+function startEverything() {
+  
+  // Loop through our collection of spans
+  targetMe1.each( function( index, value ) {
+    // Sequentially delay the firing of the animation through the letters
+    timer = setTimeout( function() {
+      animateLetter( value );
+    }, speed*index );
+  }); 
+  
+  // Loop through our collection of spans
+  targetMe2.each( function( index, value ) {
+    // Sequentially delay the firing of the animation through the letters
+    timer = setTimeout( function() {
+      animateLetter( value );
+    }, speed*index );
+  });
+  
+  // Loop through our collection of spans
+  targetMe3.each( function( index, value ) {
+    // Sequentially delay the firing of the animation through the letters
+    timer = setTimeout( function() {
+      animateLetter( value );
+    }, speed*index );
+  });
+  
+  // Loop through our collection of spans
+  targetMe4.each( function( index, value ) {
+    // Sequentially delay the firing of the animation through the letters
+    timer = setTimeout( function() {
+      animateLetter( value );
+    }, speed*index );
+  });
+      
+}
+// growing-things slide show
+// =======================================================
+var gtIndex = 0;
+carousel();
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("slide-text");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+      setTimeout(animateMe, 500);
+    }
+    gtIndex++;
+    if (gtIndex > x.length) {gtIndex = 1} 
+    x[gtIndex-1].style.display = "inline-block";
+    setTimeout(carousel, 7000); // Change image every 6 seconds
+};
+   
+function animateMe() { 
+        
+  turnedOn = true;
+  startEverything();
+        
+};
+</script>
+<script>
+// projects slide show
+// =======================================================
+var psIndex = 1;
+showProjSlides(psIndex);
+function plusProjSlides(n) {
+  showProjSlides(psIndex += n);
+}
+function currentProjSlide(n) {
+  showProjSlides(psIndex = n);
+}
+function showProjSlides(n) {
+  var ps;
+  var projSlides = document.getElementsByClassName("project-slide");
+  var projSlidesContent = document.getElementsByClassName("project-slide-content");
+  if (n > projSlides.length) {psIndex = 1} 
+  if (n < 1) {psIndex =projSlides.length}
+  for (ps = 0; ps < projSlides.length; ps++) {
+    projSlides[ps].style.display = "none";
+    projSlidesContent[ps].style.display = "none";
+  }
+    projSlides[psIndex-1].style.display = "block";
+    projSlidesContent[psIndex-1].style.display = "block";
+}
+</script>
+</body>
+
+</html>
