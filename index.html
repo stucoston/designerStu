@@ -3,7 +3,7 @@
 
 <head>
   <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
-  <link rel="icon" href="https://raw.githubusercontent.com/stucoston/saltwater/master/img/Screenshot%202017-04-24%20at%2010.png">
+   <link rel="icon" href="https://raw.githubusercontent.com/stucoston/saltwater/master/img/Screenshot%202017-04-24%20at%2010.png">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
@@ -60,6 +60,7 @@ a:hover hr {
   width:100%;
   visibility: visible;
 }
+
 .middle {
   position: absolute;
   left: 50%;
@@ -68,6 +69,7 @@ a:hover hr {
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
+
 .bottommiddle {
   position: absolute;
   left: 50%;
@@ -76,26 +78,44 @@ a:hover hr {
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
+
 .fixed {
   position: fixed;
   z-index: 10;
 }
+
 .absolute {
   position: absolute;
 }
+
 .relative {
   position: relative;
+}
+
+.full-width {
+  width: 100%;
 }
   
 .hide {
   display: none;
 }
+
 .show {
   display: block;
 }
+
 .text-white {
   color: white;
 }
+
+.text-black {
+  color: black;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
 .center {
   text-align: center;
 }
@@ -163,19 +183,29 @@ a:hover hr {
   
   .page-content {
     height: 100%;
-    width: 100%;
+    width: 120vh;
+    max-width:100%;
+    margin: 0 auto;
   }
   
   .page-link {
-    color: black;
     border: 1px solid;
     padding: 4px 20px;
     margin: 5px;
   }
   
   .page-link:hover {
+    color: white;
+    background-color: rgba(	0, 119, 204, 0.5);
+  }
+  
+  .item-title {
     color: #0077cc;
-    background-color: rgba(250, 250, 250, 0.3);
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 600;
+    margin: 32px auto;
+    text-shadow: 0px 0px 8px rgba(50,50,50,0.5);
   }
   
   .page-bg {
@@ -195,7 +225,7 @@ a:hover hr {
   }
   
   .see-through {
-    opacity: 0.4;
+    opacity: 0.7;
   } 
   
   .proj-bg-1{
@@ -207,7 +237,8 @@ a:hover hr {
   }
   
   .proj-bg-3{
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC");
+    background-image: url("https://scontent-dft4-1.cdninstagram.com/t51.2885-15/e35/17934352_1724154954549925_7088067833774473216_n.jpg");
+    background-position: center top;
   }
   
   .next-slide {
@@ -614,6 +645,7 @@ a:hover hr {
 .opacity-show {
   animation: opacityShow 1s forwards;
 }
+
 @-webkit-keyframes opacityShow {
   0%	{opacity: 0;}
   50%	{opacity: 0;}
@@ -624,9 +656,11 @@ a:hover hr {
   50%	{opacity: 0;}
   100%	{opacity: 1;}
 }
+
 .opacity-hide {
   animation: opacityHide 1s forwards;
 }
+
 @-webkit-keyframes opacityHide{
   0%	{opacity: 1;}
   50%	{opacity: 0;}
@@ -647,6 +681,12 @@ a:hover hr {
 @media only screen and (min-width: 601px) {
   .hide-on-med-and-up {
     display: none;
+  }
+}
+
+@media screen and (min-aspect-ratio: 1/1) {
+  .page-content {
+    
   }
 }
 </style>
@@ -769,25 +809,25 @@ a:hover hr {
         </svg>
       </div>
         
-      <div id="proj1" class="project-slide page-content proj-bg-1 page-bg see-through"></div>
-      <div id="proj1-slide" class="project-slide-content middle fixed center">
-        <h1>Coston Mission Blog</h1>
-        <a class="page-link" onclick="openProject1">Details</a>
-        <a class="page-link" href="http://www.costonmission.com" target="_blank">Visit</a>
+      <div id="proj1" class="project-slide page-content proj-bg-1 page-bg"></div>
+      <div id="proj1-slide" class="project-slide-content middle center fixed full-width">
+        <div class="item-title">Coston Mission Blog</div>
+        <a class="page-link text-white" onclick="openProject1">Project</a>
+        <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>
       </div>
       
       <div id="proj2" class="project-slide page-content proj-bg-2 page-bg see-through"></div>
-      <div id="proj2-slide" class="project-slide-content middle fixed center">
-        <h1>Coston Mission Magazine</h1>
-        <a class="page-link" onclick="openProject2">Details</a>
-        <a class="page-link" href="http://rawgit.com/stucoston/costonmission/master/2017_FebNewsletter/index.html" target="_blank">Visit</a>
+      <div id="proj2-slide" class="project-slide-content middle center fixed full-width">
+        <div class="item-title">Coston Mission Magazine</div>
+        <a class="page-link text-white" onclick="openProject2">Project</a>
+        <a class="page-link text-white" href="http://rawgit.com/stucoston/costonmission/master/2017_FebNewsletter/index.html" target="_blank">View</a>
       </div>
       
-      <div id="proj3" class="project-slide page-content proj-bg-3 page-bg see-through"></div>
-      <div id="proj3-slide" class="project-slide-content middle fixed center">
-        <h1>Sadie Hope Blog</h1>
-        <a class="page-link" onclick="openProject3">Details</a>
-        <a class="page-link" href="http://www.sadiehope.com" target="_blank">Visit</a>
+      <div id="proj3" class="project-slide page-content proj-bg-3 page-bg"></div>
+      <div id="proj3-slide" class="project-slide-content middle center fixed full-width">
+        <div class="item-title">Sadie Hope Blog</div>
+        <a class="page-link text-black" onclick="openProject3">Project</a>
+        <a class="page-link text-black" href="http://www.sadiehope.com" target="_blank">Visit Site</a>
       </div>
       
     </div>
@@ -1333,16 +1373,20 @@ function animateMe() {
 };
 </script>
 <script>
+
 // projects slide show
 // =======================================================
 var psIndex = 1;
 showProjSlides(psIndex);
+
 function plusProjSlides(n) {
   showProjSlides(psIndex += n);
 }
+
 function currentProjSlide(n) {
   showProjSlides(psIndex = n);
 }
+
 function showProjSlides(n) {
   var ps;
   var projSlides = document.getElementsByClassName("project-slide");
@@ -1356,6 +1400,7 @@ function showProjSlides(n) {
     projSlides[psIndex-1].style.display = "block";
     projSlidesContent[psIndex-1].style.display = "block";
 }
+
 </script>
 </body>
 
