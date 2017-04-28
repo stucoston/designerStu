@@ -839,30 +839,62 @@ a:hover hr {
       <div id="proj1-slide" class="project-slide-content middle center fixed full-width">
         <div id="cm-blog" class="item-title" onclick="openProject1()">Coston Mission Blog</div>
       </div>
-      <div id="proj1-details" class="middle hide">
-        <div class="item-title fixed" onclick="openProject1()">Coston Mission Blog</div>
-        <div class="center" style="margin: 50vh auto;">
+      <div id="proj1-details" class="middle fixed full-screen hide" style="overflow: scroll;">
+        <div class="item-title middle" onclick="openProject1()">Coston Mission Blog</div>
+        <div class="center" style="margin: 120vh auto 0;">
           <a class="page-link text-white" onclick="openProject1">Project</a>
           <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>
         </div>
-        <div class="center" style="margin: 50vh auto;">
-          <a class="page-link text-white" onclick="openProject1">Project</a>
-          <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>
+        <div class="center" style="margin: 16px auto;">
+          <h1>Challenge</h1>
+          <p>this project has such and such a challenge and such and such a words.</p>
+        </div>
+        <div class="center" style="margin: 16px auto;">
+          <h1>Challenge</h1>
+          <p>this project has such and such a challenge and such and such a words.</p>
         </div>
       </div>
       
       <div id="proj2" class="project-slide page-content proj-bg-2 page-bg"></div>
       <div id="proj2-slide" class="project-slide-content middle center fixed full-width">
-        <div id="cm-mag" class="item-title">Coston Mission Magazine</div>
+        <div id="cm-mag" class="item-title" onclick="openProject2()">Coston Mission Magazine</div>
         <!--<a class="page-link text-white" onclick="openProject2">Project</a>
         <a class="page-link text-white" href="http://rawgit.com/stucoston/costonmission/master/2017_FebNewsletter/index.html" target="_blank">View</a>-->
+      </div>
+      <div id="proj2-details" class="middle fixed full-screen hide" style="overflow: scroll;">
+        <div class="item-title middle" onclick="openProject2()">Coston Mission Blog</div>
+        <div class="center" style="margin: 120vh auto 0;">
+          <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>
+        </div>
+        <div class="center" style="margin: 16px auto;">
+          <h1>Challenge</h1>
+          <p>this project has such and such a challenge and such and such a words.</p>
+        </div>
+        <div class="center" style="margin: 16px auto;">
+          <h1>Challenge</h1>
+          <p>this project has such and such a challenge and such and such a words.</p>
+        </div>
       </div>
       
       <div id="proj3" class="project-slide page-content proj-bg-3 page-bg"></div>
       <div id="proj3-slide" class="project-slide-content middle center fixed full-width">
-        <div id="sh-blog" class="item-title">Sadie Hope Blog</div>
+        <div id="sh-blog" class="item-title" onclick="openProject3()">Sadie Hope Blog</div>
        <!-- <a class="page-link text-black" onclick="openProject3">Project</a>
         <a class="page-link text-black" href="http://www.sadiehope.com" target="_blank">Visit Site</a>-->
+      </div>
+      <div id="proj3-details" class="middle fixed full-screen hide" style="overflow: scroll;">
+        <div class="item-title middle" onclick="openProject3()">Coston Mission Blog</div>
+        <div class="center" style="margin: 120vh auto 0;">
+          <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>
+        </div>
+        <div class="center" style="margin: 16px auto;">
+          <h1>Challenge</h1>
+          <p>this project has such and such a challenge and such and such a words.</p>
+        </div>
+        <div class="center" style="margin: 16px auto;">
+          <h1>Challenge</h1>
+          <p>this project has such and such a challenge and such and such a words.</p>
+        </div>
       </div>
       
     </div>
@@ -1256,12 +1288,33 @@ function openProject1() {
 
   var wrap = document.getElementById('proj-page-wrap'),
       sa = document.getElementById('slide-arrow'),
-      p1s = document.getElementById('proj1-slide'),
-      p1d = document.getElementById('proj1-details');
+      p1s = document.getElementById('proj1-slide');
   stu.togglePaddingProj(wrap);
   stu.toggleShow(sa);
   stu.toggleShow(p1s);
   stu.toggleClass('#proj1-details','show','hide');
+}
+
+function openProject2() {
+
+  var wrap = document.getElementById('proj-page-wrap'),
+      sa = document.getElementById('slide-arrow'),
+      p2s = document.getElementById('proj2-slide');
+  stu.togglePaddingProj(wrap);
+  stu.toggleShow(sa);
+  stu.toggleShow(p2s);
+  stu.toggleClass('#proj2-details','show','hide');
+}
+
+function openProject3() {
+
+  var wrap = document.getElementById('proj-page-wrap'),
+      sa = document.getElementById('slide-arrow'),
+      p3s = document.getElementById('proj3-slide');
+  stu.togglePaddingProj(wrap);
+  stu.toggleShow(sa);
+  stu.toggleShow(p3s);
+  stu.toggleClass('#proj3-details','show','hide');
 }
 </script>
 
