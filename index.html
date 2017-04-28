@@ -829,7 +829,7 @@ a:hover hr {
   <div id="projects" class="hide">
     <div id="proj-page-wrap" class="page-wrapper" style="border: 1px solid green;">
     
-      <div class="bottommiddle next-slide fixed" onclick="plusProjSlides(1)">
+      <div id="slide-arrow" class="bottommiddle next-slide fixed" onclick="plusProjSlides(1)">
         <svg viewBox="0,0,100,300">
           <path fill="transparent" stroke-width="8" stroke="#0077cc" d="M0 240 L50 290 L100 240 M50 290 L50 0"/>
         </svg>
@@ -838,8 +838,17 @@ a:hover hr {
       <div id="proj1" class="project-slide page-content proj-bg-1 page-bg"></div>
       <div id="proj1-slide" class="project-slide-content middle center fixed full-width">
         <div id="cm-blog" class="item-title" onclick="openProject1()">Coston Mission Blog</div>
-        <!--<a class="page-link text-white" onclick="openProject1">Project</a>
-        <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>-->
+      </div>
+      <div id="proj1-details" class="middle hide">
+        <div class="item-title fixed" onclick="openProject1()">Coston Mission Blog</div>
+        <div class="center" style="margin: 50vh auto;">
+          <a class="page-link text-white" onclick="openProject1">Project</a>
+          <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>
+        </div>
+        <div class="center" style="margin: 50vh auto;">
+          <a class="page-link text-white" onclick="openProject1">Project</a>
+          <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>
+        </div>
       </div>
       
       <div id="proj2" class="project-slide page-content proj-bg-2 page-bg"></div>
@@ -1239,6 +1248,26 @@ function templatesPage() {
   };
   
 }
+</script>
+
+<script>
+// open project slides
+function openProject1() {
+
+  var wrap = document.getElementById('proj-page-wrap'),
+      sa = document.getElementById('slide-arrow'),
+      p1s = document.getElementById('proj1-slide'),
+      p1d = document.getElementById('proj1-details');
+  stu.togglePaddingProj(wrap);
+  stu.toggleShow(sa);
+  stu.toggleShow(p1s);
+  stu.toggleClass('#proj1-details','show','hide');
+}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<script>
 // stu toggle functions
 // ========================================================
 var stu = {};
@@ -1256,12 +1285,89 @@ stu.toggleShow = function (sel) {
   }
 };
 stu.togglePaddingProj = function (sel) {
-  var p, y = stu.getElements(sel), yl = y.length;
-  for (p = 0; p < yl; p++) {    
-    if (y[p].style.padding == "0px") {
-      stu.styleElement(y[p], "padding", "48px");
+  var i, x = stu.getElements(sel), l = x.length;
+  for (i = 0; i < l; i++) {    
+    if (x[i].style.padding == "0px") {
+      stu.styleElement(x[i], "padding", "48px 24px 24px");
     } else {
-      stu.styleElement(y[p], "padding", "0px");
+      stu.styleElement(x[i], "padding", "0px");
+    }
+  }
+};
+stu.addClass = function (sel, name) {
+  stu.addClassElements(stu.getElements(sel), name);
+};
+stu.addClassElements = function (elements, name) {
+  var i, l = elements.length;
+  for (i = 0; i < l; i++) {
+    stu.addClassElement(elements[i], name);
+  }
+};
+stu.addClassElement = function (element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+};
+stu.removeClass = function (sel, name) {
+  stu.removeClassElements(stu.getElements(sel), name);
+};
+stu.removeClassElements = function (elements, name) {
+  var i, l = elements.length, arr1, arr2, j;
+  for (i = 0; i < l; i++) {
+    stu.removeClassElement(elements[i], name);
+  }
+};
+stu.removeClassElement = function (element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+};
+stu.toggleClass = function (sel, c1, c2) {
+  stu.toggleClassElements(stu.getElements(sel), c1, c2);
+};
+stu.toggleClassElements = function (elements, c1, c2) {
+  var i, l = elements.length;
+  for (i = 0; i < l; i++) {    
+    stu.toggleClassElement(elements[i], c1, c2);
+  }
+};
+stu.toggleClassElement = function (element, c1, c2) {
+  var t1, t2, t1Arr, t2Arr, j, arr, allPresent;
+  t1 = (c1 || "");
+  t2 = (c2 || "");
+  t1Arr = t1.split(" ");
+  t2Arr = t2.split(" ");
+  arr = element.className.split(" ");
+  if (t2Arr.length == 0) {
+    allPresent = true;
+    for (j = 0; j < t1Arr.length; j++) {
+      if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+    }
+    if (allPresent) {
+      stu.removeClassElement(element, t1);
+    } else {
+      stu.addClassElement(element, t1);
+    }
+  } else {
+    allPresent = true;
+    for (j = 0; j < t1Arr.length; j++) {
+      if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+    }
+    if (allPresent) {
+      stu.removeClassElement(element, t1);
+      stu.addClassElement(element, t2);          
+    } else {
+      stu.removeClassElement(element, t2);        
+      stu.addClassElement(element, t1);
     }
   }
 };
@@ -1273,19 +1379,6 @@ stu.getElements = function (id) {
   }
 };
 </script>
-
-<script>
-// open project slides
-function openProject1() {
-
-wrap = document.getElementById('proj-page-wrap');
-
-stu.togglePaddingProj(wrap);
-
-}
-</script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 <script>
 jQuery(function($){
