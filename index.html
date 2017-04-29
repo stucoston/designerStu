@@ -1322,7 +1322,7 @@ function openProject() {
 
 //enable touch events to change slides
       // ==================================================
-      $(window).addEventListener('load', function(){
+      window.addEventListener('load', function(){
           var el = document.getElementById('proj-page-wrap')
           var hidetimer = null
           
@@ -1358,15 +1358,15 @@ function openProject() {
               startY = touchobj.pageY
               startTime = new Date().getTime() // record time when finger first makes contact with surface
              
-//	      if(touchsurface.style.padding != "0px") {
-//                e.preventDefault() // prevent scrolling when inside DIV
-//              }
+	      if(touchsurface.style.padding != "0px") {
+                e.preventDefault() // prevent scrolling when inside DIV
+              }
           }, false)
         
           touchsurface.addEventListener('touchmove', function(e){
-//            if (touchsurface.style.padding != "0px") {
-//              e.preventDefault() // prevent scrolling when inside DIV
-//            }
+            if (touchsurface.style.padding != "0px") {
+              e.preventDefault() // prevent scrolling when inside DIV
+            }
           }, false)
         
           touchsurface.addEventListener('touchend', function(e){
@@ -1384,7 +1384,7 @@ function openProject() {
               }
 	      if (touchsurface.style.padding != "0px") {
                 handleswipe(swipedir)
-//                e.preventDefault()
+                e.preventDefault()
 	      }
           }, false)
       	//continue to trigger click event from the target of any touch event at the document level
