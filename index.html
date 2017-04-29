@@ -1337,7 +1337,7 @@ function openProject() {
                               
           function swipedetect(el, callback){
             
-          var touchsurface = el,
+            var touchsurface = el,
               swipedir,
               startX,
               startY,
@@ -1352,28 +1352,25 @@ function openProject() {
         
             touchsurface.addEventListener('touchstart', function(e){
               var touchobj = e.changedTouches[0]
-              var wrap = document.getElementById('proj-page-wrap')
               swipedir = 'none'
               dist = 0
               startX = touchobj.pageX
               startY = touchobj.pageY
               startTime = new Date().getTime() // record time when finger first makes contact with surface
              
-		      if(wrap.style.padding == "0px") {
-                e.preventDefault() // prevent scrolling when inside DIV
-              }
+//	      if(touchsurface.style.padding != "0px") {
+//                e.preventDefault() // prevent scrolling when inside DIV
+//              }
           }, false)
         
           touchsurface.addEventListener('touchmove', function(e){
-            var wrap = document.getElementById('proj-page-wrap')
-		        if (wrap.style.padding == "0px") {
-              e.preventDefault() // prevent scrolling when inside DIV
-            }
+//            if (touchsurface.style.padding != "0px") {
+//              e.preventDefault() // prevent scrolling when inside DIV
+//            }
           }, false)
         
           touchsurface.addEventListener('touchend', function(e){
               var touchobj = e.changedTouches[0]
-	      var wrap = document.getElementById('proj-page-wrap')
               distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
               distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
               elapsedTime = new Date().getTime() - startTime // get time elapsed
@@ -1385,9 +1382,9 @@ function openProject() {
                      swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
                   }
               }
-	      if (wrap.style.padding == "0px") {
+	      if (touchsurface.style.padding != "0px") {
                 handleswipe(swipedir)
-                e.preventDefault()
+//                e.preventDefault()
 	      }
           }, false)
       	//continue to trigger click event from the target of any touch event at the document level
