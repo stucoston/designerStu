@@ -638,7 +638,7 @@ a:hover hr {
 /*me slideshow animations*/
 /* =============================== */
 .slide-text {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
 }
 .slide-text span {
@@ -855,8 +855,8 @@ a:hover hr {
       <!-- ===================================== -->
       <div id="proj1" class="project-slide page-content proj-bg-1 page-bg"></div>
       <div id="proj1-slide" class="project-slide-content middle fixed full-width">
-        <div class="item-title" onclick="openProject()">Coston Mission Blog</div>
-        <div class="proj-details middle full-screen hide" style="overflow: scroll; margin:24px;">
+        <div id="it1" class="item-title" onclick="openProject()">Coston Mission Blog</div>
+        <div id="p1d" class="proj-details middle full-screen hide" style="overflow: scroll; margin:24px;">
           <div class="center" style="margin: 120vh auto 0;">
             <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>
           </div>
@@ -871,8 +871,8 @@ a:hover hr {
       
       <div id="proj2" class="project-slide page-content proj-bg-2 page-bg"></div>
       <div id="proj2-slide" class="project-slide-content middle fixed full-width">
-        <div class="item-title" onclick="openProject()">Coston Mission Magazine</div>
-        <div class="proj-details middle full-screen hide" style="overflow: scroll; margin:24px;">
+        <div id="it2" class="item-title" onclick="openProject()">Coston Mission Magazine</div>
+        <div id="p2d" class="proj-details middle full-screen hide" style="overflow: scroll; margin:24px;">
           <div class="center" style="margin: 120vh auto 0;">
             <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">View</a>
           </div>
@@ -885,8 +885,8 @@ a:hover hr {
       
       <div id="proj3" class="project-slide page-content proj-bg-3 page-bg"></div>
       <div id="proj3-slide" class="project-slide-content middle fixed full-width">
-        <div class="item-title" onclick="openProject()">Sadie Hope Blog</div>
-        <div class="proj-details middle full-screen hide" style="overflow: scroll; margin:24px;">
+        <div id="it3" class="item-title" onclick="openProject()">Sadie Hope Blog</div>
+        <div id="p3d" class="proj-details middle full-screen hide" style="overflow: scroll; margin:24px;">
           <div class="center" style="margin: 120vh auto 0;">
             <a class="page-link text-white" href="http://www.sadiehope.com" target="_blank">Visit Site</a>
           </div>
@@ -899,7 +899,7 @@ a:hover hr {
       
     </div>
     
-    <div class="return-projects" onclick="pageProjects()"></div>
+    <div id="rp" class="return-projects" onclick="pageProjects()"></div>
     
     <div id="slide-navbar" class="hide">
       <div class="left-arrow fixed" onclick="plusProjSlides(-1)">
@@ -1302,13 +1302,18 @@ function templatesPage() {
 }
 
 // open project slides
+// =====================================
 function openProject() {
 
   var wrap = document.getElementById('proj-page-wrap'),
-      sa = document.getElementById('slide-arrow');
+      sa = document.getElementById('slide-arrow'),
+      nav = document.getElementById('nav'),
+      rp = document.getElementById('rp');
   wrap.style.transition = "0.5s";
   stu.togglePaddingProj(wrap);
   stu.toggleShow(sa);
+  stu.toggleShow(nav);
+  stu.toggleShow(rp);
   stu.toggleClass('.proj-details','show','hide');
   setTimeout( function(){
     stu.toggleClass('#slide-navbar','show','hide');
@@ -1377,7 +1382,7 @@ function openProject() {
                       swipedir = (distX < 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
                   }
                   else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
-                      swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
+                     swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
                   }
               }
 	      if (wrap.style.padding != "0px") {
@@ -1708,16 +1713,49 @@ function showProjSlides(n) {
     
 }
 
-$('#projects').scroll(function(event){
+// scroll functions for project details
+// ===========================================================
+$('#p1d, #p2d, #p3d').scroll(function(event){
  
    var h = $(window).height(); 
-   var st = $('#projects').scrollTop();
-   var projSlidesContent = document.getElementsByClassName("project-slide-content");
+   var st1 = $('#p1d').scrollTop();
+   var st2 = $('#p2d').scrollTop();
+   var st3 = $('#p3d').scrollTop();
+   var it1 = document.getElementById('it1');
+   var it2 = document.getElementById('it2');
+   var it3 = document.getElementById('it3');
    didScroll = true; 
    
-   if(st > 0) {
+   if(st1 > 0) { 
      
-     projSlidesContent[psIndex+1].$('.item-title').style.opacity = "0";
+     it1.style.transition = "0.5s";
+     it1.style.opacity = "0";
+     
+   } else {
+   
+     it1.style.opacity = "1";
+     
+   }
+   
+   if(st2 > 0) {
+   
+     it2.style.transition = "0.5s";
+     it2.style.opacity = "0";
+   
+   } else {
+   
+     it2.style.opacity = "1";
+     
+   }
+   
+   if (st3 > 0) {
+   
+     it3.style.transition = "0.5s";
+     it3.style.opacity = "0";
+     
+   } else {
+   
+     it3.style.opacity = "1";
      
    }
 
