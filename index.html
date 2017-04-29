@@ -60,7 +60,6 @@ a:hover hr {
   width:100%;
   visibility: visible;
 }
-
 .middle {
   position: absolute;
   left: 50%;
@@ -69,7 +68,6 @@ a:hover hr {
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
-
 .bottommiddle {
   position: absolute;
   left: 50%;
@@ -78,20 +76,16 @@ a:hover hr {
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
 }
-
 .fixed {
   position: fixed;
   z-index: 10;
 }
-
 .absolute {
   position: absolute;
 }
-
 .relative {
   position: relative;
 }
-
 .full-width {
   width: 100%;
 }
@@ -99,23 +93,18 @@ a:hover hr {
 .hide {
   display: none;
 }
-
 .show {
   display: block;
 }
-
 .text-white {
   color: white;
 }
-
 .text-black {
   color: black;
 }
-
 .caps {
   text-transform: uppercase;
 }
-
 .center {
   text-align: center;
 }
@@ -190,6 +179,10 @@ a:hover hr {
     width: 120vh;
     max-width:100%;
     margin: 0 auto;
+  }
+  
+  .page-content.open {
+    width: 100vw;
   }
   
   .page-link {
@@ -548,7 +541,6 @@ a:hover hr {
   right: -100px;
   transition: .8s;
 }
-
 .left-arrow {
   height: 30px;
   width: 30px;
@@ -556,7 +548,6 @@ a:hover hr {
   left: 24px;
   cursor: pointer;
 }
-
 .right-arrow {
   height: 30px;
   width: 30px;
@@ -584,7 +575,6 @@ a:hover hr {
   width: 24px;
   height: 100%;
 }
-
 .flex-wrapper {
   transform-origin: top center;
   transition: 0.7s;
@@ -682,7 +672,6 @@ a:hover hr {
 .opacity-show {
   animation: opacityShow 1s forwards;
 }
-
 @-webkit-keyframes opacityShow {
   0%	{opacity: 0;}
   50%	{opacity: 0;}
@@ -693,11 +682,9 @@ a:hover hr {
   50%	{opacity: 0;}
   100%	{opacity: 1;}
 }
-
 .opacity-hide {
   animation: opacityHide 1s forwards;
 }
-
 @-webkit-keyframes opacityHide{
   0%	{opacity: 1;}
   50%	{opacity: 0;}
@@ -1300,21 +1287,21 @@ function templatesPage() {
   };
   
 }
-
 // open project slides
 // =====================================
 function openProject() {
-
   var wrap = document.getElementById('proj-page-wrap'),
       sa = document.getElementById('slide-arrow'),
       nav = document.getElementById('nav'),
       rp = document.getElementById('rp');
+      
   wrap.style.transition = "0.5s";
   stu.togglePaddingProj(wrap);
   stu.toggleShow(sa);
   stu.toggleShow(nav);
   stu.toggleShow(rp);
   stu.toggleClass('.proj-details','show','hide');
+  stu.toggleClass('.page-content','open');
   setTimeout( function(){
     stu.toggleClass('#slide-navbar','show','hide');
   }, 400);
@@ -1397,7 +1384,6 @@ function openProject() {
       	});
       
           }
-
 </script>
 	
 <script>
@@ -1648,28 +1634,20 @@ function animateMe() {
 };
 </script>
 <script>
-
 // projects slide show
 // =======================================================
 var psIndex = 1;
-
 showProjSlides(psIndex);
-
 function plusProjSlides(n) {
-
   hideProjSlides(psIndex);
   setTimeout( function() { showProjSlides(psIndex += n); }, 800);
   
 }
-
 function currentProjSlide(n) {
-
   showProjSlides(psIndex = n);
   
 }
-
 function hideProjSlides(n) {
-
   var projSlides = document.getElementsByClassName("project-slide");
   var projSlidesContent = document.getElementsByClassName("project-slide-content");
   
@@ -1679,9 +1657,7 @@ function hideProjSlides(n) {
   projSlidesContent[psIndex-1].style.opacity = "0";
   
 }
-
 function showProjSlides(n) {
-
   var ps;
   var projSlides = document.getElementsByClassName("project-slide");
   var projSlidesContent = document.getElementsByClassName("project-slide-content");
@@ -1711,7 +1687,6 @@ function showProjSlides(n) {
     }, 50);
     
 }
-
 // scroll functions for project details
 // ===========================================================
 $('#p1d, #p2d, #p3d').scroll(function(event){
@@ -1757,13 +1732,10 @@ $('#p1d, #p2d, #p3d').scroll(function(event){
      it3.style.opacity = "1";
      
    }
-
  });
-
 </script>
 
 <script>
-
 // scroll mousewheel to change slides
     // ====================================================
     $('#projects').on( 'DOMMouseScroll mousewheel', function ( event ) {
