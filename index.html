@@ -36,6 +36,9 @@ h1 a hr {
 h2 a hr {
   margin-top: -14px;
 }
+p a hr {
+  margin-top: -8px;
+}
 a {
   color: #0077cc;
   text-decoration: none;
@@ -50,6 +53,9 @@ a hr {
   visibility: hidden;
   transition: 0.3s;
   float: left;
+}
+.hover-text-white hr {
+  background-color: white;
 }
 a:hover {
   color: black;
@@ -96,11 +102,15 @@ a:hover hr {
 .show {
   display: block;
 }
-.text-white {
+.text-white,
+.hover-text-white:hover {
   color: white;
 }
 .text-black {
   color: black;
+}
+.white {
+  background-color: white;
 }
 .caps {
   text-transform: uppercase;
@@ -108,8 +118,723 @@ a:hover hr {
 .center {
   text-align: center;
 }
+/* grid
+/* =============================== */
+.row {
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:20px
+}
+
+.row:after {
+  content:"";
+  display:table;
+  clear:both
+}
+
+.row .col {
+  float:left;
+  box-sizing:border-box;
+  padding:0 .75rem;
+  min-height:1px
+}
+
+.row .col[class*="push-"],.row .col[class*="pull-"] {
+  position:relative
+}
+
+.row .col.s1 {
+  width:8.3333333333%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.s2 {
+  width:16.6666666667%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.s3 {
+  width:25%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.s4 {
+  width:33.3333333333%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.s5 {
+  width:41.6666666667%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.s6 {
+  width:50%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.s7 {
+  width:58.3333333333%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.s8 {
+  width:66.6666666667%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.s9 {
+  width:75%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.s10 {
+  width:83.3333333333%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.s11 {
+  width:91.6666666667%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.s12 {
+  width:100%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.offset-s1 {
+  margin-left:8.3333333333%
+}
+
+.row .col.pull-s1 {
+  right:8.3333333333%
+}
+
+.row .col.push-s1 {
+  left:8.3333333333%
+}
+
+.row .col.offset-s2 {
+  margin-left:16.6666666667%
+}
+
+.row .col.pull-s2 {
+  right:16.6666666667%
+}
+
+.row .col.push-s2 {
+  left:16.6666666667%
+}
+
+.row .col.offset-s3 {
+  margin-left:25%
+}
+
+.row .col.pull-s3 {
+  right:25%
+}
+
+.row .col.push-s3 {
+  left:25%
+}
+
+.row .col.offset-s4 {
+  margin-left:33.3333333333%
+}
+
+.row .col.pull-s4 {
+  right:33.3333333333%
+}
+
+.row .col.push-s4 {
+  left:33.3333333333%
+}
+
+.row .col.offset-s5 {
+  margin-left:41.6666666667%
+}
+
+.row .col.pull-s5 {
+  right:41.6666666667%
+}
+
+.row .col.push-s5 {
+  left:41.6666666667%
+}
+
+.row .col.offset-s6 {
+  margin-left:50%
+}
+
+.row .col.pull-s6 {
+  right:50%
+}
+
+.row .col.push-s6 {
+  left:50%
+}
+
+.row .col.offset-s7 {
+  margin-left:58.3333333333%
+}
+
+.row .col.pull-s7 {
+  right:58.3333333333%
+}
+
+.row .col.push-s7 {
+  left:58.3333333333%
+}
+
+.row .col.offset-s8 {
+  margin-left:66.6666666667%
+}
+
+.row .col.pull-s8 {
+  right:66.6666666667%
+}
+
+.row .col.push-s8 {
+  left:66.6666666667%
+}
+
+.row .col.offset-s9 {
+  margin-left:75%
+}
+
+.row .col.pull-s9 {
+  right:75%
+}
+
+.row .col.push-s9 {
+  left:75%
+}
+
+.row .col.offset-s10 {
+  margin-left:83.3333333333%
+}
+
+.row .col.pull-s10 {
+  right:83.3333333333%
+}
+
+.row .col.push-s10 {
+  left:83.3333333333%
+}
+
+.row .col.offset-s11 {
+  margin-left:91.6666666667%
+}
+
+.row .col.pull-s11 {
+  right:91.6666666667%
+}
+
+.row .col.push-s11 {
+  left:91.6666666667%
+}
+
+.row .col.offset-s12 {
+  margin-left:100%
+}
+
+.row .col.pull-s12 {
+  right:100%
+}
+
+.row .col.push-s12 {
+  left:100%
+}
+
+@media only screen and (min-width: 601px) {
+  .row .col.m1 {
+  width:8.3333333333%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.m2 {
+  width:16.6666666667%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.m3 {
+  width:25%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.m4 {
+  width:33.3333333333%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.m5 {
+  width:41.6666666667%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.m6 {
+  width:50%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.m7 {
+  width:58.3333333333%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.m8 {
+  width:66.6666666667%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.m9 {
+  width:75%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.m10 {
+  width:83.3333333333%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.m11 {
+  width:91.6666666667%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.m12 {
+  width:100%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.offset-m1 {
+  margin-left:8.3333333333%
+}
+
+.row .col.pull-m1 {
+  right:8.3333333333%
+}
+
+.row .col.push-m1 {
+  left:8.3333333333%
+}
+
+.row .col.offset-m2 {
+  margin-left:16.6666666667%
+}
+
+.row .col.pull-m2 {
+  right:16.6666666667%
+}
+
+.row .col.push-m2 {
+  left:16.6666666667%
+}
+
+.row .col.offset-m3 {
+  margin-left:25%
+}
+
+.row .col.pull-m3 {
+  right:25%
+}
+
+.row .col.push-m3 {
+  left:25%
+}
+
+.row .col.offset-m4 {
+  margin-left:33.3333333333%
+}
+
+.row .col.pull-m4 {
+  right:33.3333333333%
+}
+
+.row .col.push-m4 {
+  left:33.3333333333%
+}
+
+.row .col.offset-m5 {
+  margin-left:41.6666666667%
+}
+
+.row .col.pull-m5 {
+  right:41.6666666667%
+}
+
+.row .col.push-m5 {
+  left:41.6666666667%
+}
+
+.row .col.offset-m6 {
+  margin-left:50%
+}
+
+.row .col.pull-m6 {
+  right:50%
+}
+
+.row .col.push-m6 {
+  left:50%
+}
+
+.row .col.offset-m7 {
+  margin-left:58.3333333333%
+}
+
+.row .col.pull-m7 {
+  right:58.3333333333%
+}
+
+.row .col.push-m7 {
+  left:58.3333333333%
+}
+
+.row .col.offset-m8 {
+  margin-left:66.6666666667%
+}
+
+.row .col.pull-m8 {
+  right:66.6666666667%
+}
+
+.row .col.push-m8 {
+  left:66.6666666667%
+}
+
+.row .col.offset-m9 {
+  margin-left:75%
+}
+
+.row .col.pull-m9 {
+  right:75%
+}
+
+.row .col.push-m9 {
+  left:75%
+}
+
+.row .col.offset-m10 {
+  margin-left:83.3333333333%
+}
+
+.row .col.pull-m10 {
+  right:83.3333333333%
+}
+
+.row .col.push-m10 {
+  left:83.3333333333%
+}
+
+.row .col.offset-m11 {
+  margin-left:91.6666666667%
+}
+
+.row .col.pull-m11 {
+  right:91.6666666667%
+}
+
+.row .col.push-m11 {
+  left:91.6666666667%
+}
+
+.row .col.offset-m12 {
+  margin-left:100%
+}
+
+.row .col.pull-m12 {
+  right:100%
+}
+
+.row .col.push-m12 {
+  left:100%
+}
+
+
+}
+
+@media only screen and (min-width: 993px) {
+  .row .col.l1 {
+  width:8.3333333333%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.l2 {
+  width:16.6666666667%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.l3 {
+  width:25%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.l4 {
+  width:33.3333333333%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.l5 {
+  width:41.6666666667%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.l6 {
+  width:50%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.l7 {
+  width:58.3333333333%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.l8 {
+  width:66.6666666667%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.l9 {
+  width:75%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.l10 {
+  width:83.3333333333%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.l11 {
+  width:91.6666666667%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.l12 {
+  width:100%;
+  margin-left:auto;
+  left:auto;
+  right:auto
+}
+
+.row .col.offset-l1 {
+  margin-left:8.3333333333%
+}
+
+.row .col.pull-l1 {
+  right:8.3333333333%
+}
+
+.row .col.push-l1 {
+  left:8.3333333333%
+}
+
+.row .col.offset-l2 {
+  margin-left:16.6666666667%
+}
+
+.row .col.pull-l2 {
+  right:16.6666666667%
+}
+
+.row .col.push-l2 {
+  left:16.6666666667%
+}
+
+.row .col.offset-l3 {
+  margin-left:25%
+}
+
+.row .col.pull-l3 {
+  right:25%
+}
+
+.row .col.push-l3 {
+  left:25%
+}
+
+.row .col.offset-l4 {
+  margin-left:33.3333333333%
+}
+
+.row .col.pull-l4 {
+  right:33.3333333333%
+}
+
+.row .col.push-l4 {
+  left:33.3333333333%
+}
+
+.row .col.offset-l5 {
+  margin-left:41.6666666667%
+}
+
+.row .col.pull-l5 {
+  right:41.6666666667%
+}
+
+.row .col.push-l5 {
+  left:41.6666666667%
+}
+
+.row .col.offset-l6 {
+  margin-left:50%
+}
+
+.row .col.pull-l6 {
+  right:50%
+}
+
+.row .col.push-l6 {
+  left:50%
+}
+
+.row .col.offset-l7 {
+  margin-left:58.3333333333%
+}
+
+.row .col.pull-l7 {
+  right:58.3333333333%
+}
+
+.row .col.push-l7 {
+  left:58.3333333333%
+}
+
+.row .col.offset-l8 {
+  margin-left:66.6666666667%
+}
+
+.row .col.pull-l8 {
+  right:66.6666666667%
+}
+
+.row .col.push-l8 {
+  left:66.6666666667%
+}
+
+.row .col.offset-l9 {
+  margin-left:75%
+}
+
+.row .col.pull-l9 {
+  right:75%
+}
+
+.row .col.push-l9 {
+  left:75%
+}
+
+.row .col.offset-l10 {
+  margin-left:83.3333333333%
+}
+
+.row .col.pull-l10 {
+  right:83.3333333333%
+}
+
+.row .col.push-l10 {
+  left:83.3333333333%
+}
+
+.row .col.offset-l11 {
+  margin-left:91.6666666667%
+}
+
+.row .col.pull-l11 {
+  right:91.6666666667%
+}
+
+.row .col.push-l11 {
+  left:91.6666666667%
+}
+
+.row .col.offset-l12 {
+  margin-left:100%
+}
+
+.row .col.pull-l12 {
+  right:100%
+}
+
+.row .col.push-l12 {
+  left:100%
+}
+
+}
 /* home-page elements */
-/* ===============================*/
+/* =============================== */
 #home {
   position: fixed;
   left: 0;
@@ -212,6 +937,12 @@ a:hover hr {
     margin: 0 auto;
   }
   
+  .content {
+    margin: 100vh auto 30vh;
+    width: 90%;
+    max-width: 700px;
+  }
+  
   .page-bg {
     background-repeat: no-repeat;
     background-position: center;
@@ -228,11 +959,19 @@ a:hover hr {
   
   .page-bg,
   img {
-    -webkit-filter: grayscale(100%) contrast(85%);
-    -moz-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
+    -webkit-filter: grayscale(100%) contrast(115%) brightness(115%);
+    -moz-filter: grayscale(100%) contrast(115%) brightness(115%);
+    -o-filter: grayscale(100%) contrast(115%) brightness(115%);
+    -ms-filter: grayscale(100%) contrast(115%) brightness(115%);
     filter: grayscale(100%) contrast(115%) brightness(115%);
+  }
+  
+  .bg-dark {
+    -webkit-filter: grayscale(100%) contrast(115%) brightness(65%);
+    -moz-filter: grayscale(100%) contrast(115%) brightness(65%);
+    -o-filter: grayscale(100%) contrast(115%) brightness(65%);
+    -ms-filter: grayscale(100%) contrast(115%) brightness(65%);
+    filter: grayscale(100%) contrast(115%) brightness(65%);
   }
   
   .see-through {
@@ -843,13 +1582,21 @@ a:hover hr {
       <div id="proj1" class="project-slide page-content proj-bg-1 page-bg"></div>
       <div id="proj1-slide" class="project-slide-content middle fixed full-width">
         <div id="it1" class="item-title" onclick="openProject()">Coston Mission Blog</div>
-        <div id="p1d" class="proj-details middle full-screen hide" style="overflow: scroll; margin:24px;">
-          <div class="center" style="margin: 120vh auto 0;">
-            <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>
-          </div>
-          <div class="text-white">
-            <h3>Challenge</h3>
-            <p>this project has such and such a challenge and such and such a words with even more text to fill up more space.</p>
+        <div id="p1d" class="proj-details middle full-screen hide" style="overflow: scroll;">
+          <div class="content text-white">
+            <div style="width: 300px;">
+              <div style="display: inline-block; width: 145px; vertical-align: top;">
+                <h2 class="thin">Year</h2>
+                <p>2016</p>
+              </div>
+              <div style="display: inline-block; width: 145px; vertical-align: top;">
+                <h2 class="thin">Service</h2>
+                <p>My personal blog featuring a daily journal through the Bible.</p>
+              </div>
+            </div>
+            <h2 style="width: 180px;"><a class="thin hover-text-white" style="margin: 120vh auto 0;" href="http://costonmission.com" target="_blank">Visit Site<hr></a></h2>
+            <h2 class="thin">Challenge</h2>
+            <p>this project has such and such a challenge and such and such a words.</p>
           </div>
         </div>
         
@@ -859,12 +1606,20 @@ a:hover hr {
       <div id="proj2" class="project-slide page-content proj-bg-2 page-bg"></div>
       <div id="proj2-slide" class="project-slide-content middle fixed full-width">
         <div id="it2" class="item-title" onclick="openProject()">Coston Mission Magazine</div>
-        <div id="p2d" class="proj-details middle full-screen hide" style="overflow: scroll; margin:24px;">
-          <div class="center" style="margin: 120vh auto 0;">
-            <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">View</a>
-          </div>
-          <div class="text-white">
-            <h1>Challenge</h1>
+        <div id="p2d" class="proj-details middle full-screen hide" style="overflow: scroll;">
+          <div class="content text-white">
+            <div style="width: 300px;">
+              <div style="display: inline-block; width: 145px; vertical-align: top;">
+                <h2 class="thin">Year</h2>
+                <p>2017</p>
+              </div>
+              <div style="display: inline-block; width: 145px; vertical-align: top;">
+                <h2 class="thin">Service</h2>
+                <p>Quarterly Online Magazine for the Coston Mission blog.</p>
+              </div>
+            </div>
+            <h2 style="width: 180px;"><a class="thin hover-text-white" style="margin: 120vh auto 0;" href="http://rawgit.com/stucoston/costonmission/master/2017_FebNewsletter/index.html" target="_blank">View Magazine<hr></a></h2>
+            <h2 class="thin">Challenge</h2>
             <p>this project has such and such a challenge and such and such a words.</p>
           </div>
         </div>
@@ -873,13 +1628,37 @@ a:hover hr {
       <div id="proj3" class="project-slide page-content proj-bg-3 page-bg"></div>
       <div id="proj3-slide" class="project-slide-content middle fixed full-width">
         <div id="it3" class="item-title" onclick="openProject()">Sadie Hope Blog</div>
-        <div id="p3d" class="proj-details middle full-screen hide" style="overflow: scroll; margin:24px;">
-          <div class="center" style="margin: 120vh auto 0;">
-            <a class="page-link text-white" href="http://www.sadiehope.com" target="_blank">Visit Site</a>
-          </div>
-          <div class="text-white">
-            <h1>Challenge</h1>
-            <p>this project has such and such a challenge and such and such a words.</p>
+        <div id="p3d" class="proj-details middle full-screen hide" style="overflow: scroll;">
+          <div class="content text-white">
+            <div style="width: 300px;">
+              <div style="display: inline-block; width: 145px; vertical-align: top;">
+                <h2 class="thin">Year</h2>
+                <p>2017</p>
+              </div>
+              <div style="display: inline-block; width: 145px; vertical-align: top;">
+                <h2 class="thin">Service</h2>
+                <p>Personal blog for a family friend.</p>
+              </div>
+            </div>
+            <h2 style="width: 100px;"><a class="thin hover-text-white" style="margin: 120vh auto 0;" href="http://sadiehope.com" target="_blank">Visit Site<hr></a></h2>
+            <div class="row">
+              <div class="col s12 m6">
+                <h2 class="thin">Challenge</h2>
+                <p>Blogs are everywhere. Almost everyone either has their own blog or has at least visited a blog. This means that everyone has a pre-formed idea of what to expect when they visit a blog.  Sadie has unique and personal stories to share with the world so her blog needed to be simultaneously intuitive for the reader but very personalized. The result? A simple but robust, elegant but functional, and clean but information saturated personal blog.</p>
+              </div>
+              <div class="col s12 m6">
+                <h2 class="thin">Project</h2>
+                <p>Sadie is a personal friend of Melissa's and this was my first project for someone other than myself. Sadie was planning on using her Instagram account, <a href="http://instagram.com/sadie_hope" class="hover-text-white" target="_blank">@sadie_hope</a>, as her primary marketing platform, so I wanted to integrate the instagram style into her blog as much as possible. I quickly recognized that she favored soft, low contrast colors so I included these in her blog along with slower-than-normal animations and interactions to give the feeling of bliss.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m4 offset-m2">
+                <h2 class="thin">Primary Typeface</h2>
+              </div>
+              <div class="col s12 m4 offset-m7">
+                <h2 class="thin">Secondary Typeface</h2>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1704,10 +2483,12 @@ $('#p1d, #p2d, #p3d').scroll(function(event){
      
      it1.style.transition = "0.5s";
      it1.style.opacity = "0";
+     stu.addClass('#proj1','bg-dark');
      
    } else {
    
      it1.style.opacity = "1";
+     stu.removeClass('#proj1','bg-dark');
      
    }
    
@@ -1715,10 +2496,12 @@ $('#p1d, #p2d, #p3d').scroll(function(event){
    
      it2.style.transition = "0.5s";
      it2.style.opacity = "0";
+     stu.addClass('#proj2','bg-dark');
    
    } else {
    
      it2.style.opacity = "1";
+     stu.removeClass('#proj2','bg-dark');
      
    }
    
@@ -1726,10 +2509,12 @@ $('#p1d, #p2d, #p3d').scroll(function(event){
    
      it3.style.transition = "0.5s";
      it3.style.opacity = "0";
+     stu.addClass('#proj3','bg-dark');
      
    } else {
    
      it3.style.opacity = "1";
+     stu.removeClass('#proj3','bg-dark');
      
    }
  });
