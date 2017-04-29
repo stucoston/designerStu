@@ -1392,7 +1392,7 @@ function openProject() {
 	      }
           }, false)
       	//continue to trigger click event from the target of any touch event at the document level
-      	window.on('touchend', function(e){
+      	$(window).on('touchend', function(e){
       		$(e.target).trigger('click');
       	});
       
