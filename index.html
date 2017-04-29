@@ -1320,7 +1320,9 @@ function openProject() {
   }, 400);
 }
 </script>
-	  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
 <script>
 //enable touch events to change slides
       // ==================================================
@@ -1390,16 +1392,14 @@ function openProject() {
 	      }
           }, false)
       	//continue to trigger click event from the target of any touch event at the document level
-      	$(window).on('touchend', function(e){
+      	window.on('touchend', function(e){
       		$(e.target).trigger('click');
       	});
       
           }
 
 </script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-
+	
 <script>
 // stu toggle functions
 // ========================================================
