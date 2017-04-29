@@ -18,7 +18,7 @@ body {
 }  
 p {
   font-weight: 200;
-  font-size: 14px;
+  font-size: 16px;
 }
 i {
   color: #0077cc;
@@ -548,6 +548,22 @@ a:hover hr {
   right: -100px;
   transition: .8s;
 }
+
+.left-arrow {
+  height: 30px;
+  width: 30px;
+  top: 20px;
+  left: 24px;
+  cursor: pointer;
+}
+
+.right-arrow {
+  height: 30px;
+  width: 30px;
+  top: 20px;
+  right: 24px;
+  cursor: pointer;
+}
 /*flex elements*/
 /* =============================== */
 #nav-contact .flex-wrapper,
@@ -827,7 +843,7 @@ a:hover hr {
   </div>
   
   <div id="projects" class="hide">
-    <div id="proj-page-wrap" class="page-wrapper" style="border: 1px solid green;">
+    <div id="proj-page-wrap" class="page-wrapper">
     
       <div id="slide-arrow" class="bottommiddle next-slide fixed" onclick="plusProjSlides(1)">
         <svg viewBox="0,0,100,300">
@@ -835,70 +851,74 @@ a:hover hr {
         </svg>
       </div>
         
+      <!-- Project Slide 1 --> 
+      <!-- ===================================== -->
       <div id="proj1" class="project-slide page-content proj-bg-1 page-bg"></div>
-      <div id="proj1-slide" class="project-slide-content middle center fixed full-width">
-        <div id="cm-blog" class="item-title" onclick="openProject1()">Coston Mission Blog</div>
-      </div>
-      <div id="proj1-details" class="middle fixed full-screen hide" style="overflow: scroll;">
-        <div class="item-title middle" onclick="openProject1()">Coston Mission Blog</div>
-        <div class="center" style="margin: 120vh auto 0;">
-          <a class="page-link text-white" onclick="openProject1">Project</a>
-          <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>
+      <div id="proj1-slide" class="project-slide-content middle fixed full-width">
+        <div class="item-title" onclick="openProject()">Coston Mission Blog</div>
+        <div class="proj-details middle full-screen hide" style="overflow: scroll; margin:24px;">
+          <div class="center" style="margin: 120vh auto 0;">
+            <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>
+          </div>
+          <div class="text-white">
+            <h3>Challenge</h3>
+            <p>this project has such and such a challenge and such and such a words with even more text to fill up more space.</p>
+          </div>
         </div>
-        <div class="center" style="margin: 16px auto;">
-          <h1>Challenge</h1>
-          <p>this project has such and such a challenge and such and such a words.</p>
-        </div>
-        <div class="center" style="margin: 16px auto;">
-          <h1>Challenge</h1>
-          <p>this project has such and such a challenge and such and such a words.</p>
-        </div>
+        
       </div>
       
+      
       <div id="proj2" class="project-slide page-content proj-bg-2 page-bg"></div>
-      <div id="proj2-slide" class="project-slide-content middle center fixed full-width">
-        <div id="cm-mag" class="item-title" onclick="openProject2()">Coston Mission Magazine</div>
-        <!--<a class="page-link text-white" onclick="openProject2">Project</a>
-        <a class="page-link text-white" href="http://rawgit.com/stucoston/costonmission/master/2017_FebNewsletter/index.html" target="_blank">View</a>-->
-      </div>
-      <div id="proj2-details" class="middle fixed full-screen hide" style="overflow: scroll;">
-        <div class="item-title middle" onclick="openProject2()">Coston Mission Blog</div>
-        <div class="center" style="margin: 120vh auto 0;">
-          <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>
-        </div>
-        <div class="center" style="margin: 16px auto;">
-          <h1>Challenge</h1>
-          <p>this project has such and such a challenge and such and such a words.</p>
-        </div>
-        <div class="center" style="margin: 16px auto;">
-          <h1>Challenge</h1>
-          <p>this project has such and such a challenge and such and such a words.</p>
+      <div id="proj2-slide" class="project-slide-content middle fixed full-width">
+        <div class="item-title" onclick="openProject()">Coston Mission Magazine</div>
+        <div class="proj-details middle full-screen hide" style="overflow: scroll; margin:24px;">
+          <div class="center" style="margin: 120vh auto 0;">
+            <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">View</a>
+          </div>
+          <div class="text-white">
+            <h1>Challenge</h1>
+            <p>this project has such and such a challenge and such and such a words.</p>
+          </div>
         </div>
       </div>
       
       <div id="proj3" class="project-slide page-content proj-bg-3 page-bg"></div>
-      <div id="proj3-slide" class="project-slide-content middle center fixed full-width">
-        <div id="sh-blog" class="item-title" onclick="openProject3()">Sadie Hope Blog</div>
-       <!-- <a class="page-link text-black" onclick="openProject3">Project</a>
-        <a class="page-link text-black" href="http://www.sadiehope.com" target="_blank">Visit Site</a>-->
-      </div>
-      <div id="proj3-details" class="middle fixed full-screen hide" style="overflow: scroll;">
-        <div class="item-title middle" onclick="openProject3()">Coston Mission Blog</div>
-        <div class="center" style="margin: 120vh auto 0;">
-          <a class="page-link text-white" href="http://www.costonmission.com" target="_blank">Visit Site</a>
-        </div>
-        <div class="center" style="margin: 16px auto;">
-          <h1>Challenge</h1>
-          <p>this project has such and such a challenge and such and such a words.</p>
-        </div>
-        <div class="center" style="margin: 16px auto;">
-          <h1>Challenge</h1>
-          <p>this project has such and such a challenge and such and such a words.</p>
+      <div id="proj3-slide" class="project-slide-content middle fixed full-width">
+        <div class="item-title" onclick="openProject()">Sadie Hope Blog</div>
+        <div class="proj-details middle full-screen hide" style="overflow: scroll; margin:24px;">
+          <div class="center" style="margin: 120vh auto 0;">
+            <a class="page-link text-white" href="http://www.sadiehope.com" target="_blank">Visit Site</a>
+          </div>
+          <div class="text-white">
+            <h1>Challenge</h1>
+            <p>this project has such and such a challenge and such and such a words.</p>
+          </div>
         </div>
       </div>
       
     </div>
+    
     <div class="return-projects" onclick="pageProjects()"></div>
+    
+    <div id="slide-navbar" class="hide">
+      <div class="left-arrow fixed" onclick="plusProjSlides(-1)">
+        <svg viewBox="0,0,100,100">
+          <path fill="transparent" stroke-width="8" stroke="white" d="M50 10 L10 50 L50 90"/>
+        </svg>
+      </div>
+      <div class="right-arrow fixed" onclick="plusProjSlides(1)">
+        <svg viewBox="0,0,100,100">
+          <path fill="transparent" stroke-width="8" stroke="white" d="M50 10 L90 50 L50 90"/>
+        </svg>
+      </div>
+      <div class="middle fixed" style="height: 70px; width: 70px; top: 50px; cursor: pointer;" onclick="openProject()">
+        <svg viewBox="0,0,150,100">
+          <path fill="transparent" stroke-width="4" stroke="white" d="M70 10 L50 10 L90 50 L50 90 L35 75"/>
+        </svg>
+      </div>
+    </div>
+    
   </div>
   
   <div id="templates" class="hide">
@@ -1280,42 +1300,98 @@ function templatesPage() {
   };
   
 }
-</script>
 
-<script>
 // open project slides
-function openProject1() {
+function openProject() {
 
   var wrap = document.getElementById('proj-page-wrap'),
-      sa = document.getElementById('slide-arrow'),
-      p1s = document.getElementById('proj1-slide');
+      sa = document.getElementById('slide-arrow');
+  wrap.style.transition = "0.5s";
   stu.togglePaddingProj(wrap);
   stu.toggleShow(sa);
-  stu.toggleShow(p1s);
-  stu.toggleClass('#proj1-details','show','hide');
+  stu.toggleClass('.proj-details','show','hide');
+  setTimeout( function(){
+    stu.toggleClass('#slide-navbar','show','hide');
+  }, 400);
 }
 
-function openProject2() {
+//enable touch events to change slides
+      // ==================================================
+      $('#projects').addEventListener('load', function(){
+          var el = document.getElementById('body')
+          var hidetimer = null
+          
+          swipedetect(el, function(swipedir){
+            if (swipedir != 'none'){
+                  clearTimeout(hidetimer)
+                  plusProjSlides(swipedir)
+              }
+          })
+          
+      }, false)
+                              
+          function swipedetect(el, callback){
+            
+          var touchsurface = el,
+              swipedir,
+              startX,
+              startY,
+              distX,
+              distY,
+              threshold = 60, //required min distance traveled to be considered swipe
+              restraint = 30, // maximum distance allowed at the same time in perpendicular direction
+              allowedTime = 700, // maximum time allowed to travel that distance
+              elapsedTime,
+              startTime,
+              handleswipe = callback || function(swipedir){}
+        
+            touchsurface.addEventListener('touchstart', function(e){
+              var touchobj = e.changedTouches[0]
+              var wrap = document.getElementById('proj-page-wrap')
+              swipedir = 'none'
+              dist = 0
+              startX = touchobj.pageX
+              startY = touchobj.pageY
+              startTime = new Date().getTime() // record time when finger first makes contact with surface
+             
+		      if(wrap.style.padding != "0px") {
+                e.preventDefault() // prevent scrolling when inside DIV
+              }
+          }, false)
+        
+          touchsurface.addEventListener('touchmove', function(e){
+            var wrap = document.getElementById('proj-page-wrap')
+		        if (wrap.style.padding != "0px") {
+              e.preventDefault() // prevent scrolling when inside DIV
+            }
+          }, false)
+        
+          touchsurface.addEventListener('touchend', function(e){
+              var touchobj = e.changedTouches[0]
+	          var wrap = document.getElementById('proj-page-wrap')
+              distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+              distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+              elapsedTime = new Date().getTime() - startTime // get time elapsed
+              if (elapsedTime <= allowedTime){ // first condition for awipe met
+                  if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+                      swipedir = (distX < 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
+                  }
+                  else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+                      swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
+                  }
+              }
+	      if (wrap.style.padding != "0px") {
+                handleswipe(swipedir)
+                e.preventDefault()
+	      }
+          }, false)
+      	//continue to trigger click event from the target of any touch event at the document level
+      	$(window).on('touchend', function(e){
+      		$(e.target).trigger('click');
+      	});
+      
+          }
 
-  var wrap = document.getElementById('proj-page-wrap'),
-      sa = document.getElementById('slide-arrow'),
-      p2s = document.getElementById('proj2-slide');
-  stu.togglePaddingProj(wrap);
-  stu.toggleShow(sa);
-  stu.toggleShow(p2s);
-  stu.toggleClass('#proj2-details','show','hide');
-}
-
-function openProject3() {
-
-  var wrap = document.getElementById('proj-page-wrap'),
-      sa = document.getElementById('slide-arrow'),
-      p3s = document.getElementById('proj3-slide');
-  stu.togglePaddingProj(wrap);
-  stu.toggleShow(sa);
-  stu.toggleShow(p3s);
-  stu.toggleClass('#proj3-details','show','hide');
-}
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -1572,31 +1648,117 @@ function animateMe() {
 // projects slide show
 // =======================================================
 var psIndex = 1;
+
 showProjSlides(psIndex);
 
 function plusProjSlides(n) {
-  showProjSlides(psIndex += n);
+
+  hideProjSlides(psIndex);
+  setTimeout( function() { showProjSlides(psIndex += n); }, 800);
+  
 }
 
 function currentProjSlide(n) {
+
   showProjSlides(psIndex = n);
+  
+}
+
+function hideProjSlides(n) {
+
+  var projSlides = document.getElementsByClassName("project-slide");
+  var projSlidesContent = document.getElementsByClassName("project-slide-content");
+  
+  projSlides[psIndex-1].style.transition = "0.8s";
+  projSlidesContent[psIndex-1].style.transition = "0.8s";
+  projSlides[psIndex-1].style.opacity = "0";
+  projSlidesContent[psIndex-1].style.opacity = "0";
+  
 }
 
 function showProjSlides(n) {
+
   var ps;
   var projSlides = document.getElementsByClassName("project-slide");
   var projSlidesContent = document.getElementsByClassName("project-slide-content");
+  
   if (n > projSlides.length) {psIndex = 1} 
   if (n < 1) {psIndex =projSlides.length}
+  
   for (ps = 0; ps < projSlides.length; ps++) {
+  
     projSlides[ps].style.display = "none";
     projSlidesContent[ps].style.display = "none";
+    
   }
+  
+    projSlides[psIndex-1].style.transition = "1s";
+    projSlidesContent[psIndex-1].style.transition = "1s";
     projSlides[psIndex-1].style.display = "block";
     projSlidesContent[psIndex-1].style.display = "block";
+    projSlides[psIndex-1].style.opacity = "0";
+    projSlidesContent[psIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      projSlides[psIndex-1].style.opacity = "1";
+      projSlidesContent[psIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
 }
 
+$('#projects').scroll(function(event){
+ 
+   var h = $(window).height(); 
+   var st = $('#projects').scrollTop();
+   var projSlidesContent = document.getElementsByClassName("project-slide-content");
+   didScroll = true; 
+   
+   if(st > 0) {
+     
+     projSlidesContent[psIndex+1].$('.item-title').style.opacity = "0";
+     
+   }
+
+ });
+
 </script>
+
+<script>
+
+// scroll mousewheel to change slides
+    // ====================================================
+    $('#projects').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('proj-page-wrap');
+      
+      if(wrap.style.padding == "0px") {
+        
+        //prevent page fom scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusProjSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusProjSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      //return false;
+    });
+    
+</script>
+
 </body>
 
 </html>
