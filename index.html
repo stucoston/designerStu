@@ -77,7 +77,7 @@ a:hover hr {
 .bottommiddle {
   position: absolute;
   left: 50%;
-  top: 92%;
+  bottom: 0;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
@@ -104,7 +104,7 @@ a:hover hr {
 }
 .text-white,
 .hover-text-white:hover {
-  color: white;
+  color: white !important;
 }
 .text-black {
   color: black;
@@ -117,6 +117,10 @@ a:hover hr {
 }
 .center {
   text-align: center;
+}
+.small {
+  font-style: italic;
+  font-size: 12px;
 }
 /* grid
 /* =============================== */
@@ -1571,10 +1575,23 @@ a:hover hr {
   <div id="projects" class="hide">
     <div id="proj-page-wrap" class="page-wrapper">
     
-      <div id="slide-arrow" class="bottommiddle next-slide fixed" onclick="plusProjSlides(1)">
-        <svg viewBox="0,0,100,300">
-          <path fill="transparent" stroke-width="8" stroke="#0077cc" d="M0 240 L50 290 L100 240 M50 290 L50 0"/>
-        </svg>
+      <div id="slide-arrow" class="bottommiddle fixed full-width" style="height: 50px;">
+        <div class="small center text-white">scroll for details</div>
+        <div class="bottommiddle next-slide" style="bottom: -30px;" onclick="openProject()">
+          <svg viewBox="0,0,100,300">
+            <path fill="transparent" stroke-width="8" stroke="#0077cc" d="M0 240 L50 290 L100 240 M50 290 L50 0"/>
+          </svg>
+        </div>
+        <div class="left-arrow absolute" style="top: 16px; left: 30px;" onclick="plusProjSlides(-1)">
+          <svg viewBox="0,0,100,100">
+            <path fill="transparent" stroke-width="8" stroke="white" d="M50 10 L10 50 L50 90"/>
+          </svg>
+        </div>
+        <div class="right-arrow absolute" style="top: 16px; right: 30px;" onclick="plusProjSlides(1)">
+          <svg viewBox="0,0,100,100">
+            <path fill="transparent" stroke-width="8" stroke="white" d="M50 10 L90 50 L50 90"/>
+          </svg>
+        </div>
       </div>
         
       <!-- Project Slide 1 --> 
@@ -1640,7 +1657,7 @@ a:hover hr {
                 <p>Personal blog for a family friend.</p>
               </div>
             </div>
-            <h2 style="width: 100px;"><a class="thin hover-text-white" style="margin: 120vh auto 0;" href="http://sadiehope.com" target="_blank">Visit Site<hr></a></h2>
+            <h2 style="width: 100px;"><a style="color: #fa9b95;" class="thin hover-text-white"  href="http://sadiehope.com" target="_blank">Visit Site<hr></a></h2>
             <div class="row">
               <div class="col s12 m6">
                 <h2 class="thin">Challenge</h2>
@@ -1648,15 +1665,24 @@ a:hover hr {
               </div>
               <div class="col s12 m6">
                 <h2 class="thin">Project</h2>
-                <p>Sadie is a personal friend of Melissa's and this was my first project for someone other than myself. Sadie was planning on using her Instagram account, <a href="http://instagram.com/sadie_hope" class="hover-text-white" target="_blank">@sadie_hope</a>, as her primary marketing platform, so I wanted to integrate the instagram style into her blog as much as possible. I quickly recognized that she favored soft, low contrast colors so I included these in her blog along with slower-than-normal animations and interactions to give the feeling of bliss.</p>
+                <p>Sadie is a personal friend of Melissa's and this was one of my first projects for someone other than myself. Sadie was planning on using her Instagram account, <a href="http://instagram.com/sadie_hope" style="color: #fa9b95" class="hover-text-white" target="_blank">@sadie_hope</a>, as her primary marketing platform, so I wanted to integrate the instagram style into her blog as much as possible. I quickly recognized that she favored soft, low contrast colors so I included these in her blog along with slower-than-normal animations and interactions to give the feeling of bliss.</p>
               </div>
             </div>
             <div class="row">
-              <div class="col s12 m4 offset-m2">
-                <h2 class="thin">Primary Typeface</h2>
+              <div class="col s12">
               </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m4 offset-m1">
+                <h3 class="thin">Primary Font</h3>
+                <div style="font-family: Playfair Display; font-size: 20px;font-weight: bold;"> AaBbCcDdEeFfGg<span style="color: #fa9b95">Hh</span>Ii</div>
+                <div class="small">Playfair Display</div>
+              </div>
+            </div>
+            <div class="row">
               <div class="col s12 m4 offset-m7">
-                <h2 class="thin">Secondary Typeface</h2>
+                <h3 class="thin">Secondary Font</h3>
+                <p>None</p>
               </div>
             </div>
           </div>
@@ -2149,7 +2175,7 @@ function openProject() {
                       swipedir = (distX < 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
                   }
                   else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
-                     swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
+                     swipedir = (distY < 0)? openProject() // if dist traveled is negative, it indicates up swipe
                   }
               }
 	      if (touchsurface.style.padding != "0px") {
