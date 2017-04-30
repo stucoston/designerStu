@@ -1576,7 +1576,8 @@ a:hover hr {
     <div id="proj-page-wrap" class="page-wrapper">
     
       <div id="slide-arrow" class="bottommiddle fixed full-width" style="height: 50px;">
-        <div class="small center text-white">scroll for details</div>
+        <div id="touch-proj-instruction" class="small center text-white">scroll for details</div>
+	<div id="mouse-proj-instruction" class="small center text-white">scroll for next project<br/>click for details</div>
         <div class="bottommiddle next-slide" style="bottom: -30px;" onclick="openProject()">
           <svg viewBox="0,0,100,300">
             <path fill="transparent" stroke-width="8" stroke="#0077cc" d="M0 240 L50 290 L100 240 M50 290 L50 0"/>
@@ -2576,6 +2577,22 @@ $('#p1d, #p2d, #p3d').scroll(function(event){
       //prevent page fom scrolling
       //return false;
     });
+	
+  function isTouchSupported() {
+		
+    var msTouchEnabled = window.navigator.msMaxTouchPoints;
+    var generalTouchEnabled = "ontouchstart" in document.createElement("div");
+ 
+    if (msTouchEnabled || generalTouchEnabled) {
+      return true;
+			document.getElementById('touch-proj-instruction').style.display = 'block';
+      document.getElementById('mouse-proj-instruction').style.display = 'none';  
+    }
+		
+    return false;
+		document.getElementById('touch-proj-instruction').style.display = 'none';
+    document.getElementById('mouse-proj-instruction').style.display = 'block';
+  }
     
 </script>
 
