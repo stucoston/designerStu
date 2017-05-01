@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+body {
+  background-color: #171717;
+  font-family: helvetica;
+}
+
+.hide {
+  display: none;
+}
+
+#about {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  overflow: scroll;
+  transform: translate(-50%,-50%);
+}
+
+#logo {
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  height: 40%;
+  z-index: 2;
+  transition: 0.5s;
+  filter: invert(100%);
+  transform: translate(-50%,-50%);
+}
+
+#logo.active {
+  left: 10%;
+  top: 90%;
+  height: 20%;
+}
+
+#left-portfolio,
+#right-portfolio {
+  position: fixed;
+  left: auto;
+  right: auto;
+  top: 0;
+  height: 100%;
+  width: 100%; 
+  overflow: hidden;
+  transition: 0.6s;
+  filter: brightness(75%);
+}
+
+#left-portfolio {
+  left: 0;
+  clip-path: polygon(50% 0, 0 0, 0 100%, 20% 100%);
+}
+
+#left-portfolio.hover {
+  clip-path: polygon(100% 0, 0 0, 0 100%, 20% 100%);
+  filter: none;
+}
+
+#left-portfolio.active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  filter: none;
+  width: 100%;
+  left: 0;
+}
+
+#right-portfolio {
+  right: 0;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 80% 100%);
+}
+
+#right-portfolio.hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%);
+  filter: none;
+}
+
+#right-portfolio.active {
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  filter: none;
+  width: 100%;
+  right: 0;
+}
+
+.bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: opacity .5s ease-in-out;
+}
+
+.left-portfolio-1 {
+    background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/58254e6a414fb5e851cc1950/1478839942807/1.jpg?format=750w);
+}
+
+.right-portfolio-1 {
+    background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/58255011b8a79b97633ef0d4/1478840359198/mc-3.jpg?format=750w);
+}
+
+.portfolio-title {
+  color: #eee;
+  font-size: 25px;
+  font-weight: 200;
+  position: fixed;
+  letter-spacing: 8px;
+  top: 20%;
+  z-index: 2;
+  transition: 0.5s;
+  transform: translate(-50%,-50%);
+}
+
+.portfolio-title.left {
+  left: 20%;
+}
+
+.portfolio-title.left.hover {
+  color: #171717;
+}
+
+.portfolio-title.right {
+  left: 80%;
+}
+
+.portfolio-title.right.hover {
+  color: #fff;
+}
+
+.portfolio-title.left.active,
+.portfolio-title.right.active {
+  font-size: 18px;
+  top: 10%;
+  left: 50%;
+}
+
+</style>
+
+<body>
+
+  <div id="left-portfolio" class="bg left-portfolio-1" onmouseenter="hoverLeftPortfolio()" onmouseleave="hoverLeftPortfolio()" onclick="openLeftPortfolio()"></div>
+  
+  <div id="right-portfolio" class="bg right-portfolio-1" onmouseenter="hoverRightPortfolio()" onmouseleave="hoverRightPortfolio()" onclick="openRightPortfolio()"></div>
+  
+  <div id="about" class="hide"></div>
+  
+  <img id="logo" src="http://static1.squarespace.com/static/5724d2415559869e2455c3ef/t/58f436ad1e5b6c79d5402281/1492655929848/?format=1500w"/>
+  
+  <div id="home">
+    <div id="left-title" class="portfolio-title left">MOTION</div>
+    <div id="right-title" class="portfolio-title right">STILLS</div>
+  </div>
+  
+  <script>
+  
+    var lp = document.getElementById('left-portfolio'),
+        rp = document.getElementById('right-portfolio'),
+        logo = document.getElementById('logo'),
+        leftTitle = document.getElementById('left-title'),
+        rightTitle = document.getElementById('right-title');
+    
+    function hoverLeftPortfolio() {
+        if(lp.className.indexOf('active') != -1){
+            return;
+        }  else {
+            lp.style.zIndex = "0";
+            rp.style.zIndex = "1";
+            stu.toggleClass(lp,'hover');
+            stu.toggleClass(leftTitle,'hover');
+            stu.toggleClass(rightTitle,'hide');
+        }
+    }
+    
+    function hoverRightPortfolio() {
+        if(rp.className.indexOf('active') != -1){
+            return;
+        }  else {
+            lp.style.zIndex = "1";
+            rp.style.zIndex = "0";
+            stu.toggleClass(rp,'hover');
+            stu.toggleClass(leftTitle,'hide');
+            stu.toggleClass(rightTitle,'hover');
+        }
+    }
+    
+    function openLeftPortfolio() {
+        if(lp.className.indexOf('active') != -1){
+            lp.style.zIndex = "0";
+            rp.style.zIndex = "1";
+            stu.toggleClass(lp,'active');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(leftTitle,'active');
+        }  else {
+            lp.style.zIndex = "1";
+            rp.style.zIndex = "0";
+            stu.toggleClass(lp,'active');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(leftTitle,'active');
+        }
+    }
+    
+    function openRightPortfolio() {
+        if(rp.className.indexOf('active') != -1){
+            lp.style.zIndex = "1";
+            rp.style.zIndex = "0";
+            stu.toggleClass(rp,'active');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(rightTitle,'active');
+        }  else {
+            lp.style.zIndex = "0";
+            rp.style.zIndex = "1";
+            stu.toggleClass(rp,'active');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(rightTitle,'active');
+        }
+    }
+    
+    
+  </script>
+  
+  <script>
+  
+// stu toggle functions
+// ========================================================
+var stu = {};
+stu.styleElement = function (element, prop, val) {
+  element.style.setProperty(prop, val);
+};
+stu.toggleShow = function (sel) {
+  var i, x = stu.getElements(sel), xl = x.length;
+  for (i = 0; i < xl; i++) {    
+    if (x[i].style.display == "none") {
+      stu.styleElement(x[i], "display", "block");
+    } else {
+      stu.styleElement(x[i], "display", "none");
+    }
+  }
+};
+stu.togglePaddingProj = function (sel) {
+  var i, x = stu.getElements(sel), l = x.length;
+  for (i = 0; i < l; i++) {    
+    if (x[i].style.padding == "0px") {
+      stu.styleElement(x[i], "padding", "48px 24px 24px");
+    } else {
+      stu.styleElement(x[i], "padding", "0px");
+    }
+  }
+};
+stu.addClass = function (sel, name) {
+  stu.addClassElements(stu.getElements(sel), name);
+};
+stu.addClassElements = function (elements, name) {
+  var i, l = elements.length;
+  for (i = 0; i < l; i++) {
+    stu.addClassElement(elements[i], name);
+  }
+};
+stu.addClassElement = function (element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+};
+stu.removeClass = function (sel, name) {
+  stu.removeClassElements(stu.getElements(sel), name);
+};
+stu.removeClassElements = function (elements, name) {
+  var i, l = elements.length, arr1, arr2, j;
+  for (i = 0; i < l; i++) {
+    stu.removeClassElement(elements[i], name);
+  }
+};
+stu.removeClassElement = function (element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+};
+stu.toggleClass = function (sel, c1, c2) {
+  stu.toggleClassElements(stu.getElements(sel), c1, c2);
+};
+stu.toggleClassElements = function (elements, c1, c2) {
+  var i, l = elements.length;
+  for (i = 0; i < l; i++) {    
+    stu.toggleClassElement(elements[i], c1, c2);
+  }
+};
+stu.toggleClassElement = function (element, c1, c2) {
+  var t1, t2, t1Arr, t2Arr, j, arr, allPresent;
+  t1 = (c1 || "");
+  t2 = (c2 || "");
+  t1Arr = t1.split(" ");
+  t2Arr = t2.split(" ");
+  arr = element.className.split(" ");
+  if (t2Arr.length == 0) {
+    allPresent = true;
+    for (j = 0; j < t1Arr.length; j++) {
+      if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+    }
+    if (allPresent) {
+      stu.removeClassElement(element, t1);
+    } else {
+      stu.addClassElement(element, t1);
+    }
+  } else {
+    allPresent = true;
+    for (j = 0; j < t1Arr.length; j++) {
+      if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+    }
+    if (allPresent) {
+      stu.removeClassElement(element, t1);
+      stu.addClassElement(element, t2);          
+    } else {
+      stu.removeClassElement(element, t2);        
+      stu.addClassElement(element, t1);
+    }
+  }
+};
+stu.getElements = function (id) {
+  if (typeof id == "object") {
+    return [id];
+  } else {
+    return document.querySelectorAll(id);
+  }
+};
+
+  </script>
+
+</body>
+
+</html>
