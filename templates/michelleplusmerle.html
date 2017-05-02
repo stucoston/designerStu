@@ -4,7 +4,6 @@
 <head>
   <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
   <link rel="icon" href="http://static1.squarespace.com/static/5724d2415559869e2455c3ef/t/58f436ad1e5b6c79d5402281/1492655929848/?format=1500w">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 </head>
 
@@ -12,17 +11,40 @@
 body {
   background-color: #171717;
   font-family: helvetica;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+p {
+  color: #eee;
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+.large {
+  font-size: 26px;
 }
 .hide {
   display: none;
 }
 #about {
-  position: fixed;
-  height: 100%;
+  position: absolute;
   width: 100%;
-  top: 50%;
-  overflow: scroll;
-  transform: translate(-50%,-50%);
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+#about .content {
+  margin: 50vh 10%;
+  max-width: 700px;
+}
+.title {
+  color: #eee;
+  font-size: 30px;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  padding: 0 8px;
+  border-bottom: 1px solid #eee;
 }
 #logo {
   position: fixed;
@@ -43,6 +65,14 @@ body {
   width: 120px;
   transform: translate(-50%,50%);
 }
+#logo.about{
+  top: 50px;
+  bottom: auto;
+  left: auto;
+  right: 50px;
+  width: 120px;
+  transform: translate(50%,-50%);
+}
 #logo:hover {
   filter: invert(50%);
 }
@@ -58,36 +88,45 @@ body {
   transform: translate(-50%,0);
   transition: 0.6s;
   filter: brightness(75%);
+  z-index: 1;
 }
 #left-portfolio {
   left: 50%;
   clip-path: polygon(50% 0, 0 0, 0 100%, 10% 100%);
 }
+#left-portfolio:hover,
 #left-portfolio.hover {
-  clip-path: polygon(100% 0, 0 0, 0 110%, 10% 100%);
+  clip-path: polygon(110% 0, 0 0, 0 100%, 10% 100%);
   filter: none;
+  z-index: 0;
+  cursor: pointer;
 }
 #left-portfolio.active {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   filter: none;
   width: 100%;
 }
-#left-portfolio.hidden,
-#right-portfolio.hidden {
-  width: 0;
+#left-portfolio.hidden {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 }
 #right-portfolio {
   right: -50%;
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 90% 100%);
 }
+#right-portfolio:hover,
 #right-portfolio.hover {
   clip-path: polygon(-10% 0, 100% 0, 100% 100%, 90% 100%);
   filter: none;
+  z-index: 0;
+  cursor: pointer;
 }
 #right-portfolio.active {
   clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
   filter: none;
   width: 100%;
+}
+#right-portfolio.hidden {
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 }
 .still-slide,
 .motion-slide {
@@ -117,49 +156,56 @@ body {
     background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/58255011b8a79b97633ef0d4/1478840359198/mc-3.jpg?format=750w);
 }
 .motion-2 {
-    background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/58254fa815d5db852592259b/1478840254658/19.jpg?format=500w);
+    background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/58254f212994cafa0c948d47/1478840114267/weddingfolio.jpg?format=500w);
 }
 .motion-3 {
-    background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/58254ece3e00be283bf3de37/1478840033767/Bolden-51.jpg?format=300w);
+    background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/584385072994cab7bdb08c72/1480820004787/fbpromo.jpg?format=750w);
+}
+#portfolios {
+  position: fixed;
+  top: 20%;
+  font-size: 25px;
+  width: 100%;
+  z-index: 2;
+  height: 60px;
+  transition: 0.5s;
 }
 .portfolio-title {
   color: #eee;
-  font-size: 25px;
   font-weight: 200;
   text-transform: uppercase;
-  position: fixed;
+  position: absolute;
+  top: 50%;
   letter-spacing: 8px;
-  top: 20%;
-  z-index: 2;
+  padding: 8px;
+  cursor: pointer;
   transition: 0.5s;
   transform: translate(-50%,-50%);
+}
+.portfolio-title:hover,
+.portfolio-title.left.active,
+.portfolio-title.right.active {
+  border-bottom: 1px solid #eee;
+}
+#portfolios.active {
+  top: 0;
+  font-size: 18px;
+  background-color: rgba(23,23,23,0.4);
 }
 .portfolio-title.left {
   left: 20%;
 }
-.portfolio-title.left.hover {
-  color: #171717;
-}
 .portfolio-title.right {
   left: 80%;
-}
-.portfolio-title.right.hover {
-  color: #fff;
-}
-.portfolio-title.left.active,
-.portfolio-title.right.active {
-  font-size: 18px;
-  top: 10%;
-  left: 50%;
 }
 #amp-title {
   color: #eee;
   font-family: playfair display;
   font-size: 25px;
   font-weight: 200;
-  position: fixed;
+  position: absolute;
   letter-spacing: 8px;
-  top: 20%;
+  top: 50%;
   left: 50%;
   z-index: 0;
   transition: 0.5s;
@@ -181,11 +227,16 @@ body {
 .next-slide {
   right: 16px;
 }
+@media only screen and (min-width: 710px) {
+  #about .content {
+    margin: 50vh auto;
+  }
+}
 </style>
 
 <body>  
 
-  <div id="left-portfolio" class="bg still-1" onmouseenter="hoverLeftPortfolio()" onmouseleave="hoverLeftPortfolio()" onclick="openLeftPortfolio()"></div>
+  <div id="left-portfolio" class="bg still-1" onclick="openLeftPortfolio()"></div>
   
   <div id="still-slideshow" class="hide" >
     <div class="still-slide bg still-1"></div>
@@ -193,7 +244,7 @@ body {
     <div class="still-slide bg still-3"></div>
   </div>
   
-  <div id="right-portfolio" class="bg motion-1" onmouseenter="hoverRightPortfolio()" onmouseleave="hoverRightPortfolio()" onclick="openRightPortfolio()"></div>
+  <div id="right-portfolio" class="bg motion-1" onclick="openRightPortfolio()"></div>
   
   <div id="motion-slideshow" class="hide">
     <div class="motion-slide bg motion-1"></div>
@@ -201,9 +252,28 @@ body {
     <div class="motion-slide bg motion-3"></div>
   </div>
   
-  <div id="about" class="hide"></div>
+  <div id="about" class="hide">
+    <div class="content">
+      <div class="title">about</div>
+      <p class="large">If <b>beautiful</b> portraits of you and/or your family is what you are looking for then I am the girl for you!</p>
+<p>From weddings to senior sessions, "or even if you just need a new photo for Instagram," I got you.</p>
+      <br/>
+      <p class="large">My name is Keiley McKean</p>
+      <p class="small">and I <i>love</i>, Love, <b>LOVE</b>, taking photos. My favorite thing about photography is capturing your genuine smile.
+      <br/>
+      <br/>
+I have multiple ways for you to contact me if you are interested in booking or have questions about pricing, you can use the quick and easy contact tab in the menu at the top. I usually respond within 24 hours unless its the weekend.</p>
+      <br/>
+      <p class="large"><b>Thank you</b> for taking the time to visit my website and I can't wait to hear from you!!!</p>
+
+      <p class="large">Info</p>
+      <p><a href="mailto:keiley@keymckean.com" target="_blank">keiley@keymckean.com</a>             <br/>Central Arkansas</p>
+      <br/>
+      <p> Site Built By ... </p>
+    </div>
+  </div>
   
-  <img id="logo" src="http://static1.squarespace.com/static/5724d2415559869e2455c3ef/t/58f436ad1e5b6c79d5402281/1492655929848/?format=1500w"/>
+  <img id="logo" onclick="openAbout()" src="http://static1.squarespace.com/static/5724d2415559869e2455c3ef/t/58f436ad1e5b6c79d5402281/1492655929848/?format=1500w"/>
   
   <div id="still-nav" class="hide">
     <div class="prev-slide" onclick="plusStillSlides(-1)">
@@ -231,12 +301,11 @@ body {
     </div>
   </div>
   
-  <div id="home">
-    <div id="left-title" class="portfolio-title left" onmouseenter="hoverLeftPortfolio()" onmouseleave="hoverLeftPortfolio()" onclick="openLeftPortfolio()">stills</div>
-    <div id="right-title" class="portfolio-title right" onmouseenter="hoverRightPortfolio()" onmouseleave="hoverRightPortfolio()" onclick="openRightPortfolio()">motion</div>
+  <div id="portfolios">
+    <div id="left-title" class="portfolio-title left" onclick="openLeftPortfolio()">stills</div>
+    <div id="right-title" class="portfolio-title right" onclick="openRightPortfolio()">motion</div>
     <div id="amp-title">&amp;</div>
   </div>
-
   
   <script>
   
@@ -245,84 +314,179 @@ body {
         logo = document.getElementById('logo'),
         stillNav = document.getElementById('still-nav'),
         motionNav = document.getElementById('motion-nav'),
+        portfolios = document.getElementById('portfolios'),
         leftTitle = document.getElementById('left-title'),
         rightTitle = document.getElementById('right-title'),
         ampTitle = document.getElementById('amp-title'),
         stillSlideshow = document.getElementById('still-slideshow'),
-        motionSlideshow = document.getElementById('motion-slideshow');
+        motionSlideshow = document.getElementById('motion-slideshow'),
+        about = document.getElementById('about');
     
-    function hoverLeftPortfolio() {
-        if(lp.className.indexOf('active') != -1){
-            return;
-        }  else {
-            lp.style.zIndex = "0";
-            rp.style.zIndex = "1";
-            stu.toggleClass(lp,'hover');
-            stu.toggleClass(leftTitle,'hover');
-            stu.toggleClass(rightTitle,'hide');
-            stu.toggleClass(ampTitle,'hide');
+    function openAbout() {
+        if(lp.className.indexOf('active') != -1) {
+            openLeftPortfolioImmediately();
+            stu.toggleClass(lp,'hidden');
+            stu.toggleClass(rp,'hidden');
+            stu.toggleClass(portfolios,'hide');
+            stu.toggleClass(logo,'about');
+            setTimeout(function(){
+              stu.toggleClass(about,'hide');
+            }, 1000);
+        } else if(rp.className.indexOf('active') != -1) {
+            openRightPortfolioImmediately();
+            stu.toggleClass(lp,'hidden');
+            stu.toggleClass(rp,'hidden');
+            stu.toggleClass(portfolios,'hide');
+            stu.toggleClass(logo,'about');
+            setTimeout(function(){
+              stu.toggleClass(about,'hide');
+            }, 1000);
+        } else {
+            stu.toggleClass(lp,'hidden');
+            stu.toggleClass(rp,'hidden');
+            stu.toggleClass(portfolios,'hide');
+            stu.toggleClass(logo,'about');
+            stu.toggleClass(about,'hide');
         }
-    }
-    
-    function hoverRightPortfolio() {
-        if(rp.className.indexOf('active') != -1){
-            return;
-        }  else {
-            lp.style.zIndex = "1";
-            rp.style.zIndex = "0";
-            stu.toggleClass(rp,'hover');
-            stu.toggleClass(leftTitle,'hide');
-            stu.toggleClass(rightTitle,'hover');
-            stu.toggleClass(ampTitle,'hide');
-        }
-    }
-    
+    }   
+
     function openLeftPortfolio() {
+        if(rp.className.indexOf('active') != -1) {
+            openRightPortfolioImmediately();
+            openLeftPortfolioDelayed();
+        } else {
+            openLeftPortfolioImmediately(); 
+        }
+    }
+    
+    function openLeftPortfolioImmediately() {
         if(lp.className.indexOf('active') != -1){
-            lp.style.zIndex = "0";
+            stu.toggleClass(rp,'hide');
+            stu.toggleClass(lp,'hide');
+            stu.toggleClass(lp,'active');
+            stu.toggleClass(lp,'active');
+            setTimeout(function(){
+              stu.toggleClass(lp,'active');
+            }, 50);
+            stu.toggleClass(stillSlideshow,'hide');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(leftTitle,'active');
+            stu.toggleClass(stillNav,'hide');
+            stu.toggleClass(portfolios,'active');
+        }  else {
             stu.toggleClass(rp,'hide');
             stu.toggleClass(lp,'active');
             stu.toggleClass(logo,'active');
             stu.toggleClass(leftTitle,'active');
-            stu.toggleClass(rightTitle,'hide');
-            stu.toggleClass(amp,'hide');
             stu.toggleClass(stillNav,'hide');
-            stu.toggleClass(stillSlideshow,'hide');
-        }  else {
-            lp.style.zIndex = "1";
-            stu.toggleClass(rp,'hide');
-            stu.toggleClass(lp,'hide');
-            stu.toggleClass(logo,'active');
-            stu.toggleClass(leftTitle,'active');
-            stu.toggleClass(rightTitle,'hide');
-            stu.toggleClass(amp,'hide');
-            stu.toggleClass(stillNav,'hide');
-            stu.toggleClass(stillSlideshow,'hide');
+            stu.toggleClass(portfolios,'active');
+            setTimeout(function(){
+              stu.toggleClass(stillSlideshow,'hide');
+              stu.toggleClass(lp,'hide');
+            }, 500);
         }
     }
     
-    function openRightPortfolio() {
-        if(rp.className.indexOf('active') != -1){
+    function openLeftPortfolioDelayed() { 
+        setTimeout(function(){
+        
+        if(lp.className.indexOf('active') != -1){
+            stu.toggleClass(rp,'hide');
             stu.toggleClass(lp,'hide');
-            rp.style.zIndex = "0";
-            stu.toggleClass(rp,'active');
+            stu.toggleClass(lp,'active');
+            stu.toggleClass(lp,'active');
+            setTimeout(function(){
+              stu.toggleClass(lp,'active');
+            }, 50);
+            stu.toggleClass(stillSlideshow,'hide');
             stu.toggleClass(logo,'active');
-            stu.toggleClass(leftTitle,'hide');
-            stu.toggleClass(rightTitle,'active');
-            stu.toggleClass(amp,'hide');
-            stu.toggleClass(motionNav,'hide');
+            stu.toggleClass(leftTitle,'active');
+            stu.toggleClass(stillNav,'hide');
+            stu.toggleClass(portfolios,'active');
+            
+        }  else {
+            stu.toggleClass(rp,'hide');
+            stu.toggleClass(lp,'active');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(leftTitle,'active');
+            stu.toggleClass(stillNav,'hide');
+            stu.toggleClass(portfolios,'active');
+            setTimeout(function(){
+              stu.toggleClass(stillSlideshow,'hide');
+              stu.toggleClass(lp,'hide');
+            }, 500);
+        }
+        
+        }, 500);
+    }
+    
+    function openRightPortfolio() {
+        if(lp.className.indexOf('active') != -1) {
+            openLeftPortfolioImmediately();
+            openRightPortfolioDelayed();
+        } else {
+            openRightPortfolioImmediately(); 
+        }
+    }
+        
+    function openRightPortfolioImmediately() {   
+        if(rp.className.indexOf('active') != -1){
+            stu.toggleClass(rp,'hide');
+            stu.toggleClass(lp,'hide');
+            stu.toggleClass(rp,'active');
+            stu.toggleClass(rp,'active');
+            setTimeout(function(){
+              stu.toggleClass(rp,'active');
+            }, 50);
             stu.toggleClass(motionSlideshow,'hide');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(rightTitle,'active');
+            stu.toggleClass(motionNav,'hide');
+            stu.toggleClass(portfolios,'active');
         }  else {
             stu.toggleClass(lp,'hide');
-            rp.style.zIndex = "1";
             stu.toggleClass(rp,'active');
             stu.toggleClass(logo,'active');
-            stu.toggleClass(leftTitle,'hide');
             stu.toggleClass(rightTitle,'active');
-            stu.toggleClass(amp,'hide');
             stu.toggleClass(motionNav,'hide');
-            stu.toggleClass(motionSlideshow,'hide');
+            stu.toggleClass(portfolios,'active');
+            setTimeout(function(){
+              stu.toggleClass(motionSlideshow,'hide');
+              stu.toggleClass(rp,'hide');
+            }, 500);
         }
+    }
+    
+    function openRightPortfolioDelayed() { 
+        setTimeout(function(){
+        
+        if(rp.className.indexOf('active') != -1){
+            stu.toggleClass(rp,'hide');
+            stu.toggleClass(lp,'hide');
+            stu.toggleClass(rp,'active');
+            stu.toggleClass(rp,'active');
+            setTimeout(function(){
+              stu.toggleClass(rp,'active');
+            }, 50);
+            stu.toggleClass(motionSlideshow,'hide');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(rightTitle,'active');
+            stu.toggleClass(motionNav,'hide');
+            stu.toggleClass(portfolios,'active');
+        }  else {
+            stu.toggleClass(lp,'hide');
+            stu.toggleClass(rp,'active');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(rightTitle,'active');
+            stu.toggleClass(motionNav,'hide');
+            stu.toggleClass(portfolios,'active');
+            setTimeout(function(){
+              stu.toggleClass(motionSlideshow,'hide');
+              stu.toggleClass(rp,'hide');
+            }, 500);
+        }
+        
+        }, 500);
     }
     
   </script>
@@ -331,18 +495,13 @@ body {
 // Stills slide show
 // =======================================================
 var stillIndex = 1;
-
 showStillSlides(stillIndex);
-
 function plusStillSlides(n) {
-
   hideStillSlides(stillIndex);
   setTimeout( function() { showStillSlides(stillIndex += n); }, 800);
   
 }
-
 function currentStillSlide(n) {
-
   showStillSlides(stillIndex = n);
   
 }
@@ -377,25 +536,19 @@ function showStillSlides(n) {
     }, 50);
     
 }
-
 </script>
 
 <script>
 // Motion slide show
 // =======================================================
 var motionIndex = 1;
-
 showMotionSlides(motionIndex);
-
 function plusMotionSlides(n) {
-
   hideMotionSlides(motionIndex);
   setTimeout( function() { showMotionSlides(motionIndex += n); }, 800);
   
 }
-
 function currentMotionSlide(n) {
-
   showMotionSlides(motionIndex = n);
   
 }
@@ -430,42 +583,7 @@ function showMotionSlides(n) {
     }, 50);
     
 }
-
 </script>
-
-<script>
-  
-// scroll mousewheel to change slides
-// ====================================================
-$('#projects').on( 'DOMMouseScroll mousewheel', function ( event ) {
-      
-  var wrap = document.getElementById('proj-page-wrap');
-   
-  if(wrap.style.padding == "0px") {
-        
-    //prevent page fom scrolling
-    return true;
-        
-    } else {
-      
-    if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
-        
-      //scroll down
-      plusProjSlides(1);
-       
-    } else {
-        
-      //scroll up
-      plusProjSlides(-1);
-    }
-       
-  }
-      
-  //prevent page fom scrolling
-  //return false;
-});
-    
-  </script>
   
   <script>
   
@@ -580,6 +698,134 @@ stu.getElements = function (id) {
   }
 };
   </script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <script>
+  
+  //    function hoverLeftPortfolio() {
+//        if(lp.className.indexOf('active') == -1){
+    $(document).ready(function(){
+        $("#left-title").hover(function(){ 
+          stu.toggleClass('#left-portfolio','hover');
+        }, function(){
+          stu.toggleClass('#left-portfolio','hover');
+        });
+        
+        $("#right-title").hover(function(){ 
+          stu.toggleClass('#right-portfolio','hover');
+        }, function(){
+          stu.toggleClass('#right-portfolio','hover');
+        });
+    });
+    
+    </script>
+    
+    <script>
+  
+// scroll mousewheel to change slides
+// ====================================================
+$('#still-slideshow').on( 'DOMMouseScroll mousewheel', function ( event ) {
+
+    if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        //scroll down
+        plusStillSlides(1);
+    } else {
+        //scroll up
+        plusStillSlides(-1);
+    }
+    
+});
+
+$('#motion-slideshow').on( 'DOMMouseScroll mousewheel', function ( event ) {
+
+    if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        //scroll down
+        plusMotionSlides(1);
+    } else {
+        //scroll up
+        plusMotionSlides(-1);
+    }
+    
+});
+    
+  </script>
+  
+  <script>
+//enable touch events to change still-slideshow
+      // ==================================================
+      window.addEventListener('load', function(){
+          var el = document.getElementById('still-slideshow')
+          var hidetimer = null
+          
+          swipedetect(el, function(swipedir){
+            if (swipedir != 'none'){
+                  clearTimeout(hidetimer)
+                  plusStillSlides(swipedir)
+              }
+          })
+          
+      }, false)
+                              
+          function swipedetect(el, callback){
+            
+            var touchsurface = el,
+              swipedir,
+              startX,
+              startY,
+              distX,
+              distY,
+              threshold = 60, //required min distance traveled to be considered swipe
+              restraint = 30, // maximum distance allowed at the same time in perpendicular direction
+              allowedTime = 700, // maximum time allowed to travel that distance
+              elapsedTime,
+              startTime,
+              handleswipe = callback || function(swipedir){}
+        
+            touchsurface.addEventListener('touchstart', function(e){
+              var touchobj = e.changedTouches[0]
+              swipedir = 'none'
+              dist = 0
+              startX = touchobj.pageX
+              startY = touchobj.pageY
+              startTime = new Date().getTime() // record time when finger first makes contact with surface
+             
+	      if(touchsurface.className.indexOf('hide') != -1) {
+//                e.preventDefault() // prevent scrolling when inside DIV
+              }
+          }, false)
+        
+          touchsurface.addEventListener('touchmove', function(e){
+            if (touchsurface.className.indexOf('hide') != -1) {
+//              e.preventDefault() // prevent scrolling when inside DIV
+            }
+          }, false)
+        
+          touchsurface.addEventListener('touchend', function(e){
+              var touchobj = e.changedTouches[0]
+              distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+              distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+              elapsedTime = new Date().getTime() - startTime // get time elapsed
+              if (elapsedTime <= allowedTime){ // first condition for awipe met
+                  if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+                      swipedir = (distX < 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
+                  }
+                  else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+                     if(touchsurface.className.indexOf('hide') != -1 && distY < 0){ swipedir = (distY < 0)? 1 : -1 }// if dist traveled is negative, it indicates up swipe
+                  }
+              }
+	      if (touchsurface.className.indexOf('hide') != -1) {
+                handleswipe(swipedir)
+ //               e.preventDefault()
+	      }
+          }, false)
+      	//continue to trigger click event from the target of any touch event at the document level
+      	window.on('touchend', function(e){
+      		$(e.target).trigger('click');
+      	});
+      
+          }
+</script>
 
 </body>
 
