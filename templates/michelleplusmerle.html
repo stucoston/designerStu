@@ -92,40 +92,48 @@ p {
 }
 #left-portfolio {
   left: 50%;
+	-webkit-clip-path: polygon(50% 0, 0 0, 0 100%, 10% 100%);
   clip-path: polygon(50% 0, 0 0, 0 100%, 10% 100%);
 }
 #left-portfolio:hover,
 #left-portfolio.hover {
+  -webkit-clip-path: polygon(110% 0, 0 0, 0 100%, 10% 100%);
   clip-path: polygon(110% 0, 0 0, 0 100%, 10% 100%);
   filter: none;
   z-index: 0;
   cursor: pointer;
 }
 #left-portfolio.active {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   filter: none;
   width: 100%;
 }
 #left-portfolio.hidden {
+  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 }
 #right-portfolio {
   right: -50%;
+  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 90% 100%);
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 90% 100%);
 }
 #right-portfolio:hover,
 #right-portfolio.hover {
+  -webkit-clip-path: polygon(-10% 0, 100% 0, 100% 100%, 90% 100%);
   clip-path: polygon(-10% 0, 100% 0, 100% 100%, 90% 100%);
   filter: none;
   z-index: 0;
   cursor: pointer;
 }
 #right-portfolio.active {
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
   clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
   filter: none;
   width: 100%;
 }
 #right-portfolio.hidden {
+  -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 }
 .still-slide,
