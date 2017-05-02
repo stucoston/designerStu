@@ -15,6 +15,15 @@ body {
   margin: 0;
   overflow: auto;
 }
+a {
+  text-decoration: none;
+  color: #666;
+  letter-spacing: 4px;
+}
+a:hover {
+  color: #aaa;
+  font-style: italic;
+}
 p {
   color: #eee;
   font-size: 18px;
@@ -34,7 +43,7 @@ p {
   transform: translate(-50%,0);
 }
 #about .content {
-  margin: 50vh 10%;
+  margin: 50vh 10% 10vh;
   max-width: 700px;
 }
 .title {
@@ -92,7 +101,7 @@ p {
 }
 #left-portfolio {
   left: 50%;
-	-webkit-clip-path: polygon(50% 0, 0 0, 0 100%, 10% 100%);
+  -webkit-clip-path: polygon(50% 0, 0 0, 0 100%, 10% 100%);
   clip-path: polygon(50% 0, 0 0, 0 100%, 10% 100%);
 }
 #left-portfolio:hover,
@@ -104,8 +113,10 @@ p {
   cursor: pointer;
 }
 #left-portfolio.active {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  /*-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);*/
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
   filter: none;
   width: 100%;
 }
@@ -127,8 +138,10 @@ p {
   cursor: pointer;
 }
 #right-portfolio.active {
-  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
-  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  /*webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   filter: none;
   width: 100%;
 }
@@ -158,16 +171,18 @@ p {
     background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/58254fa815d5db852592259b/1478840254658/19.jpg?format=500w);
 }
 .still-3 {
-    background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/58254ece3e00be283bf3de37/1478840033767/Bolden-51.jpg?format=300w);
+    background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/58254f7515d5db8525922439/1478840206078/Younts6.jpg?format=750w);
+    background-position: left;
 }
 .motion-1 {
     background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/58255011b8a79b97633ef0d4/1478840359198/mc-3.jpg?format=750w);
 }
 .motion-2 {
-    background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/58254f212994cafa0c948d47/1478840114267/weddingfolio.jpg?format=500w);
+    background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/582c874ad1758ef15b9f1b11/1479313248926/website2.jpg?format=750w);
 }
 .motion-3 {
     background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/584385072994cab7bdb08c72/1480820004787/fbpromo.jpg?format=750w);
+    background-position: left;
 }
 #portfolios {
   position: fixed;
@@ -240,6 +255,30 @@ p {
     margin: 50vh auto;
   }
 }
+#bookme {
+  position: fixed;
+  bottom: 35px;
+  right: 35px;
+  z-index: 3;
+}
+#bookme a,
+.button {
+  padding: 12px 32px;
+  color: #eee;
+  border: 1px solid;
+  font-style: none;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+#bookme a:hover,
+.button:hover {
+  background-color:rgba(23,23,23,0.7);
+  font-style: italic;
+}
+  
 </style>
 
 <body>  
@@ -273,11 +312,22 @@ p {
 I have multiple ways for you to contact me if you are interested in booking or have questions about pricing, you can use the quick and easy contact tab in the menu at the top. I usually respond within 24 hours unless its the weekend.</p>
       <br/>
       <p class="large"><b>Thank you</b> for taking the time to visit my website and I can't wait to hear from you!!!</p>
-
-      <p class="large">Info</p>
-      <p><a href="mailto:keiley@keymckean.com" target="_blank">keiley@keymckean.com</a>             <br/>Central Arkansas</p>
       <br/>
-      <p> Site Built By ... </p>
+      <br/>
+      <p style="text-align: center"><a href="mailto:keiley@keymckean.com" target="_blank" class="button" >keiley@keymckean.com</a><br/><br/>Central Arkansas
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <a href="www.designerstu.com" target="_blank">
+          Site Built By
+          <span>
+            <svg viewBox="0,0,100,100" style="height: 28px; width: 28px; margin-bottom: -10px; margin-left: -15px;">
+              <path fill="transparent" stroke-width="3" stroke="#eee" d="M70 10 L50 10 L90 50 L50 90 L35 75"/>
+            </svg>
+          </span>
+        </a>
+      </p>
     </div>
   </div>
   
@@ -315,6 +365,8 @@ I have multiple ways for you to contact me if you are interested in booking or h
     <div id="amp-title">&amp;</div>
   </div>
   
+  <div id="bookme" class="hide"><a href="mailto:keiley@keymckean.com" target="_blank">book me</a></div>
+  
   <script>
   
     var lp = document.getElementById('left-portfolio'),
@@ -328,24 +380,29 @@ I have multiple ways for you to contact me if you are interested in booking or h
         ampTitle = document.getElementById('amp-title'),
         stillSlideshow = document.getElementById('still-slideshow'),
         motionSlideshow = document.getElementById('motion-slideshow'),
-        about = document.getElementById('about');
+        about = document.getElementById('about'),
+        bookme = document.getElementById('bookme');
     
     function openAbout() {
         if(lp.className.indexOf('active') != -1) {
             openLeftPortfolioImmediately();
-            stu.toggleClass(lp,'hidden');
-            stu.toggleClass(rp,'hidden');
-            stu.toggleClass(portfolios,'hide');
-            stu.toggleClass(logo,'about');
+            setTimeout(function(){
+              stu.toggleClass(lp,'hidden');
+              stu.toggleClass(rp,'hidden');
+              stu.toggleClass(portfolios,'hide');
+              stu.toggleClass(logo,'about');
+            }, 500);
             setTimeout(function(){
               stu.toggleClass(about,'hide');
             }, 1000);
         } else if(rp.className.indexOf('active') != -1) {
             openRightPortfolioImmediately();
-            stu.toggleClass(lp,'hidden');
-            stu.toggleClass(rp,'hidden');
-            stu.toggleClass(portfolios,'hide');
-            stu.toggleClass(logo,'about');
+            setTimeout(function(){
+              stu.toggleClass(lp,'hidden');
+              stu.toggleClass(rp,'hidden');
+              stu.toggleClass(portfolios,'hide');
+              stu.toggleClass(logo,'about');
+            }, 500);
             setTimeout(function(){
               stu.toggleClass(about,'hide');
             }, 1000);
@@ -357,7 +414,6 @@ I have multiple ways for you to contact me if you are interested in booking or h
             stu.toggleClass(about,'hide');
         }
     }   
-
     function openLeftPortfolio() {
         if(rp.className.indexOf('active') != -1) {
             openRightPortfolioImmediately();
@@ -369,7 +425,7 @@ I have multiple ways for you to contact me if you are interested in booking or h
     
     function openLeftPortfolioImmediately() {
         if(lp.className.indexOf('active') != -1){
-            stu.toggleClass(rp,'hide');
+            stu.toggleClass(rp,'hidden');
             stu.toggleClass(lp,'hide');
             stu.toggleClass(lp,'active');
             stu.toggleClass(lp,'active');
@@ -381,8 +437,9 @@ I have multiple ways for you to contact me if you are interested in booking or h
             stu.toggleClass(leftTitle,'active');
             stu.toggleClass(stillNav,'hide');
             stu.toggleClass(portfolios,'active');
+            stu.toggleClass(bookme,'hide');
         }  else {
-            stu.toggleClass(rp,'hide');
+            stu.toggleClass(rp,'hidden');
             stu.toggleClass(lp,'active');
             stu.toggleClass(logo,'active');
             stu.toggleClass(leftTitle,'active');
@@ -391,6 +448,7 @@ I have multiple ways for you to contact me if you are interested in booking or h
             setTimeout(function(){
               stu.toggleClass(stillSlideshow,'hide');
               stu.toggleClass(lp,'hide');
+              stu.toggleClass(bookme,'hide');
             }, 500);
         }
     }
@@ -399,7 +457,7 @@ I have multiple ways for you to contact me if you are interested in booking or h
         setTimeout(function(){
         
         if(lp.className.indexOf('active') != -1){
-            stu.toggleClass(rp,'hide');
+            stu.toggleClass(rp,'hidden');
             stu.toggleClass(lp,'hide');
             stu.toggleClass(lp,'active');
             stu.toggleClass(lp,'active');
@@ -411,9 +469,10 @@ I have multiple ways for you to contact me if you are interested in booking or h
             stu.toggleClass(leftTitle,'active');
             stu.toggleClass(stillNav,'hide');
             stu.toggleClass(portfolios,'active');
+            stu.toggleClass(bookme,'hide');
             
         }  else {
-            stu.toggleClass(rp,'hide');
+            stu.toggleClass(rp,'hidden');
             stu.toggleClass(lp,'active');
             stu.toggleClass(logo,'active');
             stu.toggleClass(leftTitle,'active');
@@ -422,6 +481,7 @@ I have multiple ways for you to contact me if you are interested in booking or h
             setTimeout(function(){
               stu.toggleClass(stillSlideshow,'hide');
               stu.toggleClass(lp,'hide');
+              stu.toggleClass(bookme,'hide');
             }, 500);
         }
         
@@ -440,7 +500,7 @@ I have multiple ways for you to contact me if you are interested in booking or h
     function openRightPortfolioImmediately() {   
         if(rp.className.indexOf('active') != -1){
             stu.toggleClass(rp,'hide');
-            stu.toggleClass(lp,'hide');
+            stu.toggleClass(lp,'hidden');
             stu.toggleClass(rp,'active');
             stu.toggleClass(rp,'active');
             setTimeout(function(){
@@ -451,8 +511,9 @@ I have multiple ways for you to contact me if you are interested in booking or h
             stu.toggleClass(rightTitle,'active');
             stu.toggleClass(motionNav,'hide');
             stu.toggleClass(portfolios,'active');
+            stu.toggleClass(bookme,'hide');
         }  else {
-            stu.toggleClass(lp,'hide');
+            stu.toggleClass(lp,'hidden');
             stu.toggleClass(rp,'active');
             stu.toggleClass(logo,'active');
             stu.toggleClass(rightTitle,'active');
@@ -461,6 +522,7 @@ I have multiple ways for you to contact me if you are interested in booking or h
             setTimeout(function(){
               stu.toggleClass(motionSlideshow,'hide');
               stu.toggleClass(rp,'hide');
+              stu.toggleClass(bookme,'hide');
             }, 500);
         }
     }
@@ -470,7 +532,7 @@ I have multiple ways for you to contact me if you are interested in booking or h
         
         if(rp.className.indexOf('active') != -1){
             stu.toggleClass(rp,'hide');
-            stu.toggleClass(lp,'hide');
+            stu.toggleClass(lp,'hidden');
             stu.toggleClass(rp,'active');
             stu.toggleClass(rp,'active');
             setTimeout(function(){
@@ -481,8 +543,9 @@ I have multiple ways for you to contact me if you are interested in booking or h
             stu.toggleClass(rightTitle,'active');
             stu.toggleClass(motionNav,'hide');
             stu.toggleClass(portfolios,'active');
+            stu.toggleClass(bookme,'hide');
         }  else {
-            stu.toggleClass(lp,'hide');
+            stu.toggleClass(lp,'hidden');
             stu.toggleClass(rp,'active');
             stu.toggleClass(logo,'active');
             stu.toggleClass(rightTitle,'active');
@@ -491,6 +554,7 @@ I have multiple ways for you to contact me if you are interested in booking or h
             setTimeout(function(){
               stu.toggleClass(motionSlideshow,'hide');
               stu.toggleClass(rp,'hide');
+              stu.toggleClass(bookme,'hide');
             }, 500);
         }
         
@@ -734,7 +798,6 @@ stu.getElements = function (id) {
 // scroll mousewheel to change slides
 // ====================================================
 $('#still-slideshow').on( 'DOMMouseScroll mousewheel', function ( event ) {
-
     if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
         //scroll down
         plusStillSlides(1);
@@ -744,9 +807,7 @@ $('#still-slideshow').on( 'DOMMouseScroll mousewheel', function ( event ) {
     }
     
 });
-
 $('#motion-slideshow').on( 'DOMMouseScroll mousewheel', function ( event ) {
-
     if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
         //scroll down
         plusMotionSlides(1);
