@@ -60,7 +60,8 @@ p {
   top: 75%;
   bottom: auto;
   left: 50%;
-  width: 35%;
+  width: 25%;
+  height: 25%;
   z-index: 2;
   transition: 0.5s;
   filter: invert(100%);
@@ -71,7 +72,8 @@ p {
   top: auto;
   bottom: 50px;
   left: 50px;
-  width: 120px;
+  width: 60px;
+  height: 60px;
   transform: translate(-50%,50%);
 }
 #logo.about{
@@ -79,7 +81,8 @@ p {
   bottom: auto;
   left: auto;
   right: 50px;
-  width: 120px;
+  width: 60px;
+  height: 60px;
   transform: translate(50%,-50%);
 }
 #logo:hover {
@@ -164,7 +167,7 @@ p {
   background-size: cover;
   transition: opacity .5s ease-in-out;
 }
-.still-1 {
+/*.still-1 {
     background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/58254e6a414fb5e851cc1950/1478839942807/1.jpg?format=750w);
 }
 .still-2 {
@@ -182,6 +185,26 @@ p {
 }
 .motion-3 {
     background-image: url(https://static1.squarespace.com/static/5724d2415559869e2455c3ef/58254e6a15d5db8525921d0a/584385072994cab7bdb08c72/1480820004787/fbpromo.jpg?format=750w);
+    background-position: left;
+}*/
+.still-1 {
+    background-image: url(http://lorempixel.com/1280/720/people/1);
+}
+.still-2 {
+    background-image: url(http://lorempixel.com/1280/720/people/2);
+}
+.still-3 {
+    background-image: url(http://lorempixel.com/1280/720/people/3);
+    background-position: left;
+}
+.motion-1 {
+    background-image: url(http://lorempixel.com/1280/720/people/4);
+}
+.motion-2 {
+    background-image: url(http://lorempixel.com/1280/720/people/5);
+}
+.motion-3 {
+    background-image: url(http://lorempixel.com/1280/720/people/6);
     background-position: left;
 }
 #portfolios {
@@ -250,11 +273,6 @@ p {
 .next-slide {
   right: 16px;
 }
-@media only screen and (min-width: 710px) {
-  #about .content {
-    margin: 50vh auto;
-  }
-}
 #bookme {
   position: fixed;
   bottom: 35px;
@@ -277,6 +295,11 @@ p {
 .button:hover {
   background-color:rgba(23,23,23,0.7);
   font-style: italic;
+}
+@media only screen and (min-width: 710px) {
+  #about .content {
+    margin: 50vh auto;
+  }
 }
   
 </style>
@@ -302,8 +325,8 @@ p {
   <div id="about" class="hide">
     <div class="content">
       <div class="title">about</div>
-      <p class="large">If <b>beautiful</b> portraits of you and/or your family is what you are looking for then I am the girl for you!</p>
-<p>From weddings to senior sessions, "or even if you just need a new photo for Instagram," I got you.</p>
+      <!--<p class="large">If <b>beautiful</b> portraits of you and/or your family is what you are looking for then I am the girl for you!</p>
+      <p>From weddings to senior sessions, "or even if you just need a new photo for Instagram," I got you.</p>
       <br/>
       <p class="large">My name is Keiley McKean</p>
       <p class="small">and I <i>love</i>, Love, <b>LOVE</b>, taking photos. My favorite thing about photography is capturing your genuine smile.
@@ -313,8 +336,14 @@ I have multiple ways for you to contact me if you are interested in booking or h
       <br/>
       <p class="large"><b>Thank you</b> for taking the time to visit my website and I can't wait to hear from you!!!</p>
       <br/>
+      <br/>-->
+      <p class="large">Hi, my name is Elle.</p>
+      <p>Lorem ipsum dolor sit amet. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute <i>irure dolor in reprehenderit</i> in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p class="large">I love stills and motion pictures.</p>
+      <p>Consectetur <b>adipiscing elit</b>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <br/>
-      <p style="text-align: center"><a href="mailto:keiley@keymckean.com" target="_blank" class="button" >keiley@keymckean.com</a><br/><br/>Central Arkansas
+      <br/>
+      <p style="text-align: center"><a href="/" target="_blank" class="button" >name@website.com</a><br/><br/>Location
         <br/>
         <br/>
         <br/>
@@ -331,7 +360,8 @@ I have multiple ways for you to contact me if you are interested in booking or h
     </div>
   </div>
   
-  <img id="logo" onclick="openAbout()" src="http://static1.squarespace.com/static/5724d2415559869e2455c3ef/t/58f436ad1e5b6c79d5402281/1492655929848/?format=1500w"/>
+  <!--<img id="logo" onclick="openAbout()" src="http://static1.squarespace.com/static/5724d2415559869e2455c3ef/t/58f436ad1e5b6c79d5402281/1492655929848/?format=1500w"/>-->
+  <div id="logo" style="border: 4px solid #eee; border-radius: 50%; filter: invert(0);"onclick="openAbout()"><div style="position: absolute; top:50%; left:50%; transform: translate(-50%,-50%); color: #eee; font-size: 40px; text-decoration: none;">L</div></div>
   
   <div id="still-nav" class="hide">
     <div class="prev-slide" onclick="plusStillSlides(-1)">
@@ -365,7 +395,7 @@ I have multiple ways for you to contact me if you are interested in booking or h
     <div id="amp-title">&amp;</div>
   </div>
   
-  <div id="bookme" class="hide"><a href="mailto:keiley@keymckean.com" target="_blank">book me</a></div>
+  <div id="bookme" class="hide"><a href="/" target="_blank">book me</a></div>
   
   <script>
   
