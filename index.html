@@ -2677,13 +2677,21 @@ $('#p1d, #p2d, #p3d').scroll(function(event){
 		 
 	  document.getElementById('touch-proj-instruction').style.display = 'block';
     document.getElementById('mouse-proj-instruction').style.display = 'none'; 
-    $("hr").style.display = 'none';
+    var x = document.getElementsByTagName("HR");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
 	
 	} else {
 		
 		document.getElementById('touch-proj-instruction').style.display = 'none';
     document.getElementById('mouse-proj-instruction').style.display = 'block';
-    $("hr").style.display = 'block';
+    var x = document.getElementsByTagName("HR");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "block";
+    }
 		
 	}
 		 
