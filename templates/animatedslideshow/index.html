@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html>
+	
+  <!-- generic meta -->
+  <title>SALTWATER</title>
+  <meta name='description' content='We design and develop web-based products that will personalize you online space cheaper, better, and hassle free.'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/jpg" href="img/IMG_6342.JPG" />
+  
+  <!-- facebook open graph meta -->
+  <meta property='og:title' content='Saltwater - Digital Studios'/>
+  <meta property='og:type' content='website'/>
+  <meta property='og:image' content='img/IMG_6338.JPG'/>
+  <meta property='og:description' content='We design and develop web-based products that will personalize you online space cheaper, better, and hassle free.'/>
+  <meta property='og:url' content='http://www.digitalsaltwater.com'/>
+  <meta property='fb:admins' content='100004682442320'/>
+  
+  <!-- twitter cards meta -->
+  <meta name='twitter:card' content='summary'/>
+  <meta name='twitter:url' content='http://www.digitalsaltwater.com'/>
+  <meta name='twitter:image' content='img/IMG_6338.JPG'/>
+  <meta name='twitter:title' content='Saltwater - Digital Studios'/>
+  <meta name='twitter:description' content='We design and develop internet products. Templates are cumbersome and time consuming; work with us and we will personalize you online space cheaper, better, and hassle free.'/>
+	
+  <!-- external stylesheets -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Libre+Franklin" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+
+<body id="body" onload="myLoader()">
+
+  <div id="waterLoader"></div>
+  <!-- close waterLoader div -->
+  
+  <div id="site" class="w3-animate-bottom" style="display:none;">
+    <!-- Navbar (sit on top) -->
+    <header>
+      <div class="navbar-fixed">
+        <nav id="myNavbar">
+          <div id="returnBox" class="pinned topleft clickable" style="width:250px;height:64px;z-index:11;" onclick="goBack()"></div>
+          <img id="returnArrow" class="rotate90counterclock padding hide" style="width:60px; height:60px; z-index:10; vertical-align:middle; margin-top:-10px;" src="img/arrow.png">
+          <a id="ST1" class="site-title middle hide-on-med-and-up" style="left:25%;" href="https://rawgit.com/stucoston/saltwater/master/home.html">SALTWATER</a>
+          <a id="ST2" class="site-title margin-left hide-on-small-only" href="https://rawgit.com/stucoston/saltwater/master/home.html">SALTWATER</a>
+          <div class="hide-on-med-and-down">
+            <ul class="right" style="margin-top:-64px;">
+              <li><a class="letter-space waves-effect" href="#!" onclick="openComp()">COMPONENTS</a></li>
+              <li><a class="letter-space waves-effect" href="#!" onclick="openTemp()">TEMPLATES</a></li>
+              <li><a class="letter-space waves-effect" href="#!" onclick="openProj()">PROJECTS</a></li>
+              <li><a class="letter-space waves-effect margin-right" href="#contactModal">CONTACT</a></li>
+            </ul>
+          </div>
+
+          <!--close navbar-fixed-->
+        </nav>
+      </div>
+      <!--close fixed nav wrapper-->
+
+      <div class="menu-container right pinned hide-on-large-only" style="z-index:11001;" id='menu-container' onclick="openNav()">
+        <div class="bars"><span></span><span></span><span></span>
+          <div class="other-bar"></div>
+        </div>
+      </div>
+      <!--close menu-container-->
+      <div class="menu-box hide-on-large-only" onclick="openNav()"></div>
+
+      <div id="sw-sideNav-overlay" class="full-size pinned hide" onclick="openNav()"></div>
+      <div id="sw-sideNav" class="sw-sideNav grey lighten-3" onclick="openNav()">
+        <ul>
+          <li><a class="letter-space" href="#!" onclick="openComp()">COMPONENTS</a></li>
+          <li class="divider"></li>
+          <li><a class="letter-space" href="#!" onclick="openTemp()">TEMPLATES</a></li>
+          <li class="divider"></li>
+          <li><a class="letter-space" href="#!" onclick="openProj()">PROJECTS</a></li>
+          <li class="divider"></li>
+          <li><a class="letter-space" href="#contactModal">CONTACT</a></li>
+        </ul>
+      </div>
+      <!--close sw-sideNav-->
+
+      <div id="contactModal" class="modal modal-fixed-footer grey darken-2" style="z-index:12000;">
+        <div class="modal-content">
+          <i class="right black-text text-xlarge fa fa-window-close-o clickable" aria-hidden="true" onclick="$('#contactModal').modal('close');"></i>
+          <div class="black-text saltwater site-title">SALTWATER</div>
+          <div class="black-text tagline">digital studios</div>
+          <p class="grey-text hide">If you're ready for us to get started on your project today go ahead and click the "Get Started" button below. If you aren't quite ready for that yet and want to talk more about what we could do for you, click the "Message" button.</p>
+          <div class="row">
+            <div class="col s12 m6 container">
+            </div>
+            <div class="cl s12 m6 container">
+              <a class="text-xxlarge grey-text" href="mailto:stu.coston@gmail.com">stu.coston@gmail.com</a>
+              <p class="grey-text-text-darken-2">931.434.6992</p>
+              <a href="https://twitter.com/stucoston" target="_blank" style="display:inline-block;" class="waves-effect"><i class="grey-text fa fa-twitter margin-right center text-large"></i></a>
+              <a href="https://www.facebook.com/stu.coston" target="_blank" style="display:inline-block;" class="waves-effect"><i class="grey-text fa fa-facebook margin-right text-large"></i></a>
+              <a href="https://github.com/stucoston" target="_blank" style="display:inline-block;" class="waves-effect"><i class="grey-text fa fa-github margin-right center text-large"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoC0nCZfiP5ZeQV87f3CIC2taW6s1l_WIT8SuE2P2FlD-d2A/viewform" class="modal-action modal-close waves-effect waves-blue btn" target="_blank">REQUEST A QUOTE</a>
+          <a href="mailto:stu.coston@gmail.com" class="modal-action modal-close waves-effect waves-blue btn-flat hide">MESSAGE</a>
+        </div>
+      </div>
+      <!--close contactModal-->
+    </header>
+    
+    <div id="Slides">
+      <div id="hp" class="mySlides hp">
+      </div>
+      <div id="slide1" class="mySlides">
+        <div class="bgimg-1"></div>
+      </div>
+      <div id="slide2" class="mySlides">
+        <div class="bgimg-2"></div>
+      </div>
+      <div id="slide3" class="mySlides">
+        <div class="bgimg-3"></div>
+      </div>
+    </div>
+    <!-- close slides div -->
+    
+    <div id="themeSlides">
+      <div class="themeDiv" style="background-color: transparent; animation-delay: 0s;"></div>
+      <div class="themeDiv saltwaterColor2"></div>
+      <div class="themeDiv saltwaterColor3"></div>
+      <div class="themeDiv saltwaterColor1"></div>
+    </div>
+    <!-- close themeSlides div -->
+
+    <div id="numSlides">
+      <div class="pageNums"></div>
+      <div class="pageNums">
+        <svg>
+        <mask x="0" y="0" id="half">
+          <rect y="0" x="50%" fill="white" width="100%" height="100%" />
+        </mask>
+        <defs>
+          <pattern id="pathPattern" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
+            <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#555" fill="none" />
+          </pattern>
+        </defs>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="65vh" font-weight="600" fill="url(#pathPattern)">C</text>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="65vh" font-weight="600" mask="url(#half)" fill="#fff">C</text>
+       </svg>
+      </div>
+      <div class="pageNums">
+        <svg>
+        <mask x="0" y="0" id="half">
+          <rect y="0" x="50%" fill="white" width="50%" height="100%" />
+        </mask>
+        <defs>
+          <pattern id="pathPattern" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
+            <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#555" fill="none" />
+          </pattern>
+        </defs>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="65vh" font-weight="600" fill="url(#pathPattern)">T</text>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="65vh" font-weight="600" mask="url(#half)" fill="#fff">T</text>
+      </svg>
+      </div>
+      <div class="pageNums">
+        <svg>
+        <mask x="0" y="0" id="half">
+          <rect y="0" x="50%" fill="white" width="50%" height="100%" />
+        </mask>
+        <defs>
+          <pattern id="pathPattern" x="0" y="0" width="20" height="10" patternUnits="userSpaceOnUse">
+            <path d="M 0 5 Q 5 10 10 5 T 20 5" stroke="#555" fill="none" />
+          </pattern>
+        </defs>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="65vh" font-weight="600" fill="url(#pathPattern)">P</text>
+        <text x="50%" y="50%" alignment-baseline="middle" text-anchor="middle" font-size="65vh" font-weight="600" mask="url(#half)" fill="#fff">P</text>
+      </svg>
+      </div>
+    </div>
+    <!-- close numSlides div -->
+    
+    <div id="contentSlides">
+      <div class="content">
+        <div class="pageTitle hide-on-small-only hide-on-large-only" style="font-size: 7vw;font-weight: 600; line-height: 25px; animation-delay: 0s;">
+          SALTWATER
+          <br/>
+          <div style="padding: 2.5vw 0 2vw 0; font-size: 2.8vw; margin-left: 4px; font-weight: 300; letter-spacing: 1.7vw;">
+            digital studios
+          </div>
+        </div>
+        <!--close hid-on-small-only logo-->
+        <div class="pageTitle hide-on-med-and-up" style="font-size: 40px;font-weight: 600; line-height: 25px; animation-delay: 0s;">
+          SALTWATER
+          <br/>
+          <div style="padding: 2.5vw 0 2vw 0; font-size: 16px; margin-left: 4px; font-weight: 300; letter-spacing: 9.5px;">
+            digital studios
+          </div>
+        </div>
+        <!--close hid-on-med-and-up logo-->
+        <div class="pageTitle hide-on-med-and-down" style="font-size: 70px;font-weight: 600; line-height: 25px; animation-delay: 0s;">
+          SALTWATER
+          <br/>
+          <div style="padding: 2.5vw 0 2vw 0; font-size: 30px; margin-left: 4px; font-weight: 300; letter-spacing: 16.5px;">
+            digital studios
+          </div>
+        </div>
+        <!--close hid-on-med-and-down logo-->
+        <div class="pageTitleBorder" style="animation-delay: 0.1s;"></div>
+
+        <div class="pageContent sw-flow-text" style="width:60%">
+          <div class="padding-top">
+            <p>We design and develop web-</p>
+            <p>based products that</p>   
+            <p>personalize your</p>   
+            <p>online space.</p> 
+          </div>
+	</div>
+
+        <div id="sea" class="sea saltwaterColor1" style="opacity:0.6">
+          <svg class="ocean" style="position: absolute; width: 100%; height:41%;bottom:99%; left: 0%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="water" width=".25" height="2" patternContentUnits="objectBoundingBox">
+              <path fill="#20293F" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,0.5z"/>
+            </pattern>
+          </defs>  
+          <rect id="waves" class="water-fill" fill="url(#water)" width="3000"/> 
+        </svg>
+        </div>
+        <!-- close sea -->
+
+        <!--<svg id="land" class="oceanContent flow-text" style="width:60%; height:41%;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <text id="text-before" x="0" y="0" fill="#fff" font-family="'Montserrat'">
+          <tspan x=0 dy="12%">We design and develop</tspan>
+          <tspan x=0 dy="12%">custom, functional, and</tspan>
+          <tspan x=0 dy="12%">memorable websites as well </tspan>
+          <tspan x=0 dy="12%">as front-end products using</tspan>
+          <tspan x=0 dy="12%">HTML, CSS, and JavaScript.</tspan>
+        </text>
+        <defs>
+          <pattern id="water1" width=".25" height="2" patternContentUnits="objectBoundingBox">
+            <path id="water2" fill="#222" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,0.5z"/>
+          </pattern>
+		    
+          <text id="text" x="0" y="0" font-family="'Montserrat'" >
+            <tspan x=0 dy="12%">We design and develop</tspan>
+            <tspan x=0 dy="12%">custom, functional, and</tspan>
+            <tspan x=0 dy="12%">memorable websites as well </tspan>
+            <tspan x=0 dy="12%">as front-end products using</tspan>
+            <tspan x=0 dy="12%">HTML, CSS, and JavaScript.</tspan>
+          </text>
+    
+          <mask id="text_mask">
+            <use x="0" y="0" xlink:href="#text" opacity="1" fill="#fff"/>
+          </mask>
+        </defs>
+  
+        <rect class="water-fill2" mask="url(#text_mask)" fill="url(#water1)" width="3000"/>
+  
+      </svg>-->
+      </div>
+      <!--close content hp-->
+
+      <div class="content">
+        <div class="pageTitle hide-on-med-and-up text-xlarge padding-24">Components</div>
+        <h3 class="pageTitle hide-on-large-only hide-on-small-only">Components</h3>
+        <h1 class="pageTitle hide-on-med-and-down">Components</h1>
+        <div class="pageTitleBorder"></div>
+        <div class="pageContent sw-flow-text">
+          <a id="compBtn" class="btn-hollow hoverable waves-effect letter-space white-text" href="#!" onclick="openComp()">View</a>
+          <div class="hide-on-small-only padding-top">
+            <p>Add a little extra "umph" to</p>
+            <p>your site with some of our</p>
+            <p>individual components.</p>
+          </div>
+        </div>
+      </div>
+      <!--close component content-->
+
+      <div class="content">
+        <div class="pageTitle hide-on-med-and-up text-xlarge padding-24">Templates</div>
+        <h2 class="pageTitle hide-on-large-only hide-on-small-only">Templates</h2>
+        <h1 class="pageTitle hide-on-med-and-down">Templates</h1>
+        <div class="pageTitleBorder"></div>
+        <div class="pageContent sw-flow-text">
+          <a id="tempBtn" class="btn-hollow letter-space hoverable waves-effect white-text" href="#!" onclick="openTemp()">View</a>
+          <div class="hide-on-small-only padding-top">
+            <p>Check out our templates<p/>
+            <p>to get an idea of what</p>
+            <p>we can create for you.</p>
+          </div>
+        </div>
+      </div>
+      <!--close template content-->
+
+      <div class="content">
+        <div class="pageTitle hide-on-med-and-up text-xlarge padding-24">Projects</div>
+        <h2 class="pageTitle hide-on-large-only hide-on-small-only">Projects</h2>
+        <h1 class="pageTitle hide-on-med-and-down">Projects</h1>
+        <div class="pageTitleBorder"></div>
+        <div class="pageContent sw-flow-text">
+          <a id="projBtn" class="btn-hollow letter-space hoverable hoverableBlue waves-effect white-text" href="#!" onclick="openProj()">View</a>
+          <div class="hide-on-small-only padding-top">
+            <p>We keep the details of all of our</p>
+            <p>completed projects so you can</p>
+            <p>see how we created them.</p>
+          </div>
+        </div>
+      </div>
+      <!--close project content-->
+    </div>
+    <!-- close contentSlides div -->
+
+    <div id="pageNavigation">
+      <a class="hide-on-small-only pageup waves-effect waves-circle" onclick="plusDivs(-1)"><img src="img/arrow.png" style="height: 30px; z-index:9000; -webkit-filter: invert(100%); /* Safari */ filter: invert(100%);"></a>
+      <a class="hide-on-small-only pagedown waves-effect waves-circle rotate180" onclick="plusDivs(1)"><img src="img/arrow.png" style="height: 30px; z-index:10; -webkit-filter: invert(100%); /* Safari */ filter: invert(100%);"></a>
+      <div id="paginationSlides">
+        <div class="sw-pagination" style="opacity:0"></div>
+        <div class="sw-pagination">
+          <div class="activePage" onclick="currentDiv(2)">C</div>
+          <div class="inactivePage" onclick="currentDiv(3)">T</div>
+          <div class="inactivePage" onclick="currentDiv(4)">P</div>
+        </div>
+        <div class="sw-pagination">
+          <div class="inactivePage" onclick="currentDiv(2)">C</div>
+          <div class="activePage" onclick="currentDiv(3)">T</div>
+          <div class="inactivePage" onclick="currentDiv(4)">P</div>
+        </div>
+        <div class="sw-pagination">
+          <div class="inactivePage" onclick="currentDiv(2)">C</div>
+          <div class="inactivePage" onclick="currentDiv(3)">T</div>
+          <div class="activePage" onclick="currentDiv(4)">P</div>
+        </div>
+      </div>
+    </div>
+    <!-- close pageNavigation slides div -->
+    
+  </div>
+  <!-- close site div -->
+  
+  <div id="details">
+
+    <div id="ViewComponents" class="grey lighten-2 detail-right detail-right-off">
+      <div style="width: 10%; height:100%; position:fixed; background-color:white;z-index:-1; margin-top:-220px;"></div>
+      <ul class="black-text flow-text">
+        <li class="colNum" onmouseover="currentcItem(1)"><pre>01&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 1</pre></li>
+        <li class="colNum" onmouseover="currentcItem(2)"><pre>02&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 2</pre></li>
+        <li class="colNum" onmouseover="currentcItem(3)"><pre>03&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 3</pre></li>
+        <li class="colNum" onmouseover="currentcItem(4)"><pre>04&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 4</pre></li>
+        <li class="colNum" onmouseover="currentcItem(5)"><pre>05&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 5</pre></li>
+        <li class="colNum" onmouseover="currentcItem(6)"><pre>06&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Component 6</pre></li>
+      </ul>
+      <!--close row-->
+    </div>
+    <!--close ViewComponents-->
+    
+    <div id="ViewCItems" class="black black-text flow-text detail-left detail-left-off">
+      <div class="hide-on-med-and-up white black-text text-xxxlarge padding padding-bottom padding-128 droid"><b><em>Components</em></b></div>
+      <div id="cDetailItem1" class="cItem saltwaterColor4 padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">01</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--cDetailItem1 -->
+      <div id="cDetailItem2" class="cItem saltwaterColor3 padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">02</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--cDetailItem2 -->
+      <div id="cDetailItem3" class="cItem blue-grey padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">03</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--cDetailItem3 -->
+      <div id="cDetailItem4" class="cItem light-blue padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">04</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--cDetailItem4 -->
+      <div id="cDetailItem5" class="cItem purple padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">05</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--cDetailItem5 -->
+      <div id="cDetailItem6" class="cItem orange padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">06</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Component</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--cDetailItem6 -->
+    </div>
+    <!--close ViewCItems-->
+    
+    <div id="ViewTemplates" class="grey lighten-1 detail-right detail-right-off">
+      <div style="width: 10%; height:100%; position:fixed; background-color:white;z-index:-1; margin-top:-220px;">
+      </div>
+      <ul class="black-text flow-text">
+        <li class="colNum" onmouseover="currenttItem(1)"><pre>01&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Template 1</pre></li>
+        <li class="colNum" onmouseover="currenttItem(2)"><pre>02&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Template 2</pre></li>
+        <li class="colNum" onmouseover="currenttItem(3)"><pre>03&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Template 3</pre></li>
+        <li class="colNum" onmouseover="currenttItem(4)"><pre>04&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Template 4</pre></li>
+        <li class="colNum" onmouseover="currenttItem(5)"><pre>05&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Template 5</pre></li>
+        <li class="colNum" onmouseover="currenttItem(6)"><pre>06&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Template 6</pre></li>
+      </ul>
+      <!--close row-->
+    </div>
+    <!--close ViewTemplates-->
+    
+    <div id="ViewTItems" class="black black-text flow-text detail-left detail-left-off">
+      <div class="hide-on-med-and-up white black-text text-xxxlarge padding padding-bottom padding-128 droid"><b><em>Templates</em></b></div>
+      <div id="tDetailItem1" class="tItem saltwaterColor4 padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">01</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Template</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--tDetailItem1 -->
+      <div id="tDetailItem2" class="tItem saltwaterColor3 padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">02</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Template</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--tDetailItem2 -->
+      <div id="tDetailItem3" class="tItem blue-grey padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">03</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Template</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--tDetailItem3 -->
+      <div id="tDetailItem4" class="tItem light-blue padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">04</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Template</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--tDetailItem4 -->
+      <div id="tDetailItem5" class="tItem purple padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">05</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Template</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--tDetailItem5 -->
+      <div id="tDetailItem6" class="tItem orange padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">06</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Template</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--tDetailItem6 -->
+    </div>
+    <!--close ViewTItems-->
+
+    <div id="ViewProjects" class="grey lighten-1 detail-right detail-right-off">
+      <div style="width: 10%; height:100%; position:fixed; background-color:white;z-index:-1; margin-top:-220px;">
+      </div>
+      <ul class="black-text flow-text">
+        <li class="colNum" onmouseover="currentpItem(1)"><pre>01&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>Coston Mission</pre></li>
+        <li class="colNum" onmouseover="currentpItem(2)"><pre>02&#9;&#9;<span class="hide-on-med-and-down">&#9;&#9;</span>CM Online Mag</pre></li>
+      </ul>
+      <!--close row-->
+    </div>
+    <!--close ViewProjects-->
+    
+    <div id="ViewPItems" class="black black-text flow-text detail-left detail-left-off">
+      <div class="hide-on-med-and-up white black-text text-xxxlarge padding padding-bottom padding-128 droid"><b><em>Projects</em></b></div>
+      <div id="pDetailItem1" class="pItem saltwaterColor4 padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">01</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Project</b></div>
+            <div class="detailTitleBorder"></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--pDetailItem1 -->
+      <div id="pDetailItem2" class="pItem saltwaterColor3 padding">
+        <div class="valign-wrapper">
+          <div class="valign">
+            <div class="text-jumbo right padding margin overlay grey-text text-darken-2 hide-on-small-only">02</div>
+	          <div class="detailTitle text-xxlarge padding-24"><b>Project</b></div>
+            <div class="detailContent sw-flow-text">
+              <a id="detailBtn" class="btn-hollow hoverable waves-effect letter-space black-text" href="#!" onclick="openComp()">View</a>
+              <div class="padding-16">Add a little extra "umph" to your site with some of our individual components.</div>
+            </div>
+          </div><!-- close valign -->
+        </div><!-- close valign-wrapper -->
+      </div>
+      <!--pDetailItem2 -->
+    </div>
+    <!--close ViewPItems-->
+
+  </div>
+  <!-- close details div -->
+
+  <script>
+    var myVar;
+      function myLoader() {
+          myVar = setTimeout(showPage, 0);
+      }
+      function showPage() {
+        document.getElementById("waterLoader").style.display = "none";
+        document.getElementById("site").style.display = "block";
+      }
+  </script>
+  <!--close loader script-->
+
+  <script>
+    // change slides script
+    // ==================================================
+      var paginationIndex = 1,
+          contentIndex = 1,
+          numsIndex = 1,
+          themeIndex = 1,
+          slideIndex = 1,
+          vc = document.getElementById('ViewComponents');
+    
+      showDivs(slideIndex);
+      showTheme(themeIndex);
+      showPageNums(numsIndex);
+      showContent(contentIndex);
+      showPagination(paginationIndex);
+    
+      function plusDivs(n) {
+        if(slideIndex == 1){
+          transTheme(themeIndex);
+          setTimeout(function(){ showDivs(slideIndex += n); }, 1230);
+          setTimeout(function(){ showPagination(paginationIndex += n); }, 1230);
+          setTimeout(function(){ showTheme(themeIndex += n); }, 2000);
+          setTimeout(function(){ showPageNums(numsIndex += n); }, 2000);
+          setTimeout(function(){ showContent(contentIndex += n); }, 2200);
+        } 
+        else {
+          transTheme(themeIndex);
+          setTimeout(function(){ showDivs(slideIndex += n); }, 230);
+          setTimeout(function(){ showPagination(paginationIndex += n); }, 230);
+          setTimeout(function(){ showTheme(themeIndex += n); }, 1000);
+          setTimeout(function(){ showPageNums(numsIndex += n); }, 1000);
+          setTimeout(function(){ showContent(contentIndex += n); }, 1200);
+        }
+      }
+    
+      function currentDiv(n){
+        transTheme(themeIndex);
+        setTimeout(function(){ showDivs(slideIndex = n); }, 230);
+        setTimeout(function(){ showPagination(paginationIndex = n);}, 230);
+        setTimeout(function(){ showTheme(themeIndex = n); }, 1000);
+        setTimeout(function(){ showPageNums(numsIndex = n); }, 1000);
+        setTimeout(function(){ showContent(contentIndex = n); }, 1200);
+      }
+    
+      function transTheme(n) {
+        var sea = document.getElementById("sea");
+       // var water2 = document.getElementById("water2");
+       // var waves = document.getElementById("waves");
+        var pn = document.getElementsByClassName("pageNums");
+        var td = document.getElementsByClassName("themeDiv");
+        var c = document.getElementsByClassName("content");
+        if(slideIndex == 1){
+          sea.className = sea.className.replace('sea saltwaterColor1', 'sea2 saltwaterColor1');
+        //  waves.style.animationDelay = "0.95s";
+        //  water2.style.fill = "#fff";
+          setTimeout(function(){ 
+            pn[themeIndex-1].style.display = "none";
+            td[themeIndex-1].style.transition = "1s";
+            td[themeIndex-1].style.left = "100%";
+            c[themeIndex-1].style.display = "none";}, 
+          1000);
+        }
+        else {
+        //  water2.style.fill = "#222";
+          pn[themeIndex-1].style.display = "none";
+          td[themeIndex-1].style.transition = "1s";
+          td[themeIndex-1].style.left = "100%";
+          c[themeIndex-1].style.display = "none";
+        }
+      }
+    
+      function showDivs(n) {
+        var sea = document.getElementById("sea");
+        var id;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = x.length}
+        for (id = 0; id < x.length; id++) {
+           x[id].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+        sea.className = sea.className.replace('sea2 saltwaterColor1', 'sea saltwaterColor1');
+      }
+    
+      function showTheme(n) {
+        var it;
+        var td = document.getElementsByClassName("themeDiv");
+        if (n > td.length) {themeIndex = 1}    
+        if (n < 1) {themeIndex = td.length}
+        for (it = 0; it < td.length; it++) {
+           td[it].style.display = "none";
+        }
+        td[themeIndex-1].style.transition = "0.5s";
+        td[themeIndex-1].style.display = "block";
+        td[themeIndex-1].style.left = "-100%";
+        setTimeout(function(){ td[themeIndex-1].style.left = "-50%"; }, 50);
+      }
+    
+      function showPageNums(n) {
+        var inum;
+        var pn = document.getElementsByClassName("pageNums");
+        if (n > pn.length) {numsIndex = 1}    
+        if (n < 1) {numsIndex = pn.length}
+        for (inum = 0; inum < pn.length; inum++) {
+           pn[inum].style.display = "none";
+        }
+        pn[numsIndex-1].style.display = "block";
+      }
+    
+      function showContent(n) {
+        var ic;
+        var c = document.getElementsByClassName("content");
+        if (n > c.length) {contentIndex = 1}    
+        if (n < 1) {contentIndex = c.length}
+        for (ic = 0; ic < c.length; ic++) {
+           c[ic].style.display = "none";
+        }
+        c[contentIndex-1].style.display = "block";
+      }
+    
+      function showPagination(n) {
+        var ip;
+        var p = document.getElementsByClassName("sw-pagination");
+        if (n > p.length) {paginationIndex = 1}    
+        if (n < 1) {paginationIndex = p.length}
+        for (ip = 0; ip < p.length; ip++) {
+           p[ip].style.display = "none";
+        }
+        p[paginationIndex-1].style.display = "block";
+      }
+      	
+      //enable touch events to change slides
+      // ==================================================
+      window.addEventListener('load', function(){
+          var el = document.getElementById('body')
+          var hidetimer = null
+          
+          swipedetect(el, function(swipedir){
+            if (swipedir != 'none'){
+                  clearTimeout(hidetimer)
+                  plusDivs(swipedir)
+              }
+          })
+          
+      }, false)
+                              
+          function swipedetect(el, callback){
+            
+          var touchsurface = el,
+              swipedir,
+              startX,
+              startY,
+              distX,
+              distY,
+              threshold = 60, //required min distance traveled to be considered swipe
+              restraint = 30, // maximum distance allowed at the same time in perpendicular direction
+              allowedTime = 700, // maximum time allowed to travel that distance
+              elapsedTime,
+              startTime,
+              handleswipe = callback || function(swipedir){}
+        
+            touchsurface.addEventListener('touchstart', function(e){
+              var touchobj = e.changedTouches[0]
+              var vc = document.getElementById('ViewComponents')
+              var vt = document.getElementById('ViewTemplates')
+              var vp = document.getElementById('ViewProjects')
+              swipedir = 'none'
+              dist = 0
+              startX = touchobj.pageX
+              startY = touchobj.pageY
+              startTime = new Date().getTime() // record time when finger first makes contact with surface
+             
+		          if ((vc.className.indexOf('detail-right-off') > -1) && (vt.className.indexOf('detail-right-off') > -1) && (vp.className.indexOf('detail-right-off') > -1)) {
+                e.preventDefault() // prevent scrolling when inside DIV
+              }
+          }, false)
+        
+          touchsurface.addEventListener('touchmove', function(e){
+            var vc = document.getElementById('ViewComponents')
+            var vt = document.getElementById('ViewTemplates')
+            var vp = document.getElementById('ViewProjects')
+		        if ((vc.className.indexOf('detail-right-off') > -1) && (vt.className.indexOf('detail-right-off') > -1) && (vp.className.indexOf('detail-right-off') > -1)) {
+              e.preventDefault() // prevent scrolling when inside DIV
+            }
+          }, false)
+        
+          touchsurface.addEventListener('touchend', function(e){
+              var touchobj = e.changedTouches[0]
+	            var vc = document.getElementById('ViewComponents')
+              var vt = document.getElementById('ViewTemplates')
+              var vp = document.getElementById('ViewProjects')
+              distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+              distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+              elapsedTime = new Date().getTime() - startTime // get time elapsed
+              if (elapsedTime <= allowedTime){ // first condition for awipe met
+                  if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+                      swipedir = (distX < 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
+                  }
+                  else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+                      swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
+                  }
+              }
+	      if ((vc.className.indexOf('detail-right-off') != -1) && (vt.className.indexOf('detail-right-off') > -1) && (vp.className.indexOf('detail-right-off') > -1)) {
+                handleswipe(swipedir)
+                e.preventDefault()
+	      }
+          }, false)
+      	//continue to trigger click event from the target of any touch event at the document level
+      	$(window).on('touchend', function(e){
+      		$(e.target).trigger('click');
+      	});
+      
+          }
+  </script>
+  <!--close change slides script-->
+
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  <script>
+    // side navigation open and close operation
+    // ====================================================
+    function openNav() {
+      var x = document.getElementById('menu-container');
+      var y = document.getElementById('sw-sideNav-overlay');
+      var z = document.getElementById('sw-sideNav');
+      
+      if (x.className.indexOf('is-menu-open') == -1) {
+        x.className += ' is-menu-open circle saltwaterColor4';
+        y.className = y.className.replace(' hide', ' show-on-med-and-down');
+        z.style.right = '80px';
+      
+      } else {
+        x.className = x.className.replace(' is-menu-open circle saltwaterColor4', '');
+        y.className = y.className.replace(' show-on-med-and-down', ' hide');
+        z.style.right = '-250px';
+      }
+    }
+    
+    // go back to original slideset
+    // ====================================================
+    function goBack(){
+      var p = document.getElementById('ViewProjects'),
+          t = document.getElementById('ViewTemplates'),
+          c = document.getElementById('ViewComponents');
+      
+      if (p.className.indexOf('detail-right-off') == -1) {
+          openProj();
+      }
+      if (t.className.indexOf('detail-right-off') == -1) {
+          openTemp();
+      }
+      if (c.className.indexOf('detail-right-off') == -1) {
+          openComp();
+      }
+    }
+    // open details
+    // ====================================================
+    function openComp() {
+      var x = document.getElementById('ViewComponents'),
+          p = document.getElementById('ViewProjects'),
+          t = document.getElementById('ViewTemplates'),
+          ci = document.getElementsByClassName("cItem"),
+          b0 = $(".menu-container .bars span")[0],
+          b1 = $(".menu-container .bars span")[1],
+          b2 = $(".menu-container .bars span")[2],
+          ob = $(".menu-container .bars .other-bar")[0],
+          vl = document.getElementById('ViewCItems'),
+          tl = document.getElementById('ViewTItems'),
+          pl = document.getElementById('ViewPItems'),
+          ra = document.getElementById('returnArrow'),
+          ST1 = document.getElementById('ST1'),
+          ST2 = document.getElementById('ST2'),
+          y = document.getElementById('pageNavigation');
+      
+      if (x.className.indexOf('detail-right-off') == -1) {
+        x.className += ' detail-right-off';
+        vl.className += ' detail-left-off';
+        y.className = 'show';
+        ra.className = ra.className.replace(' inline',' hide');
+        ST1.className = ST1.className.replace(' hide',' hide-on-med-and-up');
+        ST2.className = ST2.className.replace(' inline',' hide-on-small-only');
+        ST2.style.color = 'white';
+        b0.style.backgroundColor = "white";
+        b1.style.backgroundColor = "white";
+        b2.style.backgroundColor = "white";
+        ob.style.backgroundColor = "white";
+      } else {
+        
+        if (p.className.indexOf('detail-right-off') == -1) {
+          p.className += ' detail-right-off';
+          pl.className += ' detail-left-off';
+        
+        }
+        if (t.className.indexOf('detail-right-off') == -1) {
+          t.className += ' detail-right-off';
+          tl.className += ' detail-left-off';
+        }
+        
+        x.className = x.className.replace(' detail-right-off', '');
+        vl.className = vl.className.replace(' detail-left-off', '');
+        y.className = 'hide';
+        ra.className = ra.className.replace(' hide',' inline');
+        ST1.className = ST1.className.replace(' hide-on-med-and-up',' hide');
+        ST2.className = ST2.className.replace(' hide-on-small-only',' inline');
+        ST2.style.color = 'black';
+        b0.style.backgroundColor = "black";
+        b1.style.backgroundColor = "black";
+        b2.style.backgroundColor = "black";
+        ob.style.backgroundColor = "black";
+        currentcItem(1);  
+      }
+    }
+    
+    function openTemp() {
+      var x = document.getElementById('ViewTemplates'),
+          p = document.getElementById('ViewProjects'),
+          c = document.getElementById('ViewComponents'),
+          ci = document.getElementsByClassName("tItem"),
+          b0 = $(".menu-container .bars span")[0],
+          b1 = $(".menu-container .bars span")[1],
+          b2 = $(".menu-container .bars span")[2],
+          ob = $(".menu-container .bars .other-bar")[0],
+          vl = document.getElementById('ViewTItems'),
+          cl = document.getElementById('ViewCItems'),
+          pl = document.getElementById('ViewPItems'),
+          ra = document.getElementById('returnArrow'),
+          ST1 = document.getElementById('ST1'),
+          ST2 = document.getElementById('ST2'),
+          y = document.getElementById('pageNavigation');
+      
+      if (x.className.indexOf('detail-right-off') == -1) {
+        x.className += ' detail-right-off';
+        vl.className += ' detail-left-off';
+        y.className = 'show';
+        ra.className = ra.className.replace(' inline',' hide');
+        ST1.className = ST1.className.replace(' hide',' hide-on-med-and-up');
+        ST2.className = ST2.className.replace(' inline',' hide-on-small-only');
+        ST2.style.color = 'white';
+        b0.style.backgroundColor = "white";
+        b1.style.backgroundColor = "white";
+        b2.style.backgroundColor = "white";
+        ob.style.backgroundColor = "white";
+      } else {
+        
+        if (p.className.indexOf('detail-right-off') == -1) {
+          p.className += ' detail-right-off';
+          pl.className += ' detail-left-off';
+        
+        }
+        if (c.className.indexOf('detail-right-off') == -1) {
+          c.className += ' detail-right-off';
+          cl.className += ' detail-left-off';
+        }
+        
+        x.className = x.className.replace(' detail-right-off', '');
+        vl.className = vl.className.replace(' detail-left-off', '');
+        y.className = 'hide';
+        ra.className = ra.className.replace(' hide',' inline');
+        ST1.className = ST1.className.replace(' hide-on-med-and-up',' hide');
+        ST2.className = ST2.className.replace(' hide-on-small-only',' inline');
+        ST2.style.color = 'black';
+        b0.style.backgroundColor = "black";
+        b1.style.backgroundColor = "black";
+        b2.style.backgroundColor = "black";
+        ob.style.backgroundColor = "black";
+        currenttItem(1);  
+      }
+    }
+    
+    function openProj() {
+      var x = document.getElementById('ViewProjects'),
+          c = document.getElementById('ViewComponents'),
+          t = document.getElementById('ViewTemplates'),
+          ci = document.getElementsByClassName("pItem"),
+          b0 = $(".menu-container .bars span")[0],
+          b1 = $(".menu-container .bars span")[1],
+          b2 = $(".menu-container .bars span")[2],
+          ob = $(".menu-container .bars .other-bar")[0],
+          vl = document.getElementById('ViewPItems'),
+          cl = document.getElementById('ViewCItems'),
+          tl = document.getElementById('ViewTItems'),
+          ra = document.getElementById('returnArrow'),
+          ST1 = document.getElementById('ST1'),
+          ST2 = document.getElementById('ST2'),
+          y = document.getElementById('pageNavigation');
+      
+      if (x.className.indexOf('detail-right-off') == -1) {
+        x.className += ' detail-right-off';
+        vl.className += ' detail-left-off';
+        y.className = 'show';
+        ra.className = ra.className.replace(' inline',' hide');
+        ST1.className = ST1.className.replace(' hide',' hide-on-med-and-up');
+        ST2.className = ST2.className.replace(' inline',' hide-on-small-only');
+        ST2.style.color = 'white';
+        b0.style.backgroundColor = "white";
+        b1.style.backgroundColor = "white";
+        b2.style.backgroundColor = "white";
+        ob.style.backgroundColor = "white";
+      } else {
+        
+        if (t.className.indexOf('detail-right-off') == -1) {
+          t.className += ' detail-right-off';
+          tl.className += ' detail-left-off';
+        
+        }
+        if (c.className.indexOf('detail-right-off') == -1) {
+          c.className += ' detail-right-off';
+          cl.className += ' detail-left-off';
+        }
+        
+        x.className = x.className.replace(' detail-right-off', '');
+        vl.className = vl.className.replace(' detail-left-off', '');
+        y.className = 'hide';
+        ra.className = ra.className.replace(' hide',' inline');
+        ST1.className = ST1.className.replace(' hide-on-med-and-up',' hide');
+        ST2.className = ST2.className.replace(' hide-on-small-only',' inline');
+        ST2.style.color = 'black';
+        b0.style.backgroundColor = "black";
+        b1.style.backgroundColor = "black";
+        b2.style.backgroundColor = "black";
+        ob.style.backgroundColor = "black";
+        currentpItem(1);  
+      }
+    }
+    
+    
+    // change detailSlides
+    // ====================================================
+    var cItemIndex = 1,
+        tItemIndex = 1,
+        pItemIndex = 1;
+      
+      // component detail slides
+      // ==================================================
+      function currentcItem(n){
+        cShowItem(cItemIndex = n);
+      }
+    
+      function cShowItem(n) {
+              var i;
+              var ci = document.getElementsByClassName("cItem");
+              if (n > ci.length) {cItemIndex = 1}    
+              if (n < 1) {cItemIndex = ci.length}
+              for (i = 0; i < ci.length; i++) {
+                var mq = window.matchMedia( "(min-width: 510px)" );
+                  if (mq.matches) {
+                    // window width is at least 510px
+                    setTimeout(function(){ci[i].style.display = "none";}, 500);
+                    ci[i].style.transition = "0.5s";
+		                ci[i].style.opacity = 0;
+                    ci[i].style.position = "absolute";
+                  } else {
+                    ci[i].style.display = "block";
+                    ci[i].style.opacity = 1;
+                    ci[i].style.position = "relative";
+                  }
+                
+              }
+                ci[cItemIndex-1].style.display = "block";
+                ci[cItemIndex-1].style.opacity = 1;
+            }
+    
+      // template detail slides
+      // ==================================================
+      function currenttItem(n){
+        tShowItem(tItemIndex = n);
+      }
+    
+      function tShowItem(n) {
+              var i;
+              var ti = document.getElementsByClassName("tItem");
+              if (n > ti.length) {tItemIndex = 1}    
+              if (n < 1) {tItemIndex = ti.length}
+              for (i = 0; i < ti.length; i++) {
+                var mq = window.matchMedia( "(min-width: 510px)" );
+                  if (mq.matches) {
+                    // window width is at least 510px
+                    setTimeout(function(){ti[i].style.display = "none";}, 500);
+                    ti[i].style.transition = "0.5s";
+		                ti[i].style.opacity = 0;
+                    ti[i].style.position = "absolute";
+                  } else {
+                    ti[i].style.display = "block";
+                    ti[i].style.opacity = 1;
+                    ti[i].style.position = "relative";
+                  }
+                
+              }
+                ti[tItemIndex-1].style.display = "block";
+                ti[tItemIndex-1].style.opacity = 1;
+            }
+      
+      // project detail slides
+      // ==================================================
+      function currentpItem(n){
+        pShowItem(pItemIndex = n);
+      }
+    
+      function pShowItem(n) {
+              var i;
+              var pi = document.getElementsByClassName("pItem");
+              if (n > pi.length) {pItemIndex = 1}    
+              if (n < 1) {pItemIndex = pi.length}
+              for (i = 0; i < pi.length; i++) {
+                var mq = window.matchMedia( "(min-width: 510px)" );
+                  if (mq.matches) {
+                    // window width is at least 510px
+                    setTimeout(function(){pi[i].style.display = "none";}, 500);
+                    pi[i].style.transition = "0.5s";
+		                pi[i].style.opacity = 0;
+                    pi[i].style.position = "absolute";
+                  } else {
+                    pi[i].style.display = "block";
+                    pi[i].style.opacity = 1;
+                    pi[i].style.position = "relative";
+                  }
+                
+              }
+                pi[pItemIndex-1].style.display = "block";
+                pi[pItemIndex-1].style.opacity = 1;
+            }
+    
+    // scroll mousewheel to change slides
+    // ====================================================
+    $('#site').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+       if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+        //scroll down
+        plusDivs(-1);
+        
+      } else {
+        
+        //scroll up
+        plusDivs(1);
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+  <script>
+    // modal materialize plug-in 
+    // ==================================================
+    $('.modal').modal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      inDuration: 300, // Transition in duration
+      outDuration: 200, // Transition out duration
+    });
+  </script>
+
+</body>
+
+</html>
