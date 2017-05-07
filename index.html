@@ -893,6 +893,20 @@ a:hover hr {
     display: block !important;
   }
   
+  .os-item .overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 48px;
+    top: 0;
+    z-index: 2;
+    background: transparent; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(white 15%, transparent, white 15%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white 15%, transparent, white 15%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white 15%, transparent, white 15%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white 15%, transparent, white 15%); /* Standard syntax */
+  }
+  
   .next-slide {
     height: 40px;
     width: 17px;
@@ -1521,6 +1535,7 @@ a:hover hr {
               <h2 class="thin center"><a href="/" target="_blank">code<hr/></a></h2>
             </div>
           </div>
+          <div class="overlay"></div>
         </div>
         
         <div class="os-item">
@@ -1535,6 +1550,7 @@ a:hover hr {
               <h2 class="thin center"><a href="/" target="_blank">code<hr/></a></h2>
             </div>
           </div>
+          <div class="overlay"></div>
         </div>
         
       </div>
