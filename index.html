@@ -1358,9 +1358,6 @@ a:hover hr {
   .h-bottom-words p {
     font-size: 16px;
   }
-  hr {
-    display: none;
-  }
 }
 @media only screen and (min-width: 551px) {
   .hide-on-med-and-up {
@@ -1391,9 +1388,6 @@ a:hover hr {
     text-align: left;
     width: 300px;
   }
-  hr {
-    display: none;
-  }
 }
 @media only screen and (min-width: 901px) {
   .item-title {
@@ -1406,9 +1400,6 @@ a:hover hr {
   .h-top-words p,
   .h-bottom-words p {
     font-size: 26px;
-  }
-  hr {
-    display: block;
   }
 }
 </style>
@@ -2686,11 +2677,13 @@ $('#p1d, #p2d, #p3d').scroll(function(event){
 		 
 	  document.getElementById('touch-proj-instruction').style.display = 'block';
     document.getElementById('mouse-proj-instruction').style.display = 'none'; 
+    $("hr").style.display = 'none';
 	
 	} else {
 		
 		document.getElementById('touch-proj-instruction').style.display = 'none';
     document.getElementById('mouse-proj-instruction').style.display = 'block';
+    $("hr").style.display = 'block';
 		
 	}
 		 
