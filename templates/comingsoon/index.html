@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<title>Designer Stu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://raw.githubusercontent.com/stucoston/saltwater/master/img/Screenshot%202017-04-24%20at%2010.png"/>
+<link rel="stylesheet" href="https://rawgit.com/stucoston/css/master/stu.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Libre+Franklin" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+  body, 
+  html {
+    min-height: 100vh;
+    margin:0px;
+    padding:0;
+    overflow:hidden;
+    border:1px solid white;
+  }
+  
+  .droid {
+    font-family:droid, georgia, times;
+  }
+</style>
+
+<body>
+
+  <div id="hp" class="mySlides hp" style="z-index:15000;">
+    <div class="center middle" style="width:80%; max-width:500px;z-index:10000;">
+	    
+      <div class="animate-opacity-long" style="font-size: 40px;font-weight: 600; line-height: 25px;">YOUR TITLE</div>
+      <div class="animate-opacity-long" style="padding:0; font-size: 16px; font-weight: 300; letter-spacing: 9.5px;">tagline</div>
+
+      <div class="animate-opacity">
+        <div class="letter-space text-large padding-16">// PAGE NAME //</div>
+        <div class="text-xlarge droid"><em>Coming Soon</em></div>
+
+        <div class="row">
+          <form id="gform" method="POST" class="col s12" action="https://script.google.com/macros/s/AKfycbyvShGjFyLjcjhyLKEunKZ-p4_G9D9jqAsG3vt5PFdMZp-23hdG/exec">
+          <!-- change the form action to your script url -->
+            <div class="row">
+              <div class="col s6 input-field left-align">
+                <label for="name" class="active">Name: </label>
+                <input id="name" type="text" class="validate" name="name" />
+              </div>
+            
+              <!--<fieldset class="pure-group">
+                <label for="message">Message: </label>
+                <textarea id="message" name="message" rows="10" placeholder="Tell us what's on your mind..."></textarea>
+              </fieldset>-->
+            
+              <div class="col s6 input-field left-align">
+                <label for="email" class="active">Email: </label>
+                <input id="email" name="email" type="email" class="validate" value="" required />
+                <span id="email-invalid" style="visibility:hidden">Must be a valid email address</span>
+              </div>
+            
+              <!--<fieldset class="pure-group">
+                <label for="color">Favourite Color: </label>
+                <input id="color" name="color" placeholder="green" />
+              </fieldset>-->
+              <a class="col s6 offset-s0 m4 offset-m1 btn-hollow white-text" href="https://rawgit.com/stucoston/saltwater/master/home.html">HOMEPAGE</a>
+              <button class="col s4 offset-s7 btn white-text" style="margin-top:-35px">Submit</button>
+	    </div>
+          </form>
+		
+		<!-- Customise the Thankyou Message People See when they submit the form: -->
+                <div style="display:none;" id="thankyou_message">
+			<div class="droid padding text-large"><div class="text-xlarge"><em>Thanks!</em></div>Keep an eye out for updates about site availability.</div>
+		</div>
+		
+        </div>
+      </div>
+      <!--close section-->
+
+      <!--<form action="https://docs.google.com/forms/d/e/1FAIpQLScoRhBpQhyn8_LehSduKVhXWmTMsy7qj5N0ZdPxxuZMzSntpg/formResponse"-->
+        <!--<input type="email" class="quantumWizTextinputPaperinputInput exportInput" jsname="YPqjbf" autocomplete="email" tabindex="0" aria-label="Your email" name="emailAddress" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value="">-->
+                          
+
+    <div class="text-small center animate-opacity-long">This site is currenty under water. Please come back later. We are expecting it to be up and running very soon.</div>
+  </div>
+  <!--close center middle-->
+
+  <div id="sea" class="sea saltwaterColor1">
+    <svg class="ocean" style="position: absolute; width: 100%; height:30%;bottom:99%; left: 0%; opacity:0.5;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="water" width=".25" height="2" patternContentUnits="objectBoundingBox">
+            <path fill="#7accc8" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,0.5z"/>
+          </pattern>
+        </defs> 
+        <rect id="waves" class="water-fill" fill="url(#water)" width="3000"/> 
+      </svg>
+  </div>
+  <!-- close sea -->
+  </div>
+  <!--close hp-->
+
+  <script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+  <script>
+    //
+    //
+    // materialize plugins
+    //
+    //
+	  
+    $(document).ready(function() {
+      Materialize.updateTextFields();
+    });
+	  
+    //
+    //
+    // end materialize plugins
+    //
+    //
+  </script>
+  <!--close materialize plugins-->
+
+  
+  
+</body>
+
+</html>
