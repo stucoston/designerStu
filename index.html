@@ -1790,12 +1790,13 @@ a:hover hr {
     <div id="temp-page-wrap" class="page-wrapper">
       <div class="page-content relative">
         <div class="middle full-width">
+        
           <!-- Template Slide 1 -->
           <!-- ===================================== -->
           <div class="template-slide">
             <div class="row">
               <div class="col s12">
-                <h4 class="caps">Triangle Portfolio<span class="thin">&nbsp;&nbsp;|&nbsp;&nbsp;may 2017</span></h4>
+                <h4 class="caps">Triangle Portfolio<span class="thin">&nbsp;&nbsp;|&nbsp;&nbsp;march 2017</span></h4>
               </div>
               <div class="col s12">
                 <a href="http://www.designerstu.com/templates/portfolio1/index.html" target="_blank">
@@ -1804,12 +1805,34 @@ a:hover hr {
               </div>
               <div class="col s12">
                 <h4>
-		          <a class="thin border" style="padding: 4px 16px;" href="http://www.designerstu.com/templates/portfolio1/index.html" target="_blank">demo</a>
+		              <a class="thin border" style="padding: 4px 16px;" href="http://www.designerstu.com/templates/portfolio1/index.html" target="_blank">demo</a>
                   <span style="margin-left: 24px;"><a class="thin border" style="padding: 4px 16px;" href="https://github.com/stucoston/stucoston.github.io/blob/master/templates/portfolio1/index.html" target="_blank">code</a></span>
                 </h4>
               </div>
             </div>
           </div>
+          
+          <!-- Template Slide 2 -->
+          <!-- ===================================== -->
+          <div class="template-slide">
+            <div class="row">
+              <div class="col s12">
+                <h4 class="caps">Coming Soon Page<span class="thin">&nbsp;&nbsp;|&nbsp;&nbsp;may 2017</span></h4>
+              </div>
+              <div class="col s12">
+                <a href="http://www.designerstu.com/templates/comingsoon/index.html" target="_blank">
+                  <img src="https://github.com/stucoston/stucoston.github.io/blob/master/templates/comingsoon/Screenshot%202017-05-29%20at%206.56.06%20AM%20-%20Edited.png?raw=true">
+                </a>
+              </div>
+              <div class="col s12">
+                <h4>
+		              <a class="thin border" style="padding: 4px 16px;" href="http://www.designerstu.com/templates/comingsoon/index.html" target="_blank">demo</a>
+                  <span style="margin-left: 24px;"><a class="thin border" style="padding: 4px 16px;" href="https://github.com/stucoston/stucoston.github.io/blob/master/templates/comingsoon/index.html" target="_blank">code</a></span>
+                </h4>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -2208,7 +2231,7 @@ function openProject() {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 <script>
-//enable touch events to change slides
+//enable touch events to change Project slides
       // ==================================================
       window.addEventListener('load', function(){
           var el = document.getElementById('proj-page-wrap')
@@ -2218,6 +2241,82 @@ function openProject() {
             if (swipedir != 'none'){
                   clearTimeout(hidetimer)
                   plusProjSlides(swipedir)
+              }
+          })
+          
+      }, false)
+                              
+          function swipedetect(el, callback){
+            
+            var touchsurface = el,
+              swipedir,
+              startX,
+              startY,
+              distX,
+              distY,
+              threshold = 60, //required min distance traveled to be considered swipe
+              restraint = 30, // maximum distance allowed at the same time in perpendicular direction
+              allowedTime = 700, // maximum time allowed to travel that distance
+              elapsedTime,
+              startTime,
+              handleswipe = callback || function(swipedir){}
+        
+            touchsurface.addEventListener('touchstart', function(e){
+              var touchobj = e.changedTouches[0]
+              swipedir = 'none'
+              dist = 0
+              startX = touchobj.pageX
+              startY = touchobj.pageY
+              startTime = new Date().getTime() // record time when finger first makes contact with surface
+             
+	      if(touchsurface.style.padding != "0px") {
+//                e.preventDefault() // prevent scrolling when inside DIV
+              }
+          }, false)
+        
+          touchsurface.addEventListener('touchmove', function(e){
+            if (touchsurface.style.padding != "0px") {
+//              e.preventDefault() // prevent scrolling when inside DIV
+            }
+          }, false)
+        
+          touchsurface.addEventListener('touchend', function(e){
+              var touchobj = e.changedTouches[0]
+              distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+              distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+              elapsedTime = new Date().getTime() - startTime // get time elapsed
+              if (elapsedTime <= allowedTime){ // first condition for awipe met
+                  if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+                      swipedir = (distX < 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
+                  }
+                  else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+                     if(touchsurface.style.padding != "0px" && distY < 0){ openProject() }// if dist traveled is negative, it indicates up swipe
+                  }
+              }
+	      if (touchsurface.style.padding != "0px") {
+                handleswipe(swipedir)
+ //               e.preventDefault()
+	      }
+          }, false)
+      	//continue to trigger click event from the target of any touch event at the document level
+      	window.on('touchend', function(e){
+      		$(e.target).trigger('click');
+      	});
+      
+          }
+</script>
+
+<script>
+//enable touch events to change Template slides
+      // ==================================================
+      window.addEventListener('load', function(){
+          var el = document.getElementById('temp-page-wrap')
+          var hidetimer = null
+          
+          swipedetect(el, function(swipedir){
+            if (swipedir != 'none'){
+                  clearTimeout(hidetimer)
+                  plusTempSlides(swipedir)
               }
           })
           
@@ -2639,7 +2738,56 @@ $('#p1d, #p2d, #p3d').scroll(function(event){
 </script>
 
 <script>
-// scroll mousewheel to change slides
+// templates slide show
+// =======================================================
+var tsIndex = 1;
+
+showTempSlides(psIndex);
+
+function plusTempSlides(n) {
+  hideTempSlides(tsIndex);
+  setTimeout( function() { showTempSlides(tsIndex += n); }, 800);
+  
+}
+function currentTempSlide(n) {
+  showTempSlides(tsIndex = n);
+  
+}
+function hideTempSlides(n) {
+  var tempSlides = document.getElementsByClassName("template-slide");
+  
+  tempSlides[tsIndex-1].style.transition = "0.8s";
+  tempSlides[tsIndex-1].style.opacity = "0";
+  
+}
+function showTempSlides(n) {
+  var ts;
+  var tempSlides = document.getElementsByClassName("template-slide");
+  
+  if (n > tempSlides.length) {tsIndex = 1} 
+  if (n < 1) {tsIndex = tempSlides.length}
+  
+  for (ts = 0; ts < tempSlides.length; ts++) {
+  
+    tempSlides[ts].style.display = "none";
+    
+  }
+  
+    tempSlides[tsIndex-1].style.transition = "1s";
+    tempSlides[tsIndex-1].style.display = "block";
+    tempSlides[tsIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      tempSlides[tsIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+</script>
+
+<script>
+    // scroll mousewheel to change project slides
     // ====================================================
     $('#projects').on( 'DOMMouseScroll mousewheel', function ( event ) {
       
@@ -2668,6 +2816,39 @@ $('#p1d, #p2d, #p3d').scroll(function(event){
       //prevent page fom scrolling
       //return false;
     });
+    
+    // scroll mousewheel to change template slides
+    // ====================================================
+    $('#templates').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('temp-page-wrap');
+      
+      if(wrap.style.padding == "0px") {
+        
+        //prevent page fom scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusTempSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusTempSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      //return false;
+    });
+</script>
+
+<script>
 	
   function isTouchSupported() {
 		
