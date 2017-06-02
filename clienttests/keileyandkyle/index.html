@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
+  <link rel="icon" href="https://raw.githubusercontent.com/stucoston/saltwater/master/img/Screenshot%202017-04-24%20at%2010.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+</head>
+
+<style>
+/* Content
+----------------------------------------------- */
+body {
+  background-color: $(body.background.color);
+  font: $(body.font);
+  color: $(body.text.color);
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+.post-body {
+  color: $(body.text.color);
+}
+.section {
+  margin: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+#footer-1,
+#footer-2-1,
+#footer-2-2 {
+  height: 0;
+}
+a {
+  text-decoration: none;
+  color: $(link.color);
+  letter-spacing: 4px;
+}
+a:hover {
+  color: $(link.hover.color);
+  font-style: italic;
+}
+a:visited {
+  color: $(link.visited.color);
+  font-style: italic;
+}
+p {
+  color: $(body.text.color);
+  font: $(body.font);
+}
+.large {
+  font-size: 26px;
+}
+.hide {
+  display: none;
+}
+#about {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+#about .content {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+#about .content .content-body {
+  max-width: 700px;
+  margin: 50vh 10% 0;
+  height: 50vh;
+}
+.title {
+  color: #eee;
+  font-size: 30px;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  padding: 0 8px;
+  border-bottom: 1px solid #eee;
+}
+#logo {
+  position: fixed;
+  top: 75%;
+  bottom: auto;
+  left: 50%;
+  width: 15vw;
+  height: 15vw;
+  z-index: 2;
+  transition: 0.5s;
+  filter: invert(100%);
+  transform: translate(-50%,-50%);
+  cursor: pointer;
+}
+#logo.active {
+  top: auto;
+  bottom: 50px;
+  left: 50px;
+  width: 60px;
+  height: 60px;
+  transform: translate(-50%,50%);
+}
+#logo.about{
+  top: 50px;
+  bottom: auto;
+  left: auto;
+  right: 50px;
+  width: 60px;
+  height: 60px;
+  transform: translate(50%,-50%);
+}
+#logo:hover {
+  filter: invert(50%);
+}
+#left-portfolio,
+#right-portfolio {
+  position: fixed;
+  left: auto;
+  right: auto;
+  top: 0;
+  height: 100%;
+  width: 100%; 
+  transform: translate(-50%,0);
+  transition: 0.6s;
+  filter: brightness(75%);
+  z-index: 1;
+}
+#left-portfolio {
+  left: 50%;
+  -webkit-clip-path: polygon(50% 0, 0 0, 0 100%, 10% 100%);
+  clip-path: polygon(50% 0, 0 0, 0 100%, 10% 100%);
+}
+#left-portfolio:hover,
+#left-portfolio.hover {
+  -webkit-clip-path: polygon(110% 0, 0 0, 0 100%, 10% 100%);
+  clip-path: polygon(110% 0, 0 0, 0 100%, 10% 100%);
+  filter: none;
+  z-index: 0;
+  cursor: pointer;
+}
+#left-portfolio.active {
+  /*-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);*/
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  filter: none;
+  width: 100%;
+}
+#left-portfolio.hidden {
+  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+#right-portfolio {
+  right: -50%;
+  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 90% 100%);
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 90% 100%);
+}
+#right-portfolio:hover,
+#right-portfolio.hover {
+  -webkit-clip-path: polygon(-10% 0, 100% 0, 100% 100%, 90% 100%);
+  clip-path: polygon(-10% 0, 100% 0, 100% 100%, 90% 100%);
+  filter: none;
+  z-index: 0;
+  cursor: pointer;
+}
+#right-portfolio.active {
+  /*webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  filter: none;
+  width: 100%;
+}
+#right-portfolio.hidden {
+  -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+.left-item,
+.right-item {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+.bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: opacity .5s ease-in-out;
+}
+.left-home-bg {
+  background-image: url(https://scontent-sjc2-1.cdninstagram.com/t51.2885-15/e35/18646661_303509536754608_3627380433030742016_n.jpg);
+  background-position: right;
+}
+.left-home-bg-1 {
+  background-image: url(http://lorempixel.com/720/720/city/4);
+  background-position: right;
+}
+.left-home-bg-2 {
+  background-image: url(http://lorempixel.com/720/720/city/8);
+  background-position: right;
+}
+.right-home-bg {
+  background-image: url(https://scontent-sjc2-1.cdninstagram.com/t51.2885-15/e35/18645039_307467306360818_4402154862070988800_n.jpg);
+  background-position: left;
+}
+.right-home-bg-1 {
+  background-image: url(http://lorempixel.com/720/720/city/1);
+}
+.right-home-bg-2 {
+  background-image: url(http://lorempixel.com/720/720/city/3);
+}
+#portfolios {
+  position: fixed;
+  top: 20%;
+  font-size: 25px;
+  width: 100%;
+  z-index: 2;
+  height: 60px;
+  transition: 0.5s;
+}
+.portfolio-title {
+  color: $(header.text.color);
+  font: $(header.font);
+  position: absolute;
+  top: 50%;
+  letter-spacing: 4px;
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.5s;
+  transform: translate(-50%,-50%);
+}
+.portfolio-title:hover,
+.portfolio-title.left.active,
+.portfolio-title.right.active {
+  border-bottom: 1px solid #eee;
+}
+#portfolios.active {
+  top: 0;
+  font-size: 18px;
+  background-color: rgba(23,23,23,0.4);
+}
+.portfolio-title.left {
+  left: 20%;
+}
+.portfolio-title.right {
+  left: 80%;
+}
+#amp-title {
+  color: #eee;
+  font-family: playfair display;
+  font-size: 35px;
+  font-weight: 200;
+  position: absolute;
+  letter-spacing: 8px;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  transition: 0.5s;
+  transform: translate(-50%,-50%);
+}
+#bookme {
+  position: fixed;
+  bottom: 35px;
+  right: 35px;
+  z-index: 3;
+}
+#bookme a,
+.button {
+  padding: 12px 32px;
+  color: #eee;
+  border: 1px solid;
+  font-style: none;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+#bookme a:hover,
+.button:hover {
+  background-color:rgba(23,23,23,0.7);
+  font-style: italic;
+}
+@media only screen and (max-width: 670px) {
+  .portfolio-title {
+    font-size: 1.5em !important;
+    letter-spacing: 0px;
+  }
+}
+@media only screen and (max-width: 909px) {
+  .portfolio-title {
+    font-size: 2em;
+  }
+}
+/*@media only screen and (min-width: 710px) {
+  #about .content {
+    margin: 50vh auto;
+  }
+}*/
+@media only screen and (min-width: 910px) {
+  .portfolio-title {
+    font-size: 3em;
+  }
+}
+
+.prev-slide,
+.next-slide {
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  top: 50%;
+  transform: translate(0,-50%);
+  z-index: 3;
+  cursor: pointer;
+}
+.prev-slide {
+  left: 16px;
+}
+.next-slide {
+  right: 16px;
+}
+</style>
+
+<body>
+<div class='bg left-home-bg' id='left-portfolio' onclick='openLeftPortfolio()'/>
+  
+      <div class='bg right-home-bg' id='right-portfolio' onclick='openRightPortfolio()'/>
+  
+  <div class='hide' id='about'>
+    <div class='content'>
+      <div class='content-body'>
+        <div class='title'>about</div>
+        <p class='large'>If <b>beautiful</b> portraits of you and/or your family is what you are looking for then I am the girl for you!</p>
+        <p>From weddings to senior sessions, &quot;or even if you just need a new photo for Instagram,&quot; I got you.</p>
+        <br/>
+        <p class='large'>My name is Keiley McKean</p>
+        <p class='small'>and I <i>love</i>, Love, <b>LOVE</b>, taking photos. My favorite thing about photography is capturing your genuine smile.
+        <br/>
+        <br/>
+I have multiple ways for you to contact me if you are interested in booking or have questions about pricing, you can use the quick and easy contact tab in the menu at the top. I usually respond within 24 hours unless its the weekend.</p>
+        <br/>
+        <p class='large'><b>Thank you</b> for taking the time to visit my website and I can&#39;t wait to hear from you!!!</p>
+        <br/>
+        <br/>
+        <p style='text-align: center'><a class='button' href='/' target='_blank'>keiley@website.com</a><br/><br/>Central Arkansas
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <a href='http://www.designerstu.com'>
+            Site Built By
+            <span>
+              <svg style='height: 28px; width: 28px; margin-bottom: -10px; margin-left: -15px;' viewBox='0,0,100,100'>
+                <path d='M70 10 L50 10 L90 50 L50 90 L35 75' fill='transparent' stroke='#eee' stroke-width='3'/>
+              </svg>
+            </span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <img id='logo' onclick='openAbout()' src='https://2.bp.blogspot.com/-ind9tJ5iw8U/WRaBlFujU2I/AAAAAAAAOvg/07mIr7aoUiYF9vImQ6ZmQz53pACnRZwBACLcB/s320/keileyandkyle.png'/>
+  
+  <div id='portfolios'>
+    <div class='portfolio-title left' id='left-title' onclick='openLeftPortfolio()'>Keiley</div>
+    <div class='portfolio-title right' id='right-title' onclick='openRightPortfolio()'>Kyle</div>
+    <div id='amp-title'>&amp;</div>
+  </div>
+  
+  <div class='hide' id='bookme'><a href='/' target='_blank'>book me</a></div>
+  
+  <div class='hide' id='left-label'>
+    <div class='left-item bg left-home-bg' style='filter: grayscale(100%) brightness(50%); z-index: -2;'/>
+    <div class='label-content'>
+      <!--iframe for keiley-->
+    </div>
+  </div>
+  
+  <div class='hide' id='right-label'>
+    <div class='right-item bg right-home-bg' style='filter: grayscale(100%) brightness(50%); z-index: -2;'/>
+    <div class='label-content'>
+      <!--iframe for kyle-->
+    </div>
+  </div>
+  
+  <script>
+  
+    var lp = document.getElementById(&#39;left-portfolio&#39;),
+        rp = document.getElementById(&#39;right-portfolio&#39;),
+        logo = document.getElementById(&#39;logo&#39;),
+//        stillNav = document.getElementById(&#39;still-nav&#39;),
+//        motionNav = document.getElementById(&#39;motion-nav&#39;),
+        portfolios = document.getElementById(&#39;portfolios&#39;),
+        leftTitle = document.getElementById(&#39;left-title&#39;),
+        rightTitle = document.getElementById(&#39;right-title&#39;),
+        ampTitle = document.getElementById(&#39;amp-title&#39;),
+        leftLabel = document.getElementById(&#39;left-label&#39;),
+        rightLabel = document.getElementById(&#39;right-label&#39;),
+        about = document.getElementById(&#39;about&#39;),
+        bookme = document.getElementById(&#39;bookme&#39;);
+    
+    function openAbout() {
+        if(lp.className.indexOf(&#39;active&#39;) != -1) {
+            openLeftPortfolioImmediately();
+            setTimeout(function(){
+              stu.toggleClass(lp,&#39;hidden&#39;);
+              stu.toggleClass(rp,&#39;hidden&#39;);
+              stu.toggleClass(portfolios,&#39;hide&#39;);
+              stu.toggleClass(logo,&#39;about&#39;);
+            }, 500);
+            setTimeout(function(){
+              stu.toggleClass(about,&#39;hide&#39;);
+            }, 1000);
+        } else if(rp.className.indexOf(&#39;active&#39;) != -1) {
+            openRightPortfolioImmediately();
+            setTimeout(function(){
+              stu.toggleClass(lp,&#39;hidden&#39;);
+              stu.toggleClass(rp,&#39;hidden&#39;);
+              stu.toggleClass(portfolios,&#39;hide&#39;);
+              stu.toggleClass(logo,&#39;about&#39;);
+            }, 500);
+            setTimeout(function(){
+              stu.toggleClass(about,&#39;hide&#39;);
+            }, 1000);
+        } else {
+            stu.toggleClass(lp,&#39;hidden&#39;);
+            stu.toggleClass(rp,&#39;hidden&#39;);
+            stu.toggleClass(portfolios,&#39;hide&#39;);
+            stu.toggleClass(logo,&#39;about&#39;);
+            stu.toggleClass(about,&#39;hide&#39;);
+        }
+    }   
+    function openLeftPortfolio() {
+        if(rp.className.indexOf(&#39;active&#39;) != -1) {
+            openRightPortfolioImmediately();
+            openLeftPortfolioDelayed();
+        } else {
+            openLeftPortfolioImmediately(); 
+        }
+    }
+    
+    function openLeftPortfolioImmediately() {
+        if(lp.className.indexOf(&#39;active&#39;) != -1){
+            stu.toggleClass(rp,&#39;hidden&#39;);
+            stu.toggleClass(lp,&#39;hide&#39;);
+            stu.toggleClass(lp,&#39;active&#39;);
+            stu.toggleClass(lp,&#39;active&#39;);
+            setTimeout(function(){
+              stu.toggleClass(lp,&#39;active&#39;);
+            }, 50);
+            stu.toggleClass(leftLabel,&#39;hide&#39;);
+            stu.toggleClass(logo,&#39;active&#39;);
+            stu.toggleClass(leftTitle,&#39;active&#39;);
+//            stu.toggleClass(stillNav,&#39;hide&#39;);
+            stu.toggleClass(portfolios,&#39;active&#39;);
+            stu.toggleClass(bookme,&#39;hide&#39;);
+        }  else {
+            stu.toggleClass(rp,&#39;hidden&#39;);
+            stu.toggleClass(lp,&#39;active&#39;);
+            stu.toggleClass(logo,&#39;active&#39;);
+            stu.toggleClass(leftTitle,&#39;active&#39;);
+//            stu.toggleClass(stillNav,&#39;hide&#39;);
+            stu.toggleClass(portfolios,&#39;active&#39;);
+            setTimeout(function(){
+              stu.toggleClass(leftLabel,&#39;hide&#39;);
+              stu.toggleClass(lp,&#39;hide&#39;);
+              stu.toggleClass(bookme,&#39;hide&#39;);
+            }, 500);
+        }
+    }
+    
+    function openLeftPortfolioDelayed() { 
+        setTimeout(function(){
+        
+        if(lp.className.indexOf(&#39;active&#39;) != -1){
+            stu.toggleClass(rp,&#39;hidden&#39;);
+            stu.toggleClass(lp,&#39;hide&#39;);
+            stu.toggleClass(lp,&#39;active&#39;);
+            stu.toggleClass(lp,&#39;active&#39;);
+            setTimeout(function(){
+              stu.toggleClass(lp,&#39;active&#39;);
+            }, 50);
+            stu.toggleClass(leftLabel,&#39;hide&#39;);
+            stu.toggleClass(logo,&#39;active&#39;);
+            stu.toggleClass(leftTitle,&#39;active&#39;);
+//            stu.toggleClass(stillNav,&#39;hide&#39;);
+            stu.toggleClass(portfolios,&#39;active&#39;);
+            stu.toggleClass(bookme,&#39;hide&#39;);
+            
+        }  else {
+            stu.toggleClass(rp,&#39;hidden&#39;);
+            stu.toggleClass(lp,&#39;active&#39;);
+            stu.toggleClass(logo,&#39;active&#39;);
+            stu.toggleClass(leftTitle,&#39;active&#39;);
+//            stu.toggleClass(stillNav,&#39;hide&#39;);
+            stu.toggleClass(portfolios,&#39;active&#39;);
+            setTimeout(function(){
+              stu.toggleClass(leftLabel,&#39;hide&#39;);
+              stu.toggleClass(lp,&#39;hide&#39;);
+              stu.toggleClass(bookme,&#39;hide&#39;);
+            }, 500);
+        }
+        
+        }, 500);
+    }
+    
+    function openRightPortfolio() {
+        if(lp.className.indexOf(&#39;active&#39;) != -1) {
+            openLeftPortfolioImmediately();
+            openRightPortfolioDelayed();
+        } else {
+            openRightPortfolioImmediately(); 
+        }
+    }
+        
+    function openRightPortfolioImmediately() {   
+        if(rp.className.indexOf(&#39;active&#39;) != -1){
+            stu.toggleClass(rp,&#39;hide&#39;);
+            stu.toggleClass(lp,&#39;hidden&#39;);
+            stu.toggleClass(rp,&#39;active&#39;);
+            stu.toggleClass(rp,&#39;active&#39;);
+            setTimeout(function(){
+              stu.toggleClass(rp,&#39;active&#39;);
+            }, 50);
+            stu.toggleClass(rightLabel,&#39;hide&#39;);
+            stu.toggleClass(logo,&#39;active&#39;);
+            stu.toggleClass(rightTitle,&#39;active&#39;);
+//            stu.toggleClass(motionNav,&#39;hide&#39;);
+            stu.toggleClass(portfolios,&#39;active&#39;);
+            stu.toggleClass(bookme,&#39;hide&#39;);
+        }  else {
+            stu.toggleClass(lp,&#39;hidden&#39;);
+            stu.toggleClass(rp,&#39;active&#39;);
+            stu.toggleClass(logo,&#39;active&#39;);
+            stu.toggleClass(rightTitle,&#39;active&#39;);
+//            stu.toggleClass(motionNav,&#39;hide&#39;);
+            stu.toggleClass(portfolios,&#39;active&#39;);
+            setTimeout(function(){
+              stu.toggleClass(rightLabel,&#39;hide&#39;);
+              stu.toggleClass(rp,&#39;hide&#39;);
+              stu.toggleClass(bookme,&#39;hide&#39;);
+            }, 500);
+        }
+    }
+    
+    function openRightPortfolioDelayed() { 
+        setTimeout(function(){
+        
+        if(rp.className.indexOf(&#39;active&#39;) != -1){
+            stu.toggleClass(rp,&#39;hide&#39;);
+            stu.toggleClass(lp,&#39;hidden&#39;);
+            stu.toggleClass(rp,&#39;active&#39;);
+            stu.toggleClass(rp,&#39;active&#39;);
+            setTimeout(function(){
+              stu.toggleClass(rp,&#39;active&#39;);
+            }, 50);
+            stu.toggleClass(rightLabel,&#39;hide&#39;);
+            stu.toggleClass(logo,&#39;active&#39;);
+            stu.toggleClass(rightTitle,&#39;active&#39;);
+//            stu.toggleClass(motionNav,&#39;hide&#39;);
+            stu.toggleClass(portfolios,&#39;active&#39;);
+            stu.toggleClass(bookme,&#39;hide&#39;);
+        }  else {
+            stu.toggleClass(lp,&#39;hidden&#39;);
+            stu.toggleClass(rp,&#39;active&#39;);
+            stu.toggleClass(logo,&#39;active&#39;);
+            stu.toggleClass(rightTitle,&#39;active&#39;);
+//            stu.toggleClass(motionNav,&#39;hide&#39;);
+            stu.toggleClass(portfolios,&#39;active&#39;);
+            setTimeout(function(){
+              stu.toggleClass(rightLabel,&#39;hide&#39;);
+              stu.toggleClass(rp,&#39;hide&#39;);
+              stu.toggleClass(bookme,&#39;hide&#39;);
+            }, 500);
+        }
+        
+        }, 500);
+    }
+    
+  </script>
+  
+<!--  <script>
+// Stills slide show
+// =======================================================
+var stillIndex = 1;
+showStillSlides(stillIndex);
+function plusStillSlides(n) {
+  hideStillSlides(stillIndex);
+  setTimeout( function() { showStillSlides(stillIndex += n); }, 800);
+  
+}
+function currentStillSlide(n) {
+  showStillSlides(stillIndex = n);
+  
+}
+function hideStillSlides(n) {
+  var slide = document.getElementsByClassName(&quot;left-item&quot;);
+  
+  slide[stillIndex-1].style.transition = &quot;0.8s&quot;;
+  slide[stillIndex-1].style.opacity = &quot;0&quot;;
+  
+}
+function showStillSlides(n) {
+  var i;
+  var slide = document.getElementsByClassName(&quot;left-item&quot;);
+  
+  if (n &gt; slide.length) {stillIndex = 1} 
+  if (n &gt; 1) {stillIndex = slide.length}
+  
+  for (i = 0; i &lt; slide.length; i++) {
+  
+    slide[i].style.display = &quot;none&quot;;
+    
+  }
+  
+    slide[stillIndex-1].style.transition = &quot;1s&quot;;
+    slide[stillIndex-1].style.display = &quot;block&quot;;
+    slide[stillIndex-1].style.opacity = &quot;0&quot;;
+    
+    setTimeout(function(){
+    
+      slide[stillIndex-1].style.opacity = &quot;1&quot;;
+    
+    }, 50);
+    
+}
+</script>
+
+<script>
+// Motion slide show
+// =======================================================
+var motionIndex = 1;
+showMotionSlides(motionIndex);
+function plusMotionSlides(n) {
+  hideMotionSlides(motionIndex);
+  setTimeout( function() { showMotionSlides(motionIndex += n); }, 800);
+  
+}
+function currentMotionSlide(n) {
+  showMotionSlides(motionIndex = n);
+  
+}
+function hideMotionSlides(n) {
+  var slide = document.getElementsByClassName(&quot;right-item&quot;);
+  
+  slide[motionIndex-1].style.transition = &quot;0.8s&quot;;
+  slide[motionIndex-1].style.opacity = &quot;0&quot;;
+  
+}
+function showMotionSlides(n) {
+  var i;
+  var slide = document.getElementsByClassName(&quot;right-item&quot;);
+  
+  if (n &gt; slide.length) {motionIndex = 1} 
+  if (n &lt; 1) {motionIndex = slide.length}
+  
+  for (i = 0; i &lt; slide.length; i++) {
+  
+    slide[i].style.display = &quot;none&quot;;
+    
+  }
+  
+    slide[motionIndex-1].style.transition = &quot;1s&quot;;
+    slide[motionIndex-1].style.display = &quot;block&quot;;
+    slide[motionIndex-1].style.opacity = &quot;0&quot;;
+    
+    setTimeout(function(){
+    
+      slide[motionIndex-1].style.opacity = &quot;1&quot;;
+    
+    }, 50);
+    
+}
+</script> -->
+  
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'/>
+  
+  <script>
+  
+  //    function hoverLeftPortfolio() {
+//        if(lp.className.indexOf(&#39;active&#39;) == -1){
+    $(document).ready(function(){
+        $(&quot;#left-title&quot;).hover(function(){ 
+          stu.toggleClass(&#39;#left-portfolio&#39;,&#39;hover&#39;);
+        }, function(){
+          stu.toggleClass(&#39;#left-portfolio&#39;,&#39;hover&#39;);
+        });
+        
+        $(&quot;#right-title&quot;).hover(function(){ 
+          stu.toggleClass(&#39;#right-portfolio&#39;,&#39;hover&#39;);
+        }, function(){
+          stu.toggleClass(&#39;#right-portfolio&#39;,&#39;hover&#39;);
+        });
+    });
+    
+    </script>
+    
+<!--    <script>
+  
+// scroll mousewheel to change slides
+// ====================================================
+$(&#39;#left-label&#39;).on( &#39;DOMMouseScroll mousewheel&#39;, function ( event ) {
+    if(event.originalEvent.detail &gt; 0 || event.originalEvent.wheelDelta &lt; 0 ) {
+        //scroll down
+        plusStillSlides(1);
+    } else {
+        //scroll up
+        plusStillSlides(-1);
+    }
+    
+});
+$(&#39;#right-label&#39;).on( &#39;DOMMouseScroll mousewheel&#39;, function ( event ) {
+    if(event.originalEvent.detail &gt; 0 || event.originalEvent.wheelDelta &lt; 0 ) {
+        //scroll down
+        plusMotionSlides(1);
+    } else {
+        //scroll up
+        plusMotionSlides(-1);
+    }
+    
+});
+    
+  </script>  
+  
+  <script>
+      //enable touch events to change still-slideshow
+      // ==================================================
+      window.addEventListener(&#39;load&#39;, function(){
+          var el = document.getElementById(&#39;left-label&#39;)
+          var hidetimer = null
+          
+          swipedetect(el, function(swipedir){
+            if (swipedir != &#39;none&#39;){
+                  clearTimeout(hidetimer);
+                  plusStillSlides(swipedir);
+              }
+          });
+          
+      }, false);
+                              
+          function swipedetect(el, callback){
+            
+            var touchsurface = el,
+              swipedir,
+              startX,
+              startY,
+              distX,
+              distY,
+              threshold = 60, //required min distance traveled to be considered swipe
+              restraint = 30, // maximum distance allowed at the same time in perpendicular direction
+              allowedTime = 700, // maximum time allowed to travel that distance
+              elapsedTime,
+              startTime,
+              handleswipe = callback || function(swipedir){}
+        
+            touchsurface.addEventListener(&#39;touchstart&#39;, function(e){
+              var touchobj = e.changedTouches[0]
+              swipedir = &#39;none&#39;
+              dist = 0
+              startX = touchobj.pageX
+              startY = touchobj.pageY
+              startTime = new Date().getTime() // record time when finger first makes contact with surface
+             
+	      if(touchsurface.className.indexOf(&#39;hide&#39;) == -1) {
+                e.preventDefault() // prevent scrolling when inside DIV
+              }
+          }, false)
+        
+          touchsurface.addEventListener(&#39;touchmove&#39;, function(e){
+            if (touchsurface.className.indexOf(&#39;hide&#39;) == -1) {
+              e.preventDefault() // prevent scrolling when inside DIV
+            }
+          }, false)
+        
+          touchsurface.addEventListener(&#39;touchend&#39;, function(e){
+              var touchobj = e.changedTouches[0]
+              distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+              distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+              elapsedTime = new Date().getTime() - startTime // get time elapsed
+              if (elapsedTime &lt;= allowedTime){ // first condition for awipe met
+                  if (Math.abs(distX) &gt;= threshold &amp;&amp; Math.abs(distY) &lt;= restraint){ // 2nd condition for horizontal swipe met
+                      swipedir = (distX &lt; 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
+                  }
+                  else if (Math.abs(distY) &gt;= threshold &amp;&amp; Math.abs(distX) &lt;= restraint){ // 2nd condition for vertical swipe met
+                       swipedir = (distY &lt; 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
+                  }
+              }
+	      if (touchsurface.className.indexOf(&#39;hide&#39;) == -1) {
+                handleswipe(swipedir)
+                e.preventDefault()
+	      }
+          }, false)
+      	//continue to trigger click event from the target of any touch event at the document level
+      	window.on(&#39;touchend&#39;, function(e){
+      		$(e.target).trigger(&#39;click&#39;);
+      	});
+      
+          }
+</script>  
+    
+  <script>
+      //enable touch events to change motion-slideshow
+      // ==================================================
+      window.addEventListener(&#39;load&#39;, function(){
+          var el = document.getElementById(&#39;right-label&#39;)
+          var hidetimer = null
+          
+          swipedetect(el, function(swipedir){
+            if (swipedir != &#39;none&#39;){
+                  clearTimeout(hidetimer);
+                  plusMotionSlides(swipedir);
+              }
+          });
+          
+      }, false);
+                              
+          function swipedetect(el, callback){
+            
+            var touchsurface = el,
+              swipedir,
+              startX,
+              startY,
+              distX,
+              distY,
+              threshold = 60, //required min distance traveled to be considered swipe
+              restraint = 30, // maximum distance allowed at the same time in perpendicular direction
+              allowedTime = 700, // maximum time allowed to travel that distance
+              elapsedTime,
+              startTime,
+              handleswipe = callback || function(swipedir){}
+        
+            touchsurface.addEventListener(&#39;touchstart&#39;, function(e){
+              var touchobj = e.changedTouches[0]
+              swipedir = &#39;none&#39;
+              dist = 0
+              startX = touchobj.pageX
+              startY = touchobj.pageY
+              startTime = new Date().getTime() // record time when finger first makes contact with surface
+             
+	      if(touchsurface.className.indexOf(&#39;hide&#39;) == -1) {
+                e.preventDefault() // prevent scrolling when inside DIV
+              }
+          }, false)
+        
+          touchsurface.addEventListener(&#39;touchmove&#39;, function(e){
+            if (touchsurface.className.indexOf(&#39;hide&#39;) == -1) {
+              e.preventDefault() // prevent scrolling when inside DIV
+            }
+          }, false)
+        
+          touchsurface.addEventListener(&#39;touchend&#39;, function(e){
+              var touchobj = e.changedTouches[0]
+              distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+              distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+              elapsedTime = new Date().getTime() - startTime // get time elapsed
+              if (elapsedTime &lt;= allowedTime){ // first condition for awipe met
+                  if (Math.abs(distX) &gt;= threshold &amp;&amp; Math.abs(distY) &lt;= restraint){ // 2nd condition for horizontal swipe met
+                      swipedir = (distX &lt; 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
+                  }
+                  else if (Math.abs(distY) &gt;= threshold &amp;&amp; Math.abs(distX) &lt;= restraint){ // 2nd condition for vertical swipe met
+                       swipedir = (distY &lt; 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
+                  }
+              }
+	      if (touchsurface.className.indexOf(&#39;hide&#39;) == -1) {
+                handleswipe(swipedir)
+                e.preventDefault()
+	      }
+          }, false)
+      	//continue to trigger click event from the target of any touch event at the document level
+      	window.on(&#39;touchend&#39;, function(e){
+      		$(e.target).trigger(&#39;click&#39;);
+      	});
+      
+          }
+</script> -->
+
+  <script>
+
+// stu toggle functions
+// ========================================================
+var stu = {};
+stu.styleElement = function (element, prop, val) {
+  element.style.setProperty(prop, val);
+};
+stu.toggleShow = function (sel) {
+  var i, x = stu.getElements(sel), xl = x.length;
+  for (i = 0; i &lt; xl; i++) {    
+    if (x[i].style.display == &quot;none&quot;) {
+      stu.styleElement(x[i], &quot;display&quot;, &quot;block&quot;);
+    } else {
+      stu.styleElement(x[i], &quot;display&quot;, &quot;none&quot;);
+    }
+  }
+};
+stu.togglePaddingProj = function (sel) {
+  var i, x = stu.getElements(sel), l = x.length;
+  for (i = 0; i &lt; l; i++) {    
+    if (x[i].style.padding == &quot;0px&quot;) {
+      stu.styleElement(x[i], &quot;padding&quot;, &quot;48px 24px 24px&quot;);
+    } else {
+      stu.styleElement(x[i], &quot;padding&quot;, &quot;0px&quot;);
+    }
+  }
+};
+stu.addClass = function (sel, name) {
+  stu.addClassElements(stu.getElements(sel), name);
+};
+stu.addClassElements = function (elements, name) {
+  var i, l = elements.length;
+  for (i = 0; i &lt; l; i++) {
+    stu.addClassElement(elements[i], name);
+  }
+};
+stu.addClassElement = function (element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(&quot; &quot;);
+  arr2 = name.split(&quot; &quot;);
+  for (i = 0; i &lt; arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += &quot; &quot; + arr2[i];}
+  }
+};
+stu.removeClass = function (sel, name) {
+  stu.removeClassElements(stu.getElements(sel), name);
+};
+stu.removeClassElements = function (elements, name) {
+  var i, l = elements.length, arr1, arr2, j;
+  for (i = 0; i &lt; l; i++) {
+    stu.removeClassElement(elements[i], name);
+  }
+};
+stu.removeClassElement = function (element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(&quot; &quot;);
+  arr2 = name.split(&quot; &quot;);
+  for (i = 0; i &lt; arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) &gt; -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(&quot; &quot;);
+};
+stu.toggleClass = function (sel, c1, c2) {
+  stu.toggleClassElements(stu.getElements(sel), c1, c2);
+};
+stu.toggleClassElements = function (elements, c1, c2) {
+  var i, l = elements.length;
+  for (i = 0; i &lt; l; i++) {    
+    stu.toggleClassElement(elements[i], c1, c2);
+  }
+};
+stu.toggleClassElement = function (element, c1, c2) {
+  var t1, t2, t1Arr, t2Arr, j, arr, allPresent;
+  t1 = (c1 || &quot;&quot;);
+  t2 = (c2 || &quot;&quot;);
+  t1Arr = t1.split(&quot; &quot;);
+  t2Arr = t2.split(&quot; &quot;);
+  arr = element.className.split(&quot; &quot;);
+  if (t2Arr.length == 0) {
+    allPresent = true;
+    for (j = 0; j &lt; t1Arr.length; j++) {
+      if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+    }
+    if (allPresent) {
+      stu.removeClassElement(element, t1);
+    } else {
+      stu.addClassElement(element, t1);
+    }
+  } else {
+    allPresent = true;
+    for (j = 0; j &lt; t1Arr.length; j++) {
+      if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+    }
+    if (allPresent) {
+      stu.removeClassElement(element, t1);
+      stu.addClassElement(element, t2);          
+    } else {
+      stu.removeClassElement(element, t2);        
+      stu.addClassElement(element, t1);
+    }
+  }
+};
+stu.getElements = function (id) {
+  if (typeof id == &quot;object&quot;) {
+    return [id];
+  } else {
+    return document.querySelectorAll(id);
+  }
+};
+  </script>
+  </body>
+  </html>
