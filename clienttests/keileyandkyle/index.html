@@ -378,53 +378,53 @@ I have multiple ways for you to contact me if you are interested in booking or h
   
   <script>
   
-    var lp = document.getElementById(&#39;left-portfolio&#39;),
-        rp = document.getElementById(&#39;right-portfolio&#39;),
-        logo = document.getElementById(&#39;logo&#39;),
-//        stillNav = document.getElementById(&#39;still-nav&#39;),
-//        motionNav = document.getElementById(&#39;motion-nav&#39;),
-        portfolios = document.getElementById(&#39;portfolios&#39;),
-        leftTitle = document.getElementById(&#39;left-title&#39;),
-        rightTitle = document.getElementById(&#39;right-title&#39;),
-        ampTitle = document.getElementById(&#39;amp-title&#39;),
-        leftLabel = document.getElementById(&#39;left-label&#39;),
-        rightLabel = document.getElementById(&#39;right-label&#39;),
-        about = document.getElementById(&#39;about&#39;),
-        bookme = document.getElementById(&#39;bookme&#39;);
+    var lp = document.getElementById('left-portfolio'),
+        rp = document.getElementById('right-portfolio'),
+        logo = document.getElementById('logo'),
+//        stillNav = document.getElementById('still-nav'),
+//        motionNav = document.getElementById('motion-nav'),
+        portfolios = document.getElementById('portfolios'),
+        leftTitle = document.getElementById('left-title'),
+        rightTitle = document.getElementById('right-title'),
+        ampTitle = document.getElementById('amp-title'),
+        leftLabel = document.getElementById('left-label'),
+        rightLabel = document.getElementById('right-label'),
+        about = document.getElementById('about'),
+        bookme = document.getElementById('bookme');
     
     function openAbout() {
-        if(lp.className.indexOf(&#39;active&#39;) != -1) {
+        if(lp.className.indexOf('active') != -1) {
             openLeftPortfolioImmediately();
             setTimeout(function(){
-              stu.toggleClass(lp,&#39;hidden&#39;);
-              stu.toggleClass(rp,&#39;hidden&#39;);
-              stu.toggleClass(portfolios,&#39;hide&#39;);
-              stu.toggleClass(logo,&#39;about&#39;);
+              stu.toggleClass(lp,'hidden');
+              stu.toggleClass(rp,'hidden');
+              stu.toggleClass(portfolios,'hide');
+              stu.toggleClass(logo,'about');
             }, 500);
             setTimeout(function(){
-              stu.toggleClass(about,&#39;hide&#39;);
+              stu.toggleClass(about,'hide');
             }, 1000);
-        } else if(rp.className.indexOf(&#39;active&#39;) != -1) {
+        } else if(rp.className.indexOf('active') != -1) {
             openRightPortfolioImmediately();
             setTimeout(function(){
-              stu.toggleClass(lp,&#39;hidden&#39;);
-              stu.toggleClass(rp,&#39;hidden&#39;);
-              stu.toggleClass(portfolios,&#39;hide&#39;);
-              stu.toggleClass(logo,&#39;about&#39;);
+              stu.toggleClass(lp,'hidden');
+              stu.toggleClass(rp,'hidden');
+              stu.toggleClass(portfolios,'hide');
+              stu.toggleClass(logo,'about');
             }, 500);
             setTimeout(function(){
-              stu.toggleClass(about,&#39;hide&#39;);
+              stu.toggleClass(about,'hide');
             }, 1000);
         } else {
-            stu.toggleClass(lp,&#39;hidden&#39;);
-            stu.toggleClass(rp,&#39;hidden&#39;);
-            stu.toggleClass(portfolios,&#39;hide&#39;);
-            stu.toggleClass(logo,&#39;about&#39;);
-            stu.toggleClass(about,&#39;hide&#39;);
+            stu.toggleClass(lp,'hidden');
+            stu.toggleClass(rp,'hidden');
+            stu.toggleClass(portfolios,'hide');
+            stu.toggleClass(logo,'about');
+            stu.toggleClass(about,'hide');
         }
     }   
     function openLeftPortfolio() {
-        if(rp.className.indexOf(&#39;active&#39;) != -1) {
+        if(rp.className.indexOf('active') != -1) {
             openRightPortfolioImmediately();
             openLeftPortfolioDelayed();
         } else {
@@ -433,31 +433,31 @@ I have multiple ways for you to contact me if you are interested in booking or h
     }
     
     function openLeftPortfolioImmediately() {
-        if(lp.className.indexOf(&#39;active&#39;) != -1){
-            stu.toggleClass(rp,&#39;hidden&#39;);
-            stu.toggleClass(lp,&#39;hide&#39;);
-            stu.toggleClass(lp,&#39;active&#39;);
-            stu.toggleClass(lp,&#39;active&#39;);
+        if(lp.className.indexOf('active') != -1){
+            stu.toggleClass(rp,'hidden');
+            stu.toggleClass(lp,'hide');
+            stu.toggleClass(lp,'active');
+            stu.toggleClass(lp,'active');
             setTimeout(function(){
-              stu.toggleClass(lp,&#39;active&#39;);
+              stu.toggleClass(lp,'active');
             }, 50);
-            stu.toggleClass(leftLabel,&#39;hide&#39;);
-            stu.toggleClass(logo,&#39;active&#39;);
-            stu.toggleClass(leftTitle,&#39;active&#39;);
-//            stu.toggleClass(stillNav,&#39;hide&#39;);
-            stu.toggleClass(portfolios,&#39;active&#39;);
-            stu.toggleClass(bookme,&#39;hide&#39;);
+            stu.toggleClass(leftLabel,'hide');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(leftTitle,'active');
+//            stu.toggleClass(stillNav,'hide');
+            stu.toggleClass(portfolios,'active');
+            stu.toggleClass(bookme,'hide');
         }  else {
-            stu.toggleClass(rp,&#39;hidden&#39;);
-            stu.toggleClass(lp,&#39;active&#39;);
-            stu.toggleClass(logo,&#39;active&#39;);
-            stu.toggleClass(leftTitle,&#39;active&#39;);
-//            stu.toggleClass(stillNav,&#39;hide&#39;);
-            stu.toggleClass(portfolios,&#39;active&#39;);
+            stu.toggleClass(rp,'hidden');
+            stu.toggleClass(lp,'active');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(leftTitle,'active');
+//            stu.toggleClass(stillNav,'hide');
+            stu.toggleClass(portfolios,'active');
             setTimeout(function(){
-              stu.toggleClass(leftLabel,&#39;hide&#39;);
-              stu.toggleClass(lp,&#39;hide&#39;);
-              stu.toggleClass(bookme,&#39;hide&#39;);
+              stu.toggleClass(leftLabel,'hide');
+              stu.toggleClass(lp,'hide');
+              stu.toggleClass(bookme,'hide');
             }, 500);
         }
     }
@@ -465,32 +465,32 @@ I have multiple ways for you to contact me if you are interested in booking or h
     function openLeftPortfolioDelayed() { 
         setTimeout(function(){
         
-        if(lp.className.indexOf(&#39;active&#39;) != -1){
-            stu.toggleClass(rp,&#39;hidden&#39;);
-            stu.toggleClass(lp,&#39;hide&#39;);
-            stu.toggleClass(lp,&#39;active&#39;);
-            stu.toggleClass(lp,&#39;active&#39;);
+        if(lp.className.indexOf('active') != -1){
+            stu.toggleClass(rp,'hidden');
+            stu.toggleClass(lp,'hide');
+            stu.toggleClass(lp,'active');
+            stu.toggleClass(lp,'active');
             setTimeout(function(){
-              stu.toggleClass(lp,&#39;active&#39;);
+              stu.toggleClass(lp,'active');
             }, 50);
-            stu.toggleClass(leftLabel,&#39;hide&#39;);
-            stu.toggleClass(logo,&#39;active&#39;);
-            stu.toggleClass(leftTitle,&#39;active&#39;);
-//            stu.toggleClass(stillNav,&#39;hide&#39;);
-            stu.toggleClass(portfolios,&#39;active&#39;);
-            stu.toggleClass(bookme,&#39;hide&#39;);
+            stu.toggleClass(leftLabel,'hide');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(leftTitle,'active');
+//            stu.toggleClass(stillNav,'hide');
+            stu.toggleClass(portfolios,'active');
+            stu.toggleClass(bookme,'hide');
             
         }  else {
-            stu.toggleClass(rp,&#39;hidden&#39;);
-            stu.toggleClass(lp,&#39;active&#39;);
-            stu.toggleClass(logo,&#39;active&#39;);
-            stu.toggleClass(leftTitle,&#39;active&#39;);
-//            stu.toggleClass(stillNav,&#39;hide&#39;);
-            stu.toggleClass(portfolios,&#39;active&#39;);
+            stu.toggleClass(rp,'hidden');
+            stu.toggleClass(lp,'active');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(leftTitle,'active');
+//            stu.toggleClass(stillNav,'hide');
+            stu.toggleClass(portfolios,'active');
             setTimeout(function(){
-              stu.toggleClass(leftLabel,&#39;hide&#39;);
-              stu.toggleClass(lp,&#39;hide&#39;);
-              stu.toggleClass(bookme,&#39;hide&#39;);
+              stu.toggleClass(leftLabel,'hide');
+              stu.toggleClass(lp,'hide');
+              stu.toggleClass(bookme,'hide');
             }, 500);
         }
         
@@ -498,7 +498,7 @@ I have multiple ways for you to contact me if you are interested in booking or h
     }
     
     function openRightPortfolio() {
-        if(lp.className.indexOf(&#39;active&#39;) != -1) {
+        if(lp.className.indexOf('active') != -1) {
             openLeftPortfolioImmediately();
             openRightPortfolioDelayed();
         } else {
@@ -507,31 +507,31 @@ I have multiple ways for you to contact me if you are interested in booking or h
     }
         
     function openRightPortfolioImmediately() {   
-        if(rp.className.indexOf(&#39;active&#39;) != -1){
-            stu.toggleClass(rp,&#39;hide&#39;);
-            stu.toggleClass(lp,&#39;hidden&#39;);
-            stu.toggleClass(rp,&#39;active&#39;);
-            stu.toggleClass(rp,&#39;active&#39;);
+        if(rp.className.indexOf('active') != -1){
+            stu.toggleClass(rp,'hide');
+            stu.toggleClass(lp,'hidden');
+            stu.toggleClass(rp,'active');
+            stu.toggleClass(rp,'active');
             setTimeout(function(){
-              stu.toggleClass(rp,&#39;active&#39;);
+              stu.toggleClass(rp,'active');
             }, 50);
-            stu.toggleClass(rightLabel,&#39;hide&#39;);
-            stu.toggleClass(logo,&#39;active&#39;);
-            stu.toggleClass(rightTitle,&#39;active&#39;);
-//            stu.toggleClass(motionNav,&#39;hide&#39;);
-            stu.toggleClass(portfolios,&#39;active&#39;);
-            stu.toggleClass(bookme,&#39;hide&#39;);
+            stu.toggleClass(rightLabel,'hide');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(rightTitle,'active');
+//            stu.toggleClass(motionNav,'hide');
+            stu.toggleClass(portfolios,'active');
+            stu.toggleClass(bookme,'hide');
         }  else {
-            stu.toggleClass(lp,&#39;hidden&#39;);
-            stu.toggleClass(rp,&#39;active&#39;);
-            stu.toggleClass(logo,&#39;active&#39;);
-            stu.toggleClass(rightTitle,&#39;active&#39;);
-//            stu.toggleClass(motionNav,&#39;hide&#39;);
-            stu.toggleClass(portfolios,&#39;active&#39;);
+            stu.toggleClass(lp,'hidden');
+            stu.toggleClass(rp,'active');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(rightTitle,'active');
+//            stu.toggleClass(motionNav,'hide');
+            stu.toggleClass(portfolios,'active');
             setTimeout(function(){
-              stu.toggleClass(rightLabel,&#39;hide&#39;);
-              stu.toggleClass(rp,&#39;hide&#39;);
-              stu.toggleClass(bookme,&#39;hide&#39;);
+              stu.toggleClass(rightLabel,'hide');
+              stu.toggleClass(rp,'hide');
+              stu.toggleClass(bookme,'hide');
             }, 500);
         }
     }
@@ -539,31 +539,31 @@ I have multiple ways for you to contact me if you are interested in booking or h
     function openRightPortfolioDelayed() { 
         setTimeout(function(){
         
-        if(rp.className.indexOf(&#39;active&#39;) != -1){
-            stu.toggleClass(rp,&#39;hide&#39;);
-            stu.toggleClass(lp,&#39;hidden&#39;);
-            stu.toggleClass(rp,&#39;active&#39;);
-            stu.toggleClass(rp,&#39;active&#39;);
+        if(rp.className.indexOf('active') != -1){
+            stu.toggleClass(rp,'hide');
+            stu.toggleClass(lp,'hidden');
+            stu.toggleClass(rp,'active');
+            stu.toggleClass(rp,'active');
             setTimeout(function(){
-              stu.toggleClass(rp,&#39;active&#39;);
+              stu.toggleClass(rp,'active');
             }, 50);
-            stu.toggleClass(rightLabel,&#39;hide&#39;);
-            stu.toggleClass(logo,&#39;active&#39;);
-            stu.toggleClass(rightTitle,&#39;active&#39;);
-//            stu.toggleClass(motionNav,&#39;hide&#39;);
-            stu.toggleClass(portfolios,&#39;active&#39;);
-            stu.toggleClass(bookme,&#39;hide&#39;);
+            stu.toggleClass(rightLabel,'hide');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(rightTitle,'active');
+//            stu.toggleClass(motionNav,'hide');
+            stu.toggleClass(portfolios,'active');
+            stu.toggleClass(bookme,'hide');
         }  else {
-            stu.toggleClass(lp,&#39;hidden&#39;);
-            stu.toggleClass(rp,&#39;active&#39;);
-            stu.toggleClass(logo,&#39;active&#39;);
-            stu.toggleClass(rightTitle,&#39;active&#39;);
-//            stu.toggleClass(motionNav,&#39;hide&#39;);
-            stu.toggleClass(portfolios,&#39;active&#39;);
+            stu.toggleClass(lp,'hidden');
+            stu.toggleClass(rp,'active');
+            stu.toggleClass(logo,'active');
+            stu.toggleClass(rightTitle,'active');
+//            stu.toggleClass(motionNav,'hide');
+            stu.toggleClass(portfolios,'active');
             setTimeout(function(){
-              stu.toggleClass(rightLabel,&#39;hide&#39;);
-              stu.toggleClass(rp,&#39;hide&#39;);
-              stu.toggleClass(bookme,&#39;hide&#39;);
+              stu.toggleClass(rightLabel,'hide');
+              stu.toggleClass(rp,'hide');
+              stu.toggleClass(bookme,'hide');
             }, 500);
         }
         
@@ -572,300 +572,25 @@ I have multiple ways for you to contact me if you are interested in booking or h
     
   </script>
   
-<!--  <script>
-// Stills slide show
-// =======================================================
-var stillIndex = 1;
-showStillSlides(stillIndex);
-function plusStillSlides(n) {
-  hideStillSlides(stillIndex);
-  setTimeout( function() { showStillSlides(stillIndex += n); }, 800);
-  
-}
-function currentStillSlide(n) {
-  showStillSlides(stillIndex = n);
-  
-}
-function hideStillSlides(n) {
-  var slide = document.getElementsByClassName(&quot;left-item&quot;);
-  
-  slide[stillIndex-1].style.transition = &quot;0.8s&quot;;
-  slide[stillIndex-1].style.opacity = &quot;0&quot;;
-  
-}
-function showStillSlides(n) {
-  var i;
-  var slide = document.getElementsByClassName(&quot;left-item&quot;);
-  
-  if (n &gt; slide.length) {stillIndex = 1} 
-  if (n &gt; 1) {stillIndex = slide.length}
-  
-  for (i = 0; i &lt; slide.length; i++) {
-  
-    slide[i].style.display = &quot;none&quot;;
-    
-  }
-  
-    slide[stillIndex-1].style.transition = &quot;1s&quot;;
-    slide[stillIndex-1].style.display = &quot;block&quot;;
-    slide[stillIndex-1].style.opacity = &quot;0&quot;;
-    
-    setTimeout(function(){
-    
-      slide[stillIndex-1].style.opacity = &quot;1&quot;;
-    
-    }, 50);
-    
-}
-</script>
-
-<script>
-// Motion slide show
-// =======================================================
-var motionIndex = 1;
-showMotionSlides(motionIndex);
-function plusMotionSlides(n) {
-  hideMotionSlides(motionIndex);
-  setTimeout( function() { showMotionSlides(motionIndex += n); }, 800);
-  
-}
-function currentMotionSlide(n) {
-  showMotionSlides(motionIndex = n);
-  
-}
-function hideMotionSlides(n) {
-  var slide = document.getElementsByClassName(&quot;right-item&quot;);
-  
-  slide[motionIndex-1].style.transition = &quot;0.8s&quot;;
-  slide[motionIndex-1].style.opacity = &quot;0&quot;;
-  
-}
-function showMotionSlides(n) {
-  var i;
-  var slide = document.getElementsByClassName(&quot;right-item&quot;);
-  
-  if (n &gt; slide.length) {motionIndex = 1} 
-  if (n &lt; 1) {motionIndex = slide.length}
-  
-  for (i = 0; i &lt; slide.length; i++) {
-  
-    slide[i].style.display = &quot;none&quot;;
-    
-  }
-  
-    slide[motionIndex-1].style.transition = &quot;1s&quot;;
-    slide[motionIndex-1].style.display = &quot;block&quot;;
-    slide[motionIndex-1].style.opacity = &quot;0&quot;;
-    
-    setTimeout(function(){
-    
-      slide[motionIndex-1].style.opacity = &quot;1&quot;;
-    
-    }, 50);
-    
-}
-</script> -->
-  
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'/>
   
   <script>
   
-  //    function hoverLeftPortfolio() {
-//        if(lp.className.indexOf(&#39;active&#39;) == -1){
     $(document).ready(function(){
-        $(&quot;#left-title&quot;).hover(function(){ 
-          stu.toggleClass(&#39;#left-portfolio&#39;,&#39;hover&#39;);
+        $('#left-title').hover(function(){ 
+          stu.toggleClass('#left-portfolio','hover');
         }, function(){
-          stu.toggleClass(&#39;#left-portfolio&#39;,&#39;hover&#39;);
+          stu.toggleClass('#left-portfolio','hover');
         });
         
-        $(&quot;#right-title&quot;).hover(function(){ 
-          stu.toggleClass(&#39;#right-portfolio&#39;,&#39;hover&#39;);
+        $('#right-title').hover(function(){ 
+          stu.toggleClass('#right-portfolio','hover');
         }, function(){
-          stu.toggleClass(&#39;#right-portfolio&#39;,&#39;hover&#39;);
+          stu.toggleClass('#right-portfolio','hover');
         });
     });
     
     </script>
-    
-<!--    <script>
-  
-// scroll mousewheel to change slides
-// ====================================================
-$(&#39;#left-label&#39;).on( &#39;DOMMouseScroll mousewheel&#39;, function ( event ) {
-    if(event.originalEvent.detail &gt; 0 || event.originalEvent.wheelDelta &lt; 0 ) {
-        //scroll down
-        plusStillSlides(1);
-    } else {
-        //scroll up
-        plusStillSlides(-1);
-    }
-    
-});
-$(&#39;#right-label&#39;).on( &#39;DOMMouseScroll mousewheel&#39;, function ( event ) {
-    if(event.originalEvent.detail &gt; 0 || event.originalEvent.wheelDelta &lt; 0 ) {
-        //scroll down
-        plusMotionSlides(1);
-    } else {
-        //scroll up
-        plusMotionSlides(-1);
-    }
-    
-});
-    
-  </script>  
-  
-  <script>
-      //enable touch events to change still-slideshow
-      // ==================================================
-      window.addEventListener(&#39;load&#39;, function(){
-          var el = document.getElementById(&#39;left-label&#39;)
-          var hidetimer = null
-          
-          swipedetect(el, function(swipedir){
-            if (swipedir != &#39;none&#39;){
-                  clearTimeout(hidetimer);
-                  plusStillSlides(swipedir);
-              }
-          });
-          
-      }, false);
-                              
-          function swipedetect(el, callback){
-            
-            var touchsurface = el,
-              swipedir,
-              startX,
-              startY,
-              distX,
-              distY,
-              threshold = 60, //required min distance traveled to be considered swipe
-              restraint = 30, // maximum distance allowed at the same time in perpendicular direction
-              allowedTime = 700, // maximum time allowed to travel that distance
-              elapsedTime,
-              startTime,
-              handleswipe = callback || function(swipedir){}
-        
-            touchsurface.addEventListener(&#39;touchstart&#39;, function(e){
-              var touchobj = e.changedTouches[0]
-              swipedir = &#39;none&#39;
-              dist = 0
-              startX = touchobj.pageX
-              startY = touchobj.pageY
-              startTime = new Date().getTime() // record time when finger first makes contact with surface
-             
-	      if(touchsurface.className.indexOf(&#39;hide&#39;) == -1) {
-                e.preventDefault() // prevent scrolling when inside DIV
-              }
-          }, false)
-        
-          touchsurface.addEventListener(&#39;touchmove&#39;, function(e){
-            if (touchsurface.className.indexOf(&#39;hide&#39;) == -1) {
-              e.preventDefault() // prevent scrolling when inside DIV
-            }
-          }, false)
-        
-          touchsurface.addEventListener(&#39;touchend&#39;, function(e){
-              var touchobj = e.changedTouches[0]
-              distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
-              distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
-              elapsedTime = new Date().getTime() - startTime // get time elapsed
-              if (elapsedTime &lt;= allowedTime){ // first condition for awipe met
-                  if (Math.abs(distX) &gt;= threshold &amp;&amp; Math.abs(distY) &lt;= restraint){ // 2nd condition for horizontal swipe met
-                      swipedir = (distX &lt; 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
-                  }
-                  else if (Math.abs(distY) &gt;= threshold &amp;&amp; Math.abs(distX) &lt;= restraint){ // 2nd condition for vertical swipe met
-                       swipedir = (distY &lt; 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
-                  }
-              }
-	      if (touchsurface.className.indexOf(&#39;hide&#39;) == -1) {
-                handleswipe(swipedir)
-                e.preventDefault()
-	      }
-          }, false)
-      	//continue to trigger click event from the target of any touch event at the document level
-      	window.on(&#39;touchend&#39;, function(e){
-      		$(e.target).trigger(&#39;click&#39;);
-      	});
-      
-          }
-</script>  
-    
-  <script>
-      //enable touch events to change motion-slideshow
-      // ==================================================
-      window.addEventListener(&#39;load&#39;, function(){
-          var el = document.getElementById(&#39;right-label&#39;)
-          var hidetimer = null
-          
-          swipedetect(el, function(swipedir){
-            if (swipedir != &#39;none&#39;){
-                  clearTimeout(hidetimer);
-                  plusMotionSlides(swipedir);
-              }
-          });
-          
-      }, false);
-                              
-          function swipedetect(el, callback){
-            
-            var touchsurface = el,
-              swipedir,
-              startX,
-              startY,
-              distX,
-              distY,
-              threshold = 60, //required min distance traveled to be considered swipe
-              restraint = 30, // maximum distance allowed at the same time in perpendicular direction
-              allowedTime = 700, // maximum time allowed to travel that distance
-              elapsedTime,
-              startTime,
-              handleswipe = callback || function(swipedir){}
-        
-            touchsurface.addEventListener(&#39;touchstart&#39;, function(e){
-              var touchobj = e.changedTouches[0]
-              swipedir = &#39;none&#39;
-              dist = 0
-              startX = touchobj.pageX
-              startY = touchobj.pageY
-              startTime = new Date().getTime() // record time when finger first makes contact with surface
-             
-	      if(touchsurface.className.indexOf(&#39;hide&#39;) == -1) {
-                e.preventDefault() // prevent scrolling when inside DIV
-              }
-          }, false)
-        
-          touchsurface.addEventListener(&#39;touchmove&#39;, function(e){
-            if (touchsurface.className.indexOf(&#39;hide&#39;) == -1) {
-              e.preventDefault() // prevent scrolling when inside DIV
-            }
-          }, false)
-        
-          touchsurface.addEventListener(&#39;touchend&#39;, function(e){
-              var touchobj = e.changedTouches[0]
-              distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
-              distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
-              elapsedTime = new Date().getTime() - startTime // get time elapsed
-              if (elapsedTime &lt;= allowedTime){ // first condition for awipe met
-                  if (Math.abs(distX) &gt;= threshold &amp;&amp; Math.abs(distY) &lt;= restraint){ // 2nd condition for horizontal swipe met
-                      swipedir = (distX &lt; 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
-                  }
-                  else if (Math.abs(distY) &gt;= threshold &amp;&amp; Math.abs(distX) &lt;= restraint){ // 2nd condition for vertical swipe met
-                       swipedir = (distY &lt; 0)? 1 : -1 // if dist traveled is negative, it indicates up swipe
-                  }
-              }
-	      if (touchsurface.className.indexOf(&#39;hide&#39;) == -1) {
-                handleswipe(swipedir)
-                e.preventDefault()
-	      }
-          }, false)
-      	//continue to trigger click event from the target of any touch event at the document level
-      	window.on(&#39;touchend&#39;, function(e){
-      		$(e.target).trigger(&#39;click&#39;);
-      	});
-      
-          }
-</script> -->
 
   <script>
 
@@ -877,21 +602,21 @@ stu.styleElement = function (element, prop, val) {
 };
 stu.toggleShow = function (sel) {
   var i, x = stu.getElements(sel), xl = x.length;
-  for (i = 0; i &lt; xl; i++) {    
-    if (x[i].style.display == &quot;none&quot;) {
-      stu.styleElement(x[i], &quot;display&quot;, &quot;block&quot;);
+  for (i = 0; i < xl; i++) {    
+    if (x[i].style.display == 'none') {
+      stu.styleElement(x[i], 'display', 'block');
     } else {
-      stu.styleElement(x[i], &quot;display&quot;, &quot;none&quot;);
+      stu.styleElement(x[i], 'display', 'none');
     }
   }
 };
 stu.togglePaddingProj = function (sel) {
   var i, x = stu.getElements(sel), l = x.length;
-  for (i = 0; i &lt; l; i++) {    
-    if (x[i].style.padding == &quot;0px&quot;) {
-      stu.styleElement(x[i], &quot;padding&quot;, &quot;48px 24px 24px&quot;);
+  for (i = 0; i < l; i++) {    
+    if (x[i].style.padding == '0px') {
+      stu.styleElement(x[i], 'padding', '48px 24px 24px');
     } else {
-      stu.styleElement(x[i], &quot;padding&quot;, &quot;0px&quot;);
+      stu.styleElement(x[i], 'padding', '0px');
     }
   }
 };
@@ -900,16 +625,16 @@ stu.addClass = function (sel, name) {
 };
 stu.addClassElements = function (elements, name) {
   var i, l = elements.length;
-  for (i = 0; i &lt; l; i++) {
+  for (i = 0; i < l; i++) {
     stu.addClassElement(elements[i], name);
   }
 };
 stu.addClassElement = function (element, name) {
   var i, arr1, arr2;
-  arr1 = element.className.split(&quot; &quot;);
-  arr2 = name.split(&quot; &quot;);
-  for (i = 0; i &lt; arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += &quot; &quot; + arr2[i];}
+  arr1 = element.className.split(' ');
+  arr2 = name.split(' ');
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += ' ' + arr2[i];}
   }
 };
 stu.removeClass = function (sel, name) {
@@ -917,40 +642,40 @@ stu.removeClass = function (sel, name) {
 };
 stu.removeClassElements = function (elements, name) {
   var i, l = elements.length, arr1, arr2, j;
-  for (i = 0; i &lt; l; i++) {
+  for (i = 0; i < l; i++) {
     stu.removeClassElement(elements[i], name);
   }
 };
 stu.removeClassElement = function (element, name) {
   var i, arr1, arr2;
-  arr1 = element.className.split(&quot; &quot;);
-  arr2 = name.split(&quot; &quot;);
-  for (i = 0; i &lt; arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) &gt; -1) {
+  arr1 = element.className.split(' ');
+  arr2 = name.split(' ');
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
       arr1.splice(arr1.indexOf(arr2[i]), 1);     
     }
   }
-  element.className = arr1.join(&quot; &quot;);
+  element.className = arr1.join(' ');
 };
 stu.toggleClass = function (sel, c1, c2) {
   stu.toggleClassElements(stu.getElements(sel), c1, c2);
 };
 stu.toggleClassElements = function (elements, c1, c2) {
   var i, l = elements.length;
-  for (i = 0; i &lt; l; i++) {    
+  for (i = 0; i < l; i++) {    
     stu.toggleClassElement(elements[i], c1, c2);
   }
 };
 stu.toggleClassElement = function (element, c1, c2) {
   var t1, t2, t1Arr, t2Arr, j, arr, allPresent;
-  t1 = (c1 || &quot;&quot;);
-  t2 = (c2 || &quot;&quot;);
-  t1Arr = t1.split(&quot; &quot;);
-  t2Arr = t2.split(&quot; &quot;);
-  arr = element.className.split(&quot; &quot;);
+  t1 = (c1 || '');
+  t2 = (c2 || '');
+  t1Arr = t1.split(' ');
+  t2Arr = t2.split(' ');
+  arr = element.className.split(' ');
   if (t2Arr.length == 0) {
     allPresent = true;
-    for (j = 0; j &lt; t1Arr.length; j++) {
+    for (j = 0; j < t1Arr.length; j++) {
       if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
     }
     if (allPresent) {
@@ -960,7 +685,7 @@ stu.toggleClassElement = function (element, c1, c2) {
     }
   } else {
     allPresent = true;
-    for (j = 0; j &lt; t1Arr.length; j++) {
+    for (j = 0; j < t1Arr.length; j++) {
       if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
     }
     if (allPresent) {
@@ -973,7 +698,7 @@ stu.toggleClassElement = function (element, c1, c2) {
   }
 };
 stu.getElements = function (id) {
-  if (typeof id == &quot;object&quot;) {
+  if (typeof id == 'object') {
     return [id];
   } else {
     return document.querySelectorAll(id);
