@@ -1540,22 +1540,22 @@ a:hover hr {
     
       <div id="slide-arrow" class="bottommiddle fixed full-width" style="height: 50px;">
         <div id="touch-proj-instruction" class="small center text-white"style="margin-top: -16px;">swipe to cycle projects<br/>tap arrow for project details</div>
-	    <div id="mouse-proj-instruction" class="small center text-white" style="margin-top: -16px;">scroll to cycle projects<br/>click arrow for project details</div>
+	<div id="mouse-proj-instruction" class="small center text-white" style="margin-top: -16px;">scroll to cycle projects<br/>click arrow for project details</div>
         <div class="bottommiddle next-slide" style="bottom: -30px;" onclick="openProject()">
           <svg viewBox="0,0,100,300">
             <path fill="transparent" stroke-width="8" stroke="#0077cc" d="M0 240 L50 290 L100 240 M50 290 L50 0"/>
           </svg>
         </div>
-        <!--<div class="left-arrow absolute" style="top: 8px; left: 38px;" onclick="plusProjSlides(-1)">
-          <svg viewBox="0,0,100,100">
-            <path fill="transparent" stroke-width="8" stroke="white" d="M50 10 L10 50 L50 90"/>
+      </div>
+	    
+      <div id="slide-arrow2" class="bottommiddle fixed full-width hide" style="height: 50px;">
+        <div id="touch-proj-instruction" class="small center text-white"style="margin-top: -16px;">swipe to cycle projects<br/>tap arrow for project details</div>
+	<div id="mouse-proj-instruction" class="small center text-white" style="margin-top: -16px;">scroll to cycle projects<br/>click arrow for project details</div>
+        <div class="bottommiddle next-slide" style="bottom: -30px;" onclick="openProject()">
+          <svg viewBox="0,0,100,300">
+            <path fill="transparent" stroke-width="8" stroke="#ffffff d="M0 240 L50 290 L100 240 M50 290 L50 0"/>
           </svg>
         </div>
-        <div class="right-arrow absolute" style="top: 8px; right: 38px;" onclick="plusProjSlides(1)">
-          <svg viewBox="0,0,100,100">
-            <path fill="transparent" stroke-width="8" stroke="white" d="M50 10 L90 50 L50 90"/>
-          </svg>
-        </div>-->
       </div>
         
       <!-- Project Slide 1 --> 
@@ -2258,12 +2258,14 @@ function templatesPage() {
 function openProject() {
   var wrap = document.getElementById('proj-page-wrap'),
       sa = document.getElementById('slide-arrow'),
+      sa2 = document.getElementById('slide-arrow2'),
       nav = document.getElementById('nav'),
       rp = document.getElementById('rp');
       
   wrap.style.transition = "0.5s";
   stu.togglePaddingProj(wrap);
   stu.toggleShow(sa);
+  stu.toggleShow(sa2);
   stu.toggleShow(nav);
   stu.toggleShow(rp);
   stu.toggleClass('.proj-details','show','hide');
