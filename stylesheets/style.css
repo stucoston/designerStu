@@ -1,5 +1,13 @@
 /* ----- Generic Styles ----- */
-body {}
+body {
+  color: #333;
+  font-size: 100%;
+  font-family: "EB Garamond",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+section {}
+div {}
 h1 {}
 h2{}
 h3 {}
@@ -8,6 +16,8 @@ h5 {}
 h6 {}
 p {}
 a {}
+ul {}
+li {}
 
 /* ----- Header ----- */
 header {}
@@ -15,11 +25,16 @@ nav {}
 
 /* ----- Main ----- */
 main {}
-section {}
-div {}
 .container {}
-.container-100 {}
-.container-right {}
+.content {}
+.content-100 {}
+.content-right {}
+.content-left {}
+.content-slide-right {}
+.uppercase {}
+.no-margin {}
+.mt-1 {}
+.news {}
 
 /* ----- Footer ----- */
 footer {}
