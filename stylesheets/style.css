@@ -6,43 +6,61 @@ body {
   font-weight: 400;
   line-height: 1.5;
 }
-section {}
-div {}
+section {
+}
+div {
+}
 h1 {
-  font-family: 'Libre Baskerville', serif;
 }
 h2{
-  font-family: 'Libre Baskerville', serif;
 }
 h3 {
-  font-family: 'Libre Baskerville', serif;
 }
-h4 {}
-h5 {}
-h6 {}
+h4 {
+}
+h5 {
+}
+h6 {
+}
 p {
-  font-family: 'Libre Baskerville', serif;
 }
-a {}
-ul {}
-li {}
+a {
+}
+ul {
+}
+li {
+}
 
 /* ----- Header ----- */
-header {}
-nav {}
+header {
+}
+nav {
+}
 
 /* ----- Main ----- */
-main {}
-.container {}
-.content {}
-.content-100 {}
-.content-right {}
-.content-left {}
-.content-slide-right {}
-.uppercase {}
-.no-margin {}
-.mt-1 {}
-.news {}
+main {
+}
+.container {
+}
+.content {
+}
+.content-100 {
+}
+.content-right {
+}
+.content-left {
+}
+.content-slide-right {
+}
+.uppercase {
+}
+.no-margin {
+}
+.mt-1 {
+}
+.news {
+}
 
 /* ----- Footer ----- */
-footer {}
+footer {
+}
