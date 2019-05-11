@@ -1,0 +1,25 @@
+/* ----- Generic Styles ----- */
+body {}
+h1 {}
+h2{}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+p {}
+a {}
+
+/* ----- Header ----- */
+header {}
+nav {}
+
+/* ----- Main ----- */
+main {}
+section {}
+div {}
+.container {}
+.container-100 {}
+.container-right {}
+
+/* ----- Footer ----- */
+footer {}
