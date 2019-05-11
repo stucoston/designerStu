@@ -8,13 +8,21 @@ body {
 }
 section {}
 div {}
-h1 {}
-h2{}
-h3 {}
+h1 {
+  font-family: 'Libre Baskerville', serif;
+}
+h2{
+  font-family: 'Libre Baskerville', serif;
+}
+h3 {
+  font-family: 'Libre Baskerville', serif;
+}
 h4 {}
 h5 {}
 h6 {}
-p {}
+p {
+  font-family: 'Libre Baskerville', serif;
+}
 a {}
 ul {}
 li {}
