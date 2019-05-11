@@ -7,11 +7,23 @@ body {
   line-height: 1.5;
 }
 section {
+  position: relative;
+  margin-bottom: 15em;
+  overflow: hidden;
 }
 div {
 }
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+  word-wrap: break-word;
+  text-rendering: optimizeLegibility;
+}
 h1 {
+  font-size: 12vw;
   font-weight: 700;
+  line-height: .9em;
+  letter-spacing: -.0125em;
+  margin-bottom: .5em;
 }
 h2{
   font-weight: 700;
@@ -33,40 +45,87 @@ p {
 a {
 }
 ul {
+  margin-bottom: 1.5em;
+  list-style: none;
 }
-li {
+ul li {
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  font-size: calc(20px + (24 - 20) * ((100vw - 320px)/ (1680 - 320)));
+  line-height: 1.35em;
+}
+.list-inline li {
+  display: inline-block;
+  margin-left: .25em;
 }
 
 /* ----- Header ----- */
 header {
+  position: relative;
+  padding-top: 3em;
 }
 nav {
+  position: fixed;
+  left: 3em;
+  bottom: 4.5em;
+  z-index: 10;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 /* ----- Main ----- */
 main {
+  position: relative;
 }
 .container {
+  position: relative;
+  width: 100%;
+  padding: 0 4.5em;
 }
 .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 .content-100 {
 }
 .content-right {
+  width: 83.3334%;
+  text-align: right;
 }
 .content-left {
+  width: 83.3334%;
+  text-align: left;
 }
 .content-slide-right {
 }
 .uppercase {
+  text-transform: uppercase;
 }
 .no-margin {
+  margin: 0 !important;
 }
 .mt-1 {
 }
 .news {
+  position: absolute;
+  right: 4.5em;
+  bottom: 6em;
+  width: 66.6667%;
+  font-style: italic;
 }
 
 /* ----- Footer ----- */
 footer {
+  position: relative;
+  text-align: right;
 }
