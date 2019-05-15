@@ -26,7 +26,7 @@ h1, h2 {
 h1, #work h2, #life h2, #contact h2 {
   font-size: 17vw;
   font-weight: 600;
-  line-height: .7em;
+  line-height: .9em;
   letter-spacing: -.0125em;
   margin-bottom: .5em;
 }
@@ -44,7 +44,7 @@ h5 {
 h6 {
 }
 p {
-  font-size: calc(20px + (24 - 20) * ((100vw - 320px)/ (1680 - 320)));
+  font-size: calc(24px + (24 - 20) * ((100vw - 320px)/ (1680 - 320)));
 }
 a {
   text-decoration:none;
@@ -79,6 +79,10 @@ a span:hover:after {
   background: transparent;
   width: 100%;
   transition: 0s;
+}
+.big, h3 {
+  font-size: 40px;
+  line-height: 0.9em;
 }
 ul {
   margin-bottom: 1.5em;
@@ -179,17 +183,14 @@ main {
 .circle {
   border-radius: 50%;
 }
-.big {
-  font-size: 4vw;
-  line-height: 0.9em;
-}
+
 .black, a.black {
  color: #333; 
 }
 .absolute-right {
   position: absolute;
   right: 5px;
-  top: 0;
+  top: 10px;
 }
 .toggle {
   cursor: pointer;
@@ -212,16 +213,13 @@ main {
 }
 .work-list {
   width: 100%;
-  /*margin-top:-5em;*/
 }
 ul.work-list {
   padding: 0;
 }
 ul.work-list li {
   border-bottom: 1px solid;
-  padding: 5px 20px;
-  font-size: 5vw;
-  /*font-size: calc(32px + (72 - 32) * ((100vw - 320px)/ (1680 - 320)));*/
+  padding: 10px 20px;
 }
 .show {
   display: block;
@@ -242,8 +240,15 @@ footer {
 
 /* ----- Medium Screens ----- */
 @media all and (max-width: 991px) { 
+  h1, #work h2, #life h2, #contact h2 {
+    font-size: 22vw;
+    line-height: .9em;
+  }
   nav {
     display: none;
+  }
+  .container {
+    padding: 0 2.5em;
   }
   .content-right {
     width: 100%;
@@ -256,26 +261,36 @@ footer {
   .hide-on-small {
     display: none;
   }
+  .logo {
+    display: none;
+  }
 }
   
 /* ----- Small/Medium Screens ----- */
 @media all and (max-width: 768px) {
+  .content-right {
+    text-align:left;
+  }
   .flex-content-left {
     width: 100%;
-    text-align: right;
+    text-align: left;
+  }
+  .flex-content-left ul {
+    padding-left: 15px;
   }
   .flex-content-left img {
     width: 60%;
-    margin-right: 20%;
+    margin-left: 20%;
   }
   .flex-content-right {
     width: 100%;
+    text-align: left;
   }
   .padding-left-5 {
     padding: 0;
   }
-  .logo {
-    left: 0.8em;
+  footer {
+    text-align: left;
   }
 }
 
