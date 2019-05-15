@@ -183,14 +183,13 @@ main {
 .circle {
   border-radius: 50%;
 }
-
 .black, a.black {
  color: #333; 
 }
 .absolute-right {
   position: absolute;
   right: 5px;
-  top: 10px;
+  top: .5em;
 }
 .toggle {
   cursor: pointer;
@@ -244,6 +243,9 @@ footer {
     font-size: 22vw;
     line-height: .9em;
   }
+  .big, h3 {
+    font-size: 30px;
+  }
   nav {
     display: none;
   }
@@ -268,6 +270,9 @@ footer {
   
 /* ----- Small/Medium Screens ----- */
 @media all and (max-width: 768px) {
+  .big, h3 {
+    font-size: 24px;
+  }
   .content-right {
     text-align:left;
   }
