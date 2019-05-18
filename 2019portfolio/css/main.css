@@ -186,6 +186,9 @@ main {
 .flex-content-right {
   width: 70%;
 }
+.flex-content-third {
+  width: 33.333%;
+}
 .slow {
   transition: 0.5s;
 }
