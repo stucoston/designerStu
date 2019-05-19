@@ -183,6 +183,9 @@ main {
 .flex-content-left {
   width: 30%;
 }
+.flex-content-left img {
+    width: 80%;
+  }
 .flex-content-right {
   width: 70%;
 }
